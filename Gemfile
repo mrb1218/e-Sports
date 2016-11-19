@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'pry-rails'
 gem 'pundit'
 gem 'rolify'
 gem 'devise'

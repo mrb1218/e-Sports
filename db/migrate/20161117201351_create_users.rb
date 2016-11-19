@@ -10,7 +10,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :country
       t.string :ingame_role
       t.string :team
-      t.string: game
+      t.string :game
 
       t.timestamps
     end
