@@ -7,6 +7,7 @@
     <tr>
       <th>Teamid</th>
       <th>Playerid</th>
+      <th>User</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= favorite.teamID %></td>
         <td><%= favorite.playerID %></td>
+        <td><%= favorite.user %></td>
         <td><%= link_to 'Show', favorite %></td>
         <td><%= link_to 'Edit', edit_favorite_path(favorite) %></td>
         <td><%= link_to 'Destroy', favorite, method: :delete, data: { confirm: 'Are you sure?' } %></td>

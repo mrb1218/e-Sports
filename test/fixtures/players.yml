@@ -5,9 +5,11 @@ one:
   age: 1
   country: MyString
   in_game_role: MyString
+  team: one
 
 two:
   ign: MyString
   age: 1
   country: MyString
   in_game_role: MyString
+  team: two

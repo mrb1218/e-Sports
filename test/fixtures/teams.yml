@@ -5,9 +5,11 @@ one:
   bio: MyText
   coachID: MyString
   team_name: MyString
+  league: one
 
 two:
   leagueID: MyString
   bio: MyText
   coachID: MyString
   team_name: MyString
+  league: two

@@ -3,7 +3,9 @@
 one:
   teamID: MyString
   playerID: MyString
+  user: one
 
 two:
   teamID: MyString
   playerID: MyString
+  user: two
