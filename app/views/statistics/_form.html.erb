@@ -1,0 +1,47 @@
+<%= form_for(statistic) do |f| %>
+  <% if statistic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(statistic.errors.count, "error") %> prohibited this statistic from being saved:</h2>
+
+      <ul>
+      <% statistic.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :games_played %>
+    <%= f.number_field :games_played %>
+  </div>
+
+  <div class="field">
+    <%= f.label :kills %>
+    <%= f.number_field :kills %>
+  </div>
+
+  <div class="field">
+    <%= f.label :deaths %>
+    <%= f.number_field :deaths %>
+  </div>
+
+  <div class="field">
+    <%= f.label :wins %>
+    <%= f.number_field :wins %>
+  </div>
+
+  <div class="field">
+    <%= f.label :losses %>
+    <%= f.number_field :losses %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ties %>
+    <%= f.number_field :ties %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

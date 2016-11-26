@@ -10,7 +10,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161117231448) do
+ActiveRecord::Schema.define(version: 20161126184951) do
+
+  create_table "favorites", force: :cascade do |t|
+    t.string   "teamID"
+    t.string   "playerID"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "favs", force: :cascade do |t|
+    t.integer  "playerID"
+    t.integer  "teamID"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "leagues", force: :cascade do |t|
+    t.string   "prize_money"
+    t.string   "league_name"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "matches", force: :cascade do |t|
+    t.string   "team1ID"
+    t.string   "team2ID"
+    t.string   "leagueID"
+    t.string   "match_time"
+    t.string   "match_date"
+    t.string   "location"
+    t.integer  "team1Score"
+    t.integer  "team2Score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.string   "ign"
+    t.integer  "age"
+    t.string   "country"
+    t.string   "in_game_role"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
@@ -20,6 +63,32 @@ ActiveRecord::Schema.define(version: 20161117231448) do
     t.datetime "updated_at"
     t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
     t.index ["name"], name: "index_roles_on_name"
+  end
+
+  create_table "seasons", force: :cascade do |t|
+    t.string   "season_name"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "statistics", force: :cascade do |t|
+    t.integer  "games_played"
+    t.integer  "kills"
+    t.integer  "deaths"
+    t.integer  "wins"
+    t.integer  "losses"
+    t.integer  "ties"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string   "leagueID"
+    t.text     "bio"
+    t.string   "coachID"
+    t.string   "team_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

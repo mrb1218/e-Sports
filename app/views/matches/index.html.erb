@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Matches</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Team1id</th>
+      <th>Team2id</th>
+      <th>Leagueid</th>
+      <th>Match time</th>
+      <th>Match date</th>
+      <th>Location</th>
+      <th>Team1score</th>
+      <th>Team2score</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @matches.each do |match| %>
+      <tr>
+        <td><%= match.team1ID %></td>
+        <td><%= match.team2ID %></td>
+        <td><%= match.leagueID %></td>
+        <td><%= match.match_time %></td>
+        <td><%= match.match_date %></td>
+        <td><%= match.location %></td>
+        <td><%= match.team1Score %></td>
+        <td><%= match.team2Score %></td>
+        <td><%= link_to 'Show', match %></td>
+        <td><%= link_to 'Edit', edit_match_path(match) %></td>
+        <td><%= link_to 'Destroy', match, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Match', new_match_path %>

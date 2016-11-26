@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Team1id:</strong>
+  <%= @match.team1ID %>
+</p>
+
+<p>
+  <strong>Team2id:</strong>
+  <%= @match.team2ID %>
+</p>
+
+<p>
+  <strong>Leagueid:</strong>
+  <%= @match.leagueID %>
+</p>
+
+<p>
+  <strong>Match time:</strong>
+  <%= @match.match_time %>
+</p>
+
+<p>
+  <strong>Match date:</strong>
+  <%= @match.match_date %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @match.location %>
+</p>
+
+<p>
+  <strong>Team1score:</strong>
+  <%= @match.team1Score %>
+</p>
+
+<p>
+  <strong>Team2score:</strong>
+  <%= @match.team2Score %>
+</p>
+
+<%= link_to 'Edit', edit_match_path(@match) %> |
+<%= link_to 'Back', matches_path %>

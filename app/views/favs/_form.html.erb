@@ -1,0 +1,27 @@
+<%= form_for(fav) do |f| %>
+  <% if fav.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(fav.errors.count, "error") %> prohibited this fav from being saved:</h2>
+
+      <ul>
+      <% fav.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :playerID %>
+    <%= f.number_field :playerID %>
+  </div>
+
+  <div class="field">
+    <%= f.label :teamID %>
+    <%= f.number_field :teamID %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

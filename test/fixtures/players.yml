@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ign: MyString
+  age: 1
+  country: MyString
+  in_game_role: MyString
+
+two:
+  ign: MyString
+  age: 1
+  country: MyString
+  in_game_role: MyString

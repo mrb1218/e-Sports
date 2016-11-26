@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  leagueID: MyString
+  bio: MyText
+  coachID: MyString
+  team_name: MyString
+
+two:
+  leagueID: MyString
+  bio: MyText
+  coachID: MyString
+  team_name: MyString

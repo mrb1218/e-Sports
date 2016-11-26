@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Playerid:</strong>
+  <%= @fav.playerID %>
+</p>
+
+<p>
+  <strong>Teamid:</strong>
+  <%= @fav.teamID %>
+</p>
+
+<%= link_to 'Edit', edit_fav_path(@fav) %> |
+<%= link_to 'Back', favs_path %>

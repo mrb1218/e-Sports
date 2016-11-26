@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Games played:</strong>
+  <%= @statistic.games_played %>
+</p>
+
+<p>
+  <strong>Kills:</strong>
+  <%= @statistic.kills %>
+</p>
+
+<p>
+  <strong>Deaths:</strong>
+  <%= @statistic.deaths %>
+</p>
+
+<p>
+  <strong>Wins:</strong>
+  <%= @statistic.wins %>
+</p>
+
+<p>
+  <strong>Losses:</strong>
+  <%= @statistic.losses %>
+</p>
+
+<p>
+  <strong>Ties:</strong>
+  <%= @statistic.ties %>
+</p>
+
+<%= link_to 'Edit', edit_statistic_path(@statistic) %> |
+<%= link_to 'Back', statistics_path %>

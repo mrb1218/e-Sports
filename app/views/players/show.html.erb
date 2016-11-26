@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ign:</strong>
+  <%= @player.ign %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @player.age %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @player.country %>
+</p>
+
+<p>
+  <strong>In game role:</strong>
+  <%= @player.in_game_role %>
+</p>
+
+<%= link_to 'Edit', edit_player_path(@player) %> |
+<%= link_to 'Back', players_path %>
