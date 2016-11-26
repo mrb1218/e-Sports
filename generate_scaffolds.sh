@@ -1,7 +1,7 @@
 #!/bin/bash
 GEN="rails generate scaffold"
 
-#Users is already created
+$GEN User first_name:string last_name:string email:string phone_number:string coachID:string age:integer region:string player:references
 
 #drop old Role
 rails d scaffold Role

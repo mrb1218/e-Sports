@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161126195833) do
+ActiveRecord::Schema.define(version: 20161126201805) do
 
   create_table "favorites", force: :cascade do |t|
     t.string   "teamID"
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(version: 20161126195833) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
+  create_table "favs", force: :cascade do |t|
+    t.integer  "playerID"
+    t.integer  "teamID"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "leagues", force: :cascade do |t|
@@ -102,17 +109,14 @@ ActiveRecord::Schema.define(version: 20161126195833) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
-    t.string   "ign"
+    t.string   "phone_number"
     t.string   "coachID"
-    t.string   "age"
-    t.string   "country"
-    t.string   "ingame_role"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.string   "team"
-    t.string   "game"
-    t.integer  "players_id"
-    t.index ["players_id"], name: "index_users_on_players_id"
+    t.integer  "age"
+    t.string   "region"
+    t.integer  "player_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["player_id"], name: "index_users_on_player_id"
   end
 
   create_table "users_roles", id: false, force: :cascade do |t|
