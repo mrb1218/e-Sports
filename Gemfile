@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org' do
+gem 'rails-assets-tether', '>= 1.1.0'
+end
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
