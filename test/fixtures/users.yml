@@ -4,18 +4,18 @@ one:
   first_name: MyString
   last_name: MyString
   email: MyString
-  playerID: MyString
+  phone_number: MyString
   coachID: MyString
-  age: MyString
+  age: 1
   region: MyString
-  role: MyString
+  player: one
 
 two:
   first_name: MyString
   last_name: MyString
   email: MyString
-  playerID: MyString
+  phone_number: MyString
   coachID: MyString
-  age: MyString
+  age: 1
   region: MyString
-  role: MyString
+  player: two

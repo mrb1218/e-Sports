@@ -4,13 +4,11 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :first_name
       t.string :last_name
       t.string :email
-      t.string :ign
+      t.string :phone_number
       t.string :coachID
-      t.string :age
-      t.string :country
-      t.string :ingame_role
-      t.string :team
-      t.string :game
+      t.integer :age
+      t.string :region
+      t.references :player, foreign_key: true
 
       t.timestamps
     end

@@ -17,7 +17,7 @@ class MatchesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create match" do
     assert_difference('Match.count') do
-      post matches_url, params: { match: { leagueID: @match.leagueID, location: @match.location, match_date: @match.match_date, match_time: @match.match_time, team1ID: @match.team1ID, team1Score: @match.team1Score, team2ID: @match.team2ID, team2Score: @match.team2Score } }
+      post matches_url, params: { match: { leagueID: @match.leagueID, league_id: @match.league_id, location: @match.location, match_date: @match.match_date, match_time: @match.match_time, team1ID: @match.team1ID, team1Score: @match.team1Score, team2ID: @match.team2ID, team2Score: @match.team2Score } }
     end
 
     assert_redirected_to match_url(Match.last)
@@ -34,7 +34,7 @@ class MatchesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update match" do
-    patch match_url(@match), params: { match: { leagueID: @match.leagueID, location: @match.location, match_date: @match.match_date, match_time: @match.match_time, team1ID: @match.team1ID, team1Score: @match.team1Score, team2ID: @match.team2ID, team2Score: @match.team2Score } }
+    patch match_url(@match), params: { match: { leagueID: @match.leagueID, league_id: @match.league_id, location: @match.location, match_date: @match.match_date, match_time: @match.match_time, team1ID: @match.team1ID, team1Score: @match.team1Score, team2ID: @match.team2ID, team2Score: @match.team2Score } }
     assert_redirected_to match_url(@match)
   end
 

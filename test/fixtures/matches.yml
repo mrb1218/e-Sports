@@ -9,6 +9,7 @@ one:
   location: MyString
   team1Score: 1
   team2Score: 1
+  league: one
 
 two:
   team1ID: MyString
@@ -19,3 +20,4 @@ two:
   location: MyString
   team1Score: 1
   team2Score: 1
+  league: two

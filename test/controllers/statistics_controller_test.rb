@@ -17,7 +17,7 @@ class StatisticsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create statistic" do
     assert_difference('Statistic.count') do
-      post statistics_url, params: { statistic: { deaths: @statistic.deaths, games_played: @statistic.games_played, kills: @statistic.kills, losses: @statistic.losses, ties: @statistic.ties, wins: @statistic.wins } }
+      post statistics_url, params: { statistic: { deaths: @statistic.deaths, games_played: @statistic.games_played, kills: @statistic.kills, losses: @statistic.losses, match_id: @statistic.match_id, season_id: @statistic.season_id, team_id: @statistic.team_id, ties: @statistic.ties, wins: @statistic.wins } }
     end
 
     assert_redirected_to statistic_url(Statistic.last)
@@ -34,7 +34,7 @@ class StatisticsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update statistic" do
-    patch statistic_url(@statistic), params: { statistic: { deaths: @statistic.deaths, games_played: @statistic.games_played, kills: @statistic.kills, losses: @statistic.losses, ties: @statistic.ties, wins: @statistic.wins } }
+    patch statistic_url(@statistic), params: { statistic: { deaths: @statistic.deaths, games_played: @statistic.games_played, kills: @statistic.kills, losses: @statistic.losses, match_id: @statistic.match_id, season_id: @statistic.season_id, team_id: @statistic.team_id, ties: @statistic.ties, wins: @statistic.wins } }
     assert_redirected_to statistic_url(@statistic)
   end
 

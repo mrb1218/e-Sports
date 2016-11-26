@@ -25,12 +25,19 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+<<<<<<< HEAD
     <!--    <li class="active"><a href="#">Leagues<span class="sr-only">(current)</span></a></li> -->
         <li><a href="leagues">Leagues</a></li>
         <li><a href="#">Teams</a></li>
         <li><a href="#">Schedule</a></li>
 	      <li><a href="#">Register/Signin</a></li>
 <!--       <li class="dropdown">
+=======
+        <li class="<%= 'active' if current_page?(leagues_path) %>"><%= link_to "Leagues", leagues_path %></li>
+        <li class="<%= 'active' if current_page?(teams_path) %>"><%= link_to "Teams", teams_path %></li>
+        <!-- <li><a class ="nav-link" href="teams">Teams</a></li> -->
+ <!--       <li class="dropdown">
+>>>>>>> cf897182c1366b26c7cee0a0a9c2fa6c5124d49d
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Action</a></li>

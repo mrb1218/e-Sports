@@ -69,6 +69,6 @@ class StatisticsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def statistic_params
-      params.require(:statistic).permit(:games_played, :kills, :deaths, :wins, :losses, :ties)
+      params.require(:statistic).permit(:games_played, :kills, :deaths, :wins, :losses, :ties, :team_id, :match_id, :season_id)
     end
 end

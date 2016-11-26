@@ -1,3 +1,3 @@
 class User < ApplicationRecord
-  rolify
+  belongs_to :player
 end
