@@ -1,13 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Leagues</h1>
+<h4>Leagues</h4>
 
 <table>
   <thead>
     <tr>
-      <th>Prize money</th>
+
       <th>League name</th>
-      <th colspan="3"></th>
+      <style>p.indent{padding-right: 1.8em}</style><th>Prize money</th>
+      <th colspan="10"></th>
     </tr>
   </thead>
 
@@ -16,8 +17,8 @@
       <tr>
         <td><%= league.prize_money %></td>
         <td><%= league.league_name %></td>
-        <td><%= link_to 'Show', league %></td>
-        <td><%= link_to 'Edit', edit_league_path(league) %></td>
+        <td><small><%= link_to 'Show', league %></small></td>
+        <td><small><%= link_to 'Edit', edit_league_path(league) %></small></td>
         <td><%= link_to 'Destroy', league, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
