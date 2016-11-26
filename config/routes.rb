@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   resources :players
   resources :seasons
   resources :favorites
-  resources :favs
  root 'pages#index'
 
   get 'users/new'
