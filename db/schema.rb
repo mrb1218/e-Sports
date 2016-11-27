@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161126201805) do
+ActiveRecord::Schema.define(version: 20161127160734) do
 
   create_table "favorites", force: :cascade do |t|
     t.string   "teamID"
@@ -72,7 +72,9 @@ ActiveRecord::Schema.define(version: 20161126201805) do
     t.integer  "season_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "player_id"
     t.index ["match_id"], name: "index_statistics_on_match_id"
+    t.index ["player_id"], name: "index_statistics_on_player_id"
     t.index ["season_id"], name: "index_statistics_on_season_id"
     t.index ["team_id"], name: "index_statistics_on_team_id"
   end
