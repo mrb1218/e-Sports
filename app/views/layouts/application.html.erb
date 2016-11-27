@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -18,17 +19,124 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">eSports</a>
+      <a class="navbar-brand">eSports</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-<<<<<<< HEAD
-    <!--    <li class="active"><a href="#">Leagues<span class="sr-only">(current)</span></a></li> -->
-        <li><a href="leagues">Leagues</a></li>
-        <li><a href="#">Teams</a></li>
+
+
+
+
+
+        <!-- Split button -->
+      <li><a> <div class="btn-group">
+          <button type="button" class="btn btn-default"><li class="<%= 'active' if current_page?(leagues_path) %>"><%= link_to "Leagues", leagues_path %></li></button>
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#">League of Legends</a></li>
+            <li><a href="#">Counter-Strike: Global Offensive</a></li>
+            <li><a href="#">Overwatch</a></li>
+            <li><a href="#">Dota 2</a></li>
+          </ul>
+        </div> </a></li>
+
+<!--<div class="btn-group" role="group" aria-label="...">
+  <li class="<%= 'active' if current_page?(leagues_path) %>"><%= link_to "Leagues", leagues_path %></li>
+ <div class="btn-group" role="group">
+   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     <<span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a href="#">Dropdown link</a></li>
+      <li><a href="#">Dropdown link</a></li>
+    </ul>
+  </div>
+</div> -->
+
+
+              <!--  <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Leagues<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a ="#">One more separated link</a></li>
+                  </ul>
+                </li>
+              </ul> -->
+
+
+
+        <li><div class="btn-group">
+            <button type="button" class="btn btn-default"><li class="<%= 'active' if current_page?(teams_path) %>"><%= link_to "Teams", teams_path %></li></button>
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="caret"></span>
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+
+              <ul class="dropdown-menu">
+              <ul class="aria-labelledby="dropdownMenuDivider">
+                <small> CS:GO </small>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Cloud 9</a></li>
+                <li><a href="#">NiP</a></li>
+                <li><a href="#">Fnatic</a></li>
+                <li><a href="#">SK Gaming</a></li>
+                </ul>
+                <ul class="aria-labelledby="dropdownMenuDivider">
+                <span><small>  Leauge of Legends </small></span>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">SKT T1 </a></li>
+                  <li><a href="#">Samsung Galaxy </a></li>
+                  <li><a href="#">Saigon Jokers </a></li>
+                  <li><a href="#">Team Solomid </a></li>
+                  </ul>
+                  <ul class="aria-labelledby="dropdownMenuDivider">
+                    Dota 2
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Digital Chaos </a></li>
+                    <li><a href="#">Team NP </a></li>
+                    <li><a href="#">Infamous </a></li>
+                    <li><a href="#">Team Liquid </a></li>
+                    </ul>
+
+                    <ul class="aria-labelledby="dropdownMenuDivider">
+                      Overwatch
+                      <li role="separator" class="divider"></li>
+                      <li><a href="#">Rogue </a></li>
+                      <li><a href="#">Team EnVyUs </a></li>
+                      <li><a href="#">Misfits </a></li>
+                      <li><a href="#">melty eSports</a></li>
+                      </ul>
+                    </ul>
+                  </div> </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <li><a href="#">Schedule</a></li>
 	      <li><a href="#">Register/Signin</a></li>
 <!--       <li class="dropdown">
@@ -51,7 +159,7 @@
         </li>
       </ul> -->
 
-      <form class="navbar-form navbar-left">
+     <form class="navbar-form navbar-left">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search ...">
         </div>
