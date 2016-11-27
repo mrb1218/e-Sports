@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161126201805) do
+ActiveRecord::Schema.define(version: 20161127220732) do
 
   create_table "favorites", force: :cascade do |t|
     t.string   "teamID"
@@ -28,18 +28,21 @@ ActiveRecord::Schema.define(version: 20161126201805) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "leagues_seasons", id: false, force: :cascade do |t|
+    t.integer "league_id", null: false
+    t.integer "season_id", null: false
+  end
+
   create_table "matches", force: :cascade do |t|
     t.string   "team1ID"
     t.string   "team2ID"
-    t.string   "leagueID"
-    t.string   "match_time"
-    t.string   "match_date"
     t.string   "location"
     t.integer  "team1Score"
     t.integer  "team2Score"
     t.integer  "league_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.datetime "match_date_time"
     t.index ["league_id"], name: "index_matches_on_league_id"
   end
 
@@ -54,10 +57,20 @@ ActiveRecord::Schema.define(version: 20161126201805) do
     t.index ["team_id"], name: "index_players_on_team_id"
   end
 
+  create_table "players_seasons", id: false, force: :cascade do |t|
+    t.integer "player_id", null: false
+    t.integer "season_id", null: false
+  end
+
   create_table "seasons", force: :cascade do |t|
     t.string   "season_name"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "seasons_teams", id: false, force: :cascade do |t|
+    t.integer "team_id",   null: false
+    t.integer "season_id", null: false
   end
 
   create_table "statistics", force: :cascade do |t|
@@ -72,13 +85,14 @@ ActiveRecord::Schema.define(version: 20161126201805) do
     t.integer  "season_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "player_id"
     t.index ["match_id"], name: "index_statistics_on_match_id"
+    t.index ["player_id"], name: "index_statistics_on_player_id"
     t.index ["season_id"], name: "index_statistics_on_season_id"
     t.index ["team_id"], name: "index_statistics_on_team_id"
   end
 
   create_table "teams", force: :cascade do |t|
-    t.string   "leagueID"
     t.text     "bio"
     t.string   "coachID"
     t.string   "team_name"

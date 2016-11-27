@@ -1,3 +1,4 @@
 class User < ApplicationRecord
-  belongs_to :player
+  has_one :player
+  has_many :favorites
 end
