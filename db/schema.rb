@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161127211228) do
+ActiveRecord::Schema.define(version: 20161127220732) do
 
   create_table "favorites", force: :cascade do |t|
     t.string   "teamID"
@@ -93,7 +93,6 @@ ActiveRecord::Schema.define(version: 20161127211228) do
   end
 
   create_table "teams", force: :cascade do |t|
-    t.string   "leagueID"
     t.text     "bio"
     t.string   "coachID"
     t.string   "team_name"
