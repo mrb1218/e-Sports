@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161127160734) do
+ActiveRecord::Schema.define(version: 20161127203937) do
 
   create_table "favorites", force: :cascade do |t|
     t.string   "teamID"
@@ -31,15 +31,13 @@ ActiveRecord::Schema.define(version: 20161127160734) do
   create_table "matches", force: :cascade do |t|
     t.string   "team1ID"
     t.string   "team2ID"
-    t.string   "leagueID"
-    t.string   "match_time"
-    t.string   "match_date"
     t.string   "location"
     t.integer  "team1Score"
     t.integer  "team2Score"
     t.integer  "league_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.datetime "match_date_time"
     t.index ["league_id"], name: "index_matches_on_league_id"
   end
 
