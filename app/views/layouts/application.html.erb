@@ -57,10 +57,9 @@ p.oblique {
             <span class="sr-only">Toggle Dropdown</span>
           </button>
           <ul class="dropdown-menu">
-            <li><a href="#">League of Legends</a></li>
-            <li><a href="#">Counter-Strike: Global Offensive</a></li>
-            <li><a href="#">Overwatch</a></li>
-            <li><a href="#">Dota 2</a></li>
+            <% League.select("league_name").each do |league| %>
+              <li><a href="/leagues/<%= league.id %>"><%= league.league_name %></a></li>
+            <% end %>
           </ul>
         </div></li>
 
