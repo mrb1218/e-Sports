@@ -1,24 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Bio:</strong>
+<h1>
+  <strong><%= @team.team_name %></strong>
+</h1>
+
+<p class="team-bio">
   <%= @team.bio %>
 </p>
 
 <p>
-  <strong>Coachid:</strong>
+  <strong>League:</strong>
+  <%= League.find(String(@team.league_id)).league_name %>
+</p>
+
+<p>
+  <strong>Coach:</strong>
   <%= @team.coachID %>
 </p>
 
-<p>
-  <strong>Team name:</strong>
-  <%= @team.team_name %>
-</p>
-
-<p>
-  <strong>League:</strong>
-  <%= @team.league %>
-</p>
-
-<%= link_to 'Edit', edit_team_path(@team) %> |
 <%= link_to 'Back', teams_path %>
