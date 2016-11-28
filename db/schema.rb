@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20161128003844) do
 
   create_table "players", force: :cascade do |t|
     t.string   "ign"
+    t.integer  "age"
     t.string   "country"
     t.string   "in_game_role"
     t.integer  "team_id"
