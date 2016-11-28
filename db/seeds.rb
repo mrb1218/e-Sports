@@ -7,7 +7,7 @@ League.delete_all
 leagues = League.create([
   { id: '1', prize_money: '1000', league_name: 'League of Legends' },
   { id: '2', prize_money: '3000', league_name: 'Counter-Strike: Global Offensive' },
-  { id: '3', prize_money: '5000', league_name: 'Overwatch2' },
+  { id: '3', prize_money: '5000', league_name: 'Overwatch' },
   { id: '4', prize_money: '10000', league_name: 'Dota 2' }
 ])
 
