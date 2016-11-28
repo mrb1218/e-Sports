@@ -5,25 +5,23 @@
 <table>
   <thead>
     <tr>
-      <th>League name</th>
-      <th>Prize money</th>
-      <th colspan="10"></th>
+      <th class="league">League name</th>
+      <th class="league">Prize money</th>
     </tr>
   </thead>
 
   <tbody>
     <% @leagues.each do |league| %>
       <tr>
-        <td><%= league.prize_money %></td>
-        <td><%= league.league_name %></td>
-        <td><small><%= link_to 'Show', league %></small></td>
-        <td><small><%= link_to 'Edit', edit_league_path(league) %></small></td>
-        <td><%= link_to 'Destroy', league, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="league"><%= league.league_name %></td>
+        <td class="league">$
+          <% if league.prize_money != nil %>
+            <%= league.prize_money %>
+          <% else %>
+            <%= 0 %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<!--<%= link_to 'New League', new_league_path %>
