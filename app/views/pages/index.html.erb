@@ -1,30 +1,24 @@
-<div class="container" style="margin-top: -20px; background-color: #000000; width: 1300px;">
+<div class="container" style="margin-top: -20px; background-color: #000000; height: 100%; width: 100%;">
 	<div class="row">
     <div class="col-lg-4" style="margin-right: 0px;">
       <nav class="nav-sidebar" class="pre-scrollable">
         <ul class="nav" class="pre-scrollable">
-          <li><a class="text-bold">Upcoming Events</a></li>
-          <li><a><img src="/images/Counter-strike Global Offensive.jpg" class="img-fluid" /></a></li>
-          <li><a class="text-main">Cloud9 vs NiP</a></li>
-          <li><a class="text-main">Galaxy vs iPhone</a></li>
-          <li><a class="text-main">Cloud9 vs Galaxy</a></li>
-          <li><a><img src="/images/League of Legends.png" class="img-fluid"/></a></li>
-          <li><a class="text-main">SKT T1 vs Team Solomid</a></li>
-          <li><a class="text-main">SKT T1 vs NiP</a></li>
-          <li><a class="text-main">iPhone vs NiP</a></li>
-          <li><a class="text-main">Cloud9 vs Misfits</a></li>
-          <li><a><img src="/images/Overwatch.jpg" class="img-fluid"/></a></li>
-          <li><a class="text-main">TeamEnvyUs vs Misfits</a></li>
-          <li><a class="text-main">Cloud9 vs Misfits</a></li>
-          <li><a class="text-main">Cloud9 vs iPhone</a></li>
-
+					<li><a class="text-bold">Upcoming Events</a></li>
+					<% League.all.each do |league| %>
+					<li><a href='/leagues/<%= league.id %>'><img src="/images/league_<%= league.id %>.jpg" class="img-fluid" /></a></li>
+					<li role="separator" class="divider"></li>
+					<% Match.where(league_id: league.id).sort_by{|a| a.match_date_time}.take(3).each do |match| %>
+					<li><a href='/matches/<%= match.id %>' class="text-main"><%= Team.where(id: match.team1ID).select("team_name").first.team_name %> vs <%= Team.where(id: match.team2ID).select("team_name").first.team_name %></a></li>
+					<% end %> <!-- end Match foreach -->
+					<% end %> <!-- end League foreach -->
+				</ul>
           <!-- <li class="nav-divider"></li> -->
           <!-- <li><a href="javascript:;"><i class="glyphicon glyphicon-off"></i> Sign in</a></li> -->
         </ul>
       </nav>
     </div>
     <div class="col-lg-8">
-      <img src="/images/Cup.png" class="img-cup"/>
+      <img style="width: 100%;" src="/images/Cup.png" class="img-cup"/>
       <p class="text-main"> Main Event</p>
       <p class="text-bold"> December 25-30, 2016</p>
       <p class="text-main"> G-play Civic Center</p>

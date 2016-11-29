@@ -32,7 +32,7 @@
 
 <p>
   <strong>League:</strong>
-  <%= @match.league %>
+  <%= League.where(id: @match.league_id).first.league_name %>
 </p>
 
 <%= link_to 'Back', matches_path %>
