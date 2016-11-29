@@ -52,12 +52,11 @@
                 <ul class="dropdown-menu">
                   <% League.all.each do |league| %>
                     <ul caria-labelledby="dropdownMenuDivider">
-                      <%= league.league_name %>
+                      <h4><a href='/leagues/<%= league.id %>'><%= league.league_name %></a></h4>
                       <li role="separator" class="divider"></li>
                       <% Team.where(league_id: league.id).each do |team| %>
                         <li class="teams"><a href='/teams/<%= team.id %>'><%= team.team_name %></a></li>
                       <% end %>
-                      <br>
                     </ul>
                   <% end %>
                 </ul>
@@ -73,38 +72,31 @@
                 </button>
                 <ul class="dropdown-menu">
                   Upcoming Matches
-                  <ul caria-labelledby="dropdownMenuDivider">
-                    <p class="italic">Leauge of Legends</p>
-                    <li role="separator" class="divider"></li>
-                    SKT T1 vs Team Solomid
-                    <small> Nov 30 @ 15:00 MT </small>
-                  </ul>
-                  <ul caria-labelledby="dropdownMenuDivider">
-                    <p class="italic">Counter-Strike: Global Offensive</p>
-                    <li role="separator" class="divider"></li>
-                    Cloud9 vs NiP
-                    <small>Nov 30 @ 19:00 MT</small>
-                  </ul>
-                  <ul caria-labelledby="dropdownMenuDivider">
-                    <p class="italic">Overwatch</p>
-                    <li role="separator" class="divider"></li>
-                    TeamEnvyUs vs Misfits
-                    <small> Nov 31 @ 16:00 MT </small>
-                  </ul>
+                  <% Match.all.sort_by{|a| a.match_date_time}.take(3).each do |match| %>
+                    <ul caria-labelledby="dropdownMenuDivider">
+                      <h4><a href='/leagues/<%= match.league_id %>'><%= League.where(id: match.league_id).select("league_name").first.league_name %></a></h4>
+                      <li role="separator" class="divider"></li>
+                      <a href='/matches/<%= match.id %>'><%= Team.where(id: match.team1ID).select("team_name").first.team_name %> vs <%= Team.where(id: match.team2ID).select("team_name").first.team_name %></a>
+                      <br>
+                      <small><%= match.match_date_time %></small>
+                    </ul>
+                  <% end %>
                   <br>
-                  <div align="left">
-                    Current Matches
-                    <ul caria-labelledby="dropdownMenuDivider">
-                      <p class="italic">Leauge of Legends</p>
-                      <li role="separator" class="divider"></li>
-                      Samsung Galaxy vs Saigon Jokers
-                    </ul>
-                    <ul caria-labelledby="dropdownMenuDivider">
-                      <p class="italic">Dota 2</p>
-                      <li role="separator" class="divider"></li>
-                      Team NP vs Team Liquid
-                    </ul>
-                  </div>
+                  Current Matches
+                  <% result = Match.where("match_date_time > ? AND match_date_time < ?", DateTime.now - (2/24.0), DateTime.now + (4/24.0)).sort_by{|a| a.match_date_time}.take(3) %>
+                  <% if result.count > 0 %>
+                    <% result.each do |match| %>
+                      <ul caria-labelledby="dropdownMenuDivider">
+                        <h4><a href='/leagues/<%= match.league_id %>'><%= League.where(id: match.league_id).select("league_name").first.league_name %></a></h4>
+                        <li role="separator" class="divider"></li>
+                        <a href='/matches/<%= match.id %>'><%= Team.where(id: match.team1ID).select("team_name").first.team_name %> vs <%= Team.where(id: match.team2ID).select("team_name").first.team_name %></a>
+                        <br>
+                        <small><%= match.match_date_time %></small>
+                      </ul>
+                    <% end %>
+                  <% else %>
+                    <p class="no_matches">No current matches</p>
+                  <% end %>
                 </ul>
               </div>
             </li>
