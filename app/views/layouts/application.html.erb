@@ -19,10 +19,8 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-
           <a class="navbar-brand" href="/">eSports</a>
         </div>
-
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
@@ -36,7 +34,7 @@
                 </button>
                 <ul class="dropdown-menu">
                   <% League.select("league_name").each do |league| %>
-                    <li><a href="/leagues/<%= league.id %>"><%= league.league_name %></a></li>
+                    <a href='/leagues/<%= league.id %>'><li><%= league.league_name %></li></a>
                   <% end %>
                 </ul>
               </div>

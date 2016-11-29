@@ -1,13 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>League name:</strong>
-  <%= @league.league_name %>
-</p>
+<h2><%= @league.league_name %></h2>
+
+<img src="/images/league_<%= @league.id %>.jpg" class="img-fluid" />
 
 <p>
   <strong>Prize money:</strong>
   <%= @league.prize_money %>
 </p>
-
-<%= link_to 'Back', leagues_path %>

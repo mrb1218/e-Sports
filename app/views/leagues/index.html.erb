@@ -13,15 +13,8 @@
   <tbody>
     <% @leagues.each do |league| %>
       <tr>
-        <td class="league"><%= league.league_name %></td>
-        <td class="league">$
-          <% if league.prize_money != nil %>
-            <%= league.prize_money %>
-          <% else %>
-            <%= 0 %>
-          <% end %>
-        </td>
-        <td><%= link_to 'Show', league %></td>
+        <td class="league"><a href='/leagues/<%=league.id%>'><%= league.league_name %></a></td>
+        <td class="league">$<%= league.prize_money %></td>
       </tr>
     <% end %>
   </tbody>

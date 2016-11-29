@@ -1,14 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Team1id:</strong>
-  <%= @match.team1ID %>
-</p>
+<% team1 = Team.where(id: @match.team1ID).first %>
+<% team2 = Team.where(id: @match.team2ID).first %>
 
-<p>
-  <strong>Team2id:</strong>
-  <%= @match.team2ID %>
-</p>
+<h2><a href='/teams/<%=team1.id%>'><%= team1.team_name %></a> V <a href='/teams/<%=team2.id%>'><%= team2.team_name %></a></h2>
 
 <p>
   <strong>Match Date/Time:</strong>
@@ -34,5 +29,3 @@
   <strong>League:</strong>
   <%= League.where(id: @match.league_id).first.league_name %>
 </p>
-
-<%= link_to 'Back', matches_path %>
