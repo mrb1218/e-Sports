@@ -18,7 +18,18 @@ teams = Team.create([
   { id: '1', bio: 'This is team 1, SKT T1', coachID: '', team_name: 'SKT T1', league_id: leagues[0].id},
   { id: '2', bio: 'This is team 2, Team Solomid', coachID: '', team_name: 'Team Solomid', league_id: leagues[0].id},
   { id: '3', bio: 'This is team 3, NiP', coachID: '', team_name: 'NiP', league_id: leagues[1].id},
-  { id: '4', bio: 'This is team 4, Cloud 9', coachID: '', team_name: 'Cloud 9', league_id: leagues[1].id}
+  { id: '4', bio: 'This is team 4, Cloud 9', coachID: '', team_name: 'Cloud 9', league_id: leagues[1].id},
+  { id: '5', bio: 'This is team 3, TeamEnvyUs', coachID: '', team_name: 'TeamEnvyUs', league_id: leagues[2].id},
+  { id: '6', bio: 'This is team 4, Misfits', coachID: '', team_name: 'Misfits', league_id: leagues[2].id}
+])
+
+#Delete all Matches
+Match.delete_all
+#Create matches
+matches = Match.create([
+  { id: "1", team1ID: teams[0].id, team2ID: teams[1].id, team1Score: "0", team2Score: "0", location: "G-play Civic Center", match_date_time: DateTime.new(2016,11,30,15), league_id: leagues[0].id},
+  { id: "2", team1ID: teams[2].id, team2ID: teams[3].id, team1Score: "0", team2Score: "0", location: "G-play Civic Center", match_date_time: DateTime.new(2016,11,30,19), league_id: leagues[1].id},
+  { id: "3", team1ID: teams[4].id, team2ID: teams[5].id, team1Score: "0", team2Score: "0", location: "G-play Civic Center", match_date_time: DateTime.new(2016,12,1,11), league_id: leagues[2].id}
 ])
 
 #Delete all Players
