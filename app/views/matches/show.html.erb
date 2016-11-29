@@ -11,13 +11,8 @@
 </p>
 
 <p>
-  <strong>Match time:</strong>
-  <%= @match.match_time %>
-</p>
-
-<p>
-  <strong>Match date:</strong>
-  <%= @match.match_date %>
+  <strong>Match Date/Time:</strong>
+  <%= @match.match_date_time %>
 </p>
 
 <p>
@@ -40,5 +35,4 @@
   <%= @match.league %>
 </p>
 
-<%= link_to 'Edit', edit_match_path(@match) %> |
 <%= link_to 'Back', matches_path %>
