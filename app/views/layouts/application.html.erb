@@ -50,41 +50,16 @@
                   <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu">
-                  <ul caria-labelledby="dropdownMenuDivider">
-                    Leauge of Legends
-                    <li role="separator" class="divider"></li>
-                    <ul><a href="#">SKT T1 </a></ul>
-                    <ul><a href="#">Samsung Galaxy </a></ul>
-                    <ul><a href="#">Saigon Jokers </a></ul>
-                    <ul><a href="#">Team Solomid </a></ul>
-                  </ul>
-                  <br>
-                  <ul caria-labelledby="dropdownMenuDivider">
-                    Counter-Strike: Global Offensive
-                    <li role="separator" class="divider"></li>
-                    <ul><a href="#">Cloud9</a></ul>
-                    <ul><a href="#">NiP</a></ul>
-                    <ul><a href="#">Fnatic</a></ul>
-                    <ul><a href="#">SK Gaming</a></ul>
-                  </ul>
-                  <br>
-                  <ul caria-labelledby="dropdownMenuDivider">
-                    Overwatch
-                    <li role="separator" class="divider"></li>
-                    <ul><a href="#">Rogue </a></ul>
-                    <ul><a href="#">Team EnVyUs </a></ul>
-                    <ul><a href="#">Misfits </a></ul>
-                    <ul><a href="#">melty eSports</a></ul>
-                  </ul>
-                  <br>
-                  <ul caria-labelledby="dropdownMenuDivider">
-                    Dota 2
-                    <li role="separator" class="divider"></li>
-                    <ul><a href="#">Digital Chaos </a></ul>
-                    <ul><a href="#">Team NP </a></ul>
-                    <ul><a href="#">Infamous </a></ul>
-                    <ul><a href="#">Team Liquid </a></ul>
-                  </ul>
+                  <% League.all.each do |league| %>
+                    <ul caria-labelledby="dropdownMenuDivider">
+                      <%= league.league_name %>
+                      <li role="separator" class="divider"></li>
+                      <% Team.where(league_id: league.id).each do |team| %>
+                        <li class="teams"><a href='/teams/<%= team.id %>'><%= team.team_name %></a></li>
+                      <% end %>
+                      <br>
+                    </ul>
+                  <% end %>
                 </ul>
               </div>
             </li>
