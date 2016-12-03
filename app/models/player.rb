@@ -1,4 +1,5 @@
 class Player < ApplicationRecord
+  resourcify
   belongs_to :team
   has_one :statistic
   has_one :user
