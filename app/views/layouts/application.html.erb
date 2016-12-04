@@ -108,10 +108,25 @@
               </form>
             </li>
             <!-- Registration/Sign in link/button -->
+          <li class="header-pad">
+            <%= link_to "Favourites", favorites_path%>
+
+          </li>
             <li class="header-pad">
-              <button class="btn btn-link" href="/">Register/Sign in</button>
-            </li>
-          </ul>
+
+<% if user_signed_in? %>
+<Signed in as <%= current_user.email %>. Not You?
+<%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "btn btn-secondary" %>
+<% else %>
+</li>
+<li class="header-pad">
+<%= link_to "Sign up", new_user_registration_path, class: "btn btn-secondary"%> </li>
+<li class="header-pad">
+<%= link_to "Sign in", new_user_session_path, class: "btn btn-secondary" %>
+</li>
+<% end %>
+</li>
+</ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
