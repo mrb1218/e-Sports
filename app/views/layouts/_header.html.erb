@@ -10,10 +10,11 @@
 <body>
 
 
-<div style="height: 250px; width: 100%;">
-  <img class="mySlides" src="/images/i1.jpg" style="height: 250px; width: 100%;">
-  <img class="mySlides" src="/images/i2.jpg" style="height: 250px; width: 100%;">
-  <img class="mySlides" src="/images/i3.jpg" style="height: 250px; width: 100%;">
+<div style="height: 251px; width: 100%;">
+  <img class="mySlides" src="/images/lol_1.jpg" style="height: 250px; width: 100%;">
+  <img class="mySlides" src="/images/league_2.png" style="height: 250px; width: 100%;">
+  <img class="mySlides" src="/images/league_3.jpg" style="height: 250px; width: 100%;">
+  <img class="mySlides" src="/images/league_4.jpg" style="height: 250px; width: 100%;">
 </div>
 
 <script>
@@ -24,12 +25,12 @@ function carousel() {
     var i;
     var x = document.getElementsByClassName("mySlides");
     for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";  
+       x[i].style.display = "none";
     }
     myIndex++;
-    if (myIndex > x.length) {myIndex = 1}    
-    x[myIndex-1].style.display = "block";  
-    setTimeout(carousel, 2000); // Change image every 2 seconds
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 4000); // Change image every 4 seconds
 }
 </script>
 
@@ -44,9 +45,33 @@ function carousel() {
         <li class="Schedule"><a href="#">Schedule</a></li>
         <li class="Results"><a href="#">Results</a></li>
         <li class="About"><a href="#">About</a></li>
+<!-- Method 1 -->
+<!--        <li class="header-pad">
+          <form class="header-pad form-inline">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search...">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </li> -->
+
+<!-- Method 2 -->
+        <div class="container">
+        <div class="row">
+              <div class="col-md-4 col-md-offset-3">
+                  <form action="" class="search-form">
+                    <div class="form-group has-feedback">
+                      <label for="search" class="sr-only">Search</label>
+                      <input type="text" class="form-control" name="search" id="search" placeholder="search">
+                      <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                    </div>
+                  </form>
+                </div>
+          </div>
+        </div>
       </ul>
     </div>
-  </header>
+ </header>
 
 
 </body>
