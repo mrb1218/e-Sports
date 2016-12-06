@@ -21,7 +21,7 @@
         <li><a href="/leagues">Leagues</a></li>
         <li><a href="/teams">Teams</a></li>
         <li><a href="/schedule">Schedule</a></li>
-        <li><a href="/results">Results</a></li>
+        <li><a href="/team_stats">Results</a></li>
         <li><a href="/about">About</a></li>
         <% if user_signed_in? %>
           <li>Signed in as <%= current_user.email %>. Not You? <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "btn btn-secondary" %></li>
