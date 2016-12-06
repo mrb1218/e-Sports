@@ -5,58 +5,35 @@
 
   <h1>Leagues</h1>
 
-  <div class="row">
-    <div class="col-lg-6">
-      <h2>League:</h2>
-    </div>
-
-    <div class="col-lg-6">
-      <h3>Prize:</h3>
-    </div>
-  </div>
-
-  <% @leagues.each do |league| %>
+  <center>
     <div class="row">
       <div class="col-lg-6">
-        <a href='/leagues/<%=league.id%>'>
-          <img src="/images/league_<%= league.id %>.jpg" class="img-fluid" style="width: 40%; height: 40%"/>
-          <h4>
-            <%= league.league_name %>
-          </h4>
-        </a>
-        <br>
+        <h2>League:</h2>
       </div>
 
       <div class="col-lg-6">
-        <h4>
-          $<%= league.prize_money %>
-        </h4>
+        <h3>Prize:</h3>
       </div>
     </div>
-  <% end %>
 
-</html>
-<!--<table>
-  <thead>
-    <tr>
-      <th class="league">League:</th>
-      <th class="league">Prize:</th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @leagues.each do |league| %>
-      <tr>
-        <td class="league">
+      <div class="row">
+        <div class="col-lg-6">
           <a href='/leagues/<%=league.id%>'>
-            <%= league.league_name %>
+            <img src="/images/league_<%= league.id %>.jpg" class="img-fluid" style="width: 40%; height: 40%"/>
+            <h4>
+              <%= league.league_name %>
+            </h4>
           </a>
-        </td>
-        <td class="league">
-          $<%= league.prize_money %>
-        </td>
-      </tr>
+          <br>
+        </div>
+
+        <div class="col-lg-6">
+          <h4>
+            $<%= league.prize_money %>
+          </h4>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
--->
+  </center>
+</html>
