@@ -1,5 +1,5 @@
   <!-- Slideshow -->
-  <div class="slideshow-container">
+ <!-- <div class="slideshow-container">
     <img class="mySlides" src="/images/Cup.png">
     <img class="mySlides" src="/images/league_1.jpg">
     <img class="mySlides" src="/images/league_2.jpg">
@@ -7,12 +7,44 @@
     <img class="mySlides" src="/images/league_4.jpg">
   </div>
 
-  <!-- script to start automatic slideshow -->
+
+  <div class="w3-content w3-display-container" style="height:250px;width:100%">
+  <img class="mySlides" src="/images/league_1.jpg" style="height:250px;width:100%">
+  <img class="mySlides" src="/images/league_2.jpg" style="height:250px;width:100%">
+  <img class="mySlides" src="/images/league_3" style="height:250px;width:100%">
+  <img class="mySlides" src="/images/league_4.jpg" style="height:250px;width:100%">
+
+  <a class="w3-btn-floating w3-display-left" onclick="plusDivs(-1)">&#10094;</a>
+  <a class="w3-btn-floating w3-display-right" onclick="plusDivs(1)">&#10095;</a>
+</div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+
+
+  <!-- script to start automatic slideshow 
   <script>
     var myIndex = 0;
     carousel();
   </script>
-
+-->
   <!-- Header nav bar -->
   <header>
     <div class="nav">
@@ -24,9 +56,8 @@
         <li><a href="/team_stats">Results</a></li>
         <li><a href="/about">About</a></li>
         <% if user_signed_in? %>
-          <li>Signed in as <%= current_user.email %>. Not You? <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "btn btn-secondary" %></li>
+        <li class="signed_in">Signed in as: <%= current_user.email %><%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "btn btn-secondary" %></li>
         <% else %>
-
           <li><%= link_to "Sign up", new_user_registration_path %></li>
           <li><%= link_to "Sign in", new_user_session_path %></li>
         <% end %>
