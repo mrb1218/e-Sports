@@ -1,21 +1,53 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html>
 
-<h4>Leagues</h4>
+  <p id="notice"><%= notice %></p>
 
-<table>
+  <h1>Leagues</h1>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <h2>League:</h2>
+    </div>
+
+    <div class="col-lg-6">
+      <h2>Prize:</h2>
+    </div>
+  </div>
+
+  <% @leagues.each do |league| %>
+    <div class="row">
+      <div class="col-lg-6">
+        <h4>
+          <a href='/leagues/<%=league.id%>'>
+            <%= league.league_name %>
+          </a>
+        </div>
+      </div>
+      <% end %>
+
+</html>
+<!--<table>
   <thead>
     <tr>
-      <th class="league">League name</th>
-      <th class="league">Prize money</th>
+      <th class="league">League:</th>
+      <th class="league">Prize:</th>
     </tr>
   </thead>
 
   <tbody>
     <% @leagues.each do |league| %>
       <tr>
-        <td class="league"><a href='/leagues/<%=league.id%>'><%= league.league_name %></a></td>
-        <td class="league">$<%= league.prize_money %></td>
+        <td class="league">
+          <a href='/leagues/<%=league.id%>'>
+            <%= league.league_name %>
+          </a>
+        </td>
+        <td class="league">
+          $<%= league.prize_money %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+-->
