@@ -182,5 +182,8 @@ img.league_logo {
 //Slideshow
 img.mySlides {
   max-height: 40%;
-  width: 100%;
+  //Adding the width styling will strech the images
+  //width: 100%;
+  display: none;
+  margin: auto;
 }
