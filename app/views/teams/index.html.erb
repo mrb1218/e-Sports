@@ -8,43 +8,44 @@
   <h1>Teams</h1>
 
   <div class="row">
-    <div class="col-lg-5">
+    <div class="col-lg-3">
       <h4>Team name:</h4>
     </div>
 
-    <div class="col-lg-5">
+    <div class="col-lg-3">
       <h4>Bio:</h4>
     </div>
 
-    <div class="col-lg-5">
+    <div class="col-lg-3">
       <h4>Coach:</h4>
     </div>
 
-    <div class="col-lg-5">
+    <div class="col-lg-3">
       <h4>League:</h4>
     </div>
   </div>
 
   <% @teams.each do |team| %>
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-lg-3">
         <a href='/teams/<%team.id%>'>
           <%= team.team_name %>
         </a>
       </div>
 
-      <div class="col-sm-3">
+      <div class="col-lg-3">
         <%= team.bio %>
       </div>
 
-      <div class="col-sm-3">
+      <div class="col-lg-3">
         <%= team.coachID %>
       </div>
 
-      <div class="col-sm-3">
+      <div class="col-lg-3">
         <%= League.where(id: team.league_id).first.league_name %>
       </div>
-    <% end %>
+    </div>
+  <% end %>
 
 </html>
 <!--
