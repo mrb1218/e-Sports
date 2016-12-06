@@ -18,12 +18,12 @@
   <% @leagues.each do |league| %>
     <div class="row">
       <div class="col-lg-6">
-        <img src="/images/league_<%= league.id %>.jpg" class="img-fluid" style="width: 40%; height: 40%"/>
-        <h4>
-          <a href='/leagues/<%=league.id%>'>
+        <a href='/leagues/<%=league.id%>'>
+          <img src="/images/league_<%= league.id %>.jpg" class="img-fluid" style="width: 40%; height: 40%"/>
+          <h4>
             <%= league.league_name %>
-          </a>
-        </h4>
+          </h4>
+        </a>
         <br>
       </div>
 
