@@ -1,17 +1,22 @@
 <div class="container">
   <h1>Upcoming Matches</h1>
-    <%= image_tag("league_1.jpg", :title => "Team 1 vs Team 2 today @ 10:30 AM", :size => "260x180") %>
-    <%= image_tag("league_2.jpg", :title => "Team 3 vs Team 4 today @ 12:30 PM", :size => "260x180", :id => "test") %>
 
-    <div> <br> </div>
-
-    <div>
-      <%= image_tag("league_3.jpg", :title => "Team 1 vs Team 4 tomorrow @ 10:30 AM", :size => "260x180") %>
-      <%= image_tag("league_4.jpg", :title => "Team 2 vs Team 3 tomorrow @ 12:30 PM", :size => "260x180") %>
+  <div class="row">
+    <div class="col-lg-6">
+      <%= image_tag("league_1.jpg", :class => "league_logo", :id => "league_1", :title => "Team 1 vs Team 2 today @ 10:30 AM") %>
     </div>
-
-  <br>
-  <br>
+    <div class="col-lg-6">
+      <%= image_tag("league_2.jpg", :class => "league_logo", :id => "league_2", :title => "Team 3 vs Team 4 today @ 12:30 PM") %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <%= image_tag("league_3.jpg", :class => "league_logo", :id => "league_3", :title => "Team 1 vs Team 4 tomorrow @ 10:30 AM") %>
+    </div>
+    <div class="col-lg-6">
+      <%= image_tag("league_4.jpg", :class => "league_logo", :id => "league_4", :title => "Team 2 vs Team 3 tomorrow @ 12:30 PM") %>
+    </div>
+  </div>
 
   <h1>Game Snapshots</h1>
 </div>

@@ -172,3 +172,10 @@ p.no_matches {
 li.players {
   list-style-type: none;
 }
+
+//Img formatting
+img.league_logo {
+  max-width: 100%;
+  max-height: 100%;
+  height: inherit;
+}
