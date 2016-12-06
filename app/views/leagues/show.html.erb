@@ -1,10 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h2><%= @league.league_name %></h2>
+<h1><%= @league.league_name %></h1>
 
-<img src="/images/league_<%= @league.id %>.jpg" class="img-fluid" />
+<img src="/images/league_<%= @league.id %>.jpg" class="img-fluid" style="width: 40%; height: 40%"/>
 
 <p>
-  <strong>Prize money:</strong>
-  <%= @league.prize_money %>
+  <h4>
+    <strong>Prize money:</strong>
+    <%= @league.prize_money %>
+  </h4>
 </p>

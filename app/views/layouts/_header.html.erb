@@ -56,9 +56,8 @@ function showDivs(n) {
         <li><a href="/team_stats">Results</a></li>
         <li><a href="/about">About</a></li>
         <% if user_signed_in? %>
-          <li>Signed in as <%= current_user.email %>. Not You? <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "btn btn-secondary" %></li>
+        <li class="signed_in">Signed in as: <%= current_user.email %><%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "btn btn-secondary" %></li>
         <% else %>
-
           <li><%= link_to "Sign up", new_user_registration_path %></li>
           <li><%= link_to "Sign in", new_user_session_path %></li>
         <% end %>
