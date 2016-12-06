@@ -12,4 +12,14 @@ class User < ApplicationRecord
   def assign_default_role
     self.add_role(:newuser) if self.roles.blank?
   end
+
+  acts_as_messageable
+
+  def mailboxer_name
+    self.name
+  end
+
+  def mailboxer_email(object)
+    self.email
+  end
 end
