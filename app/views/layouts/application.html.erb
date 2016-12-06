@@ -119,6 +119,8 @@
 
 <% if user_signed_in? %>
 <Signed in as <%= current_user.email %>. Not You?
+<%= link_to "Hello, #{current_user.email}","#" %></li>
+<%= link_to "Inbox", mailboxer_inbox_path %></li>
 <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "btn btn-secondary" %>
 <% else %>
 </li>
