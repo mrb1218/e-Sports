@@ -11,6 +11,7 @@
 
 
 <div style="height: 251px; width: 100%;">
+  <img class="mySlides" src="/images/Cup.png" style="height: 250px; width: 100%;">
   <img class="mySlides" src="/images/lol_1.jpg" style="height: 250px; width: 100%;">
   <img class="mySlides" src="/images/league_2.png" style="height: 250px; width: 100%;">
   <img class="mySlides" src="/images/league_3.jpg" style="height: 250px; width: 100%;">
@@ -45,8 +46,20 @@ function carousel() {
         <li class="Schedule"><a href="#">Schedule</a></li>
         <li class="Results"><a href="#">Results</a></li>
         <li class="About"><a href="#">About</a></li>
+        <li><li>
+        <% if user_signed_in? %>
+        Signed in as <%= current_user.email %>. Not You?
+        <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "btn btn-secondary" %>
+        <% else %>
+        </li>
+        <li class="header-pad">
+        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-secondary"%> </li>
+        <li class="header-pad">
+        <%= link_to "Sign in", new_user_session_path, class: "btn btn-secondary" %>
+        </li>
+        <% end %></li>
 <!-- Method 1 -->
-<!--        <li class="header-pad">
+<!--      <li class="header-pad">
           <form class="header-pad form-inline">
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Search...">
@@ -56,7 +69,7 @@ function carousel() {
         </li> -->
 
 <!-- Method 2 -->
-        <div class="container">
+      <div class="container">
         <div class="row">
               <div class="col-md-4 col-md-offset-3">
                   <form action="" class="search-form">
@@ -68,10 +81,13 @@ function carousel() {
                   </form>
                 </div>
           </div>
-        </div>
+        </div> 
       </ul>
     </div>
  </header>
+
+ </li>
+ </ul>
 
 
 </body>
