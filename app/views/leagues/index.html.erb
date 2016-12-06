@@ -22,9 +22,16 @@
           <a href='/leagues/<%=league.id%>'>
             <%= league.league_name %>
           </a>
-        </div>
+        </h4>
       </div>
-      <% end %>
+
+      <div class="col-lg-6">
+        <h4>
+          $<%= league.prize_money %>
+        </h4>
+      </div>
+    </div>
+  <% end %>
 
 </html>
 <!--<table>
