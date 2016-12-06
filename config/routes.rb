@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get 'schedule', to: 'matches#schedule'
   get 'results', to: 'matches#results'
   get 'about', to: 'pages#about'
+  get 'prizes', to: 'leagues#prizes'
+  get 'contact', to: 'pages#contact'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
