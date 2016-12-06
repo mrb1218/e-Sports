@@ -1,17 +1,53 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html>
 
-<h1>Teams</h1>
+  <p id="notice">
+    <%= notice %>
+  </p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Team name</th>
-      <th>Bio</th>
-      <th>Coach</th>
-      <th>League</th>
-    </tr>
-  </thead>
+  <h1>Teams</h1>
 
+  <div class="row">
+    <div class="col-lg-5">
+      <h4>Team name:</h4>
+    </div>
+
+    <div class="col-lg-5">
+      <h4>Bio:</h4>
+    </div>
+
+    <div class="col-lg-5">
+      <h4>Coach:</h4>
+    </div>
+
+    <div class="col-lg-5">
+      <h4>League:</h4>
+    </div>
+  </div>
+
+  <% @teams.each do |team| %>
+    <div class="row">
+      <div class="col-sm-3">
+        <a href='/teams/<%team.id%>'>
+          <%= team.team_name %>
+        </a>
+      </div>
+
+      <div class="col-sm-3">
+        <%= team.bio %>
+      </div>
+
+      <div class="col-sm-3">
+        <%= team.coachID %>
+      </div>
+
+      <div class="col-sm-3">
+        <%= League.where(id: team.league_id).first.league_name %>
+      </div>
+    <% end %>
+
+</html>
+<!--
   <tbody>
     <% @teams.each do |team| %>
       <tr>
@@ -23,3 +59,4 @@
     <% end %>
   </tbody>
 </table>
+-->
