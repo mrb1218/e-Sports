@@ -16,6 +16,7 @@
 //= require bootstrap-sprockets
 //= require_tree.
 
+
 function carousel() {
     var i;
     var x = document.getElementsByClassName("mySlides");
@@ -27,3 +28,11 @@ function carousel() {
     x[myIndex-1].style.display = "block";
     setTimeout(carousel, 4000); // Change image every 4 seconds
 }
+
+$(document).ready(function(){
+    $("img").hover(function(){
+        $(this).css("background-color", "yellow");
+        }, function(){
+        $(this).css("background-color", "pink");
+    });
+});
