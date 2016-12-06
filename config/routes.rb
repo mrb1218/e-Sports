@@ -18,7 +18,6 @@ Rails.application.routes.draw do
   get 'schedule', to: 'matches#schedule'
   get 'team_stats', to: 'statistics#team'
   get 'about', to: 'pages#about'
-  get 'prizes', to: 'leagues#prizes'
   get 'contact', to: 'pages#contact'
 
 
