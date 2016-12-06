@@ -48,16 +48,3 @@
   <% end %>
 
 </html>
-<!--
-  <tbody>
-    <% @teams.each do |team| %>
-      <tr>
-        <td><a href='/teams/<%=team.id%>'><%= team.team_name %><a/></td>
-        <td><%= team.bio %></td>
-        <td><%= team.coachID %></td>
-        <td><%= League.where(id: team.league_id).first.league_name %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
--->
