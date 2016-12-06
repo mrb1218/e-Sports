@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   get 'users/new'
 
-  get "mailbox/inbox" => "mailbox#inbox", as: :mailboxer_inbox
+  get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox
 
   get "mailbox/sent" => "mailbox#sent", as: :mailbox_sent
 
@@ -25,6 +25,5 @@ Rails.application.routes.draw do
       post :untrash
     end
   end
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
