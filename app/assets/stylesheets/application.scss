@@ -158,7 +158,6 @@ td {
 }
 
 //Teams
-
 li.teams {
   list-style-type: none;
 }
@@ -168,14 +167,20 @@ p.no_matches {
 }
 
 //Players
-
 li.players {
   list-style-type: none;
 }
 
-//Img formatting
+//League Logo images
 img.league_logo {
   max-width: 100%;
   max-height: 100%;
   height: inherit;
+}
+
+//Header
+//Slideshow
+img.mySlides {
+  max-height: 40%;
+  width: 100%;
 }
