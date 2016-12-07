@@ -7,6 +7,7 @@
 
   <h1>Teams</h1>
 
+
   <center>
     <div class="row">
       <div class="col-lg-4">
@@ -15,8 +16,43 @@
 
       <div class="col-lg-4">
         <h3>Team info:</h3>
+
+  <div class="row">
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+      <h3>Team name:</h3>
+    </div>
+
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+      <h3>Bio:</h3>
+    </div>
+
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+      <h3>Coach:</h3>
+    </div>
+
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+      <h3>League:</h3>
+    </div>
+  </div>
+
+  <% @teams.each do |team| %>
+    <div class="row">
+      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <a href='/teams/<%team.id%>'>
+          <%= team.team_name %>
+        </a>
+      </div>
+
+      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <%= team.bio %>
+      </div>
+
+      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <%= team.coachID %>
+
       </div>
     </div>
+
 
     <% @teams.each do |team| %>
       <div class="row">
@@ -45,6 +81,10 @@
             <b>League:</b> <%= League.where(id: team.league_id).first.league_name %>
           </div>
         </div>
+
+      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <%= League.where(id: team.league_id).first.league_name %>
+
       </div>
     <% end %>
   </center>
