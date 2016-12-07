@@ -1,26 +1,50 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html>
 
-<h1>Teams</h1>
+  <p id="notice">
+    <%= notice %>
+  </p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Team name</th>
-      <th>Bio</th>
-      <th>Coach</th>
-      <th>League</th>
-    </tr>
-  </thead>
+  <h1>Teams</h1>
 
-  <tbody>
-    <% @teams.each do |team| %>
-      <tr>
-        <td><a href='/teams/<%=team.id%>'><%= team.team_name %><a/></td>
-        <td><%= team.bio %></td>
-        <td><%= team.coachID %></td>
-        <td><%= League.where(id: team.league_id).first.league_name %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
- <%= link_to "Teams", new_team_path%>
+  <div class="row">
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+      <h3>Team name:</h3>
+    </div>
+
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+      <h3>Bio:</h3>
+    </div>
+
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+      <h3>Coach:</h3>
+    </div>
+
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+      <h3>League:</h3>
+    </div>
+  </div>
+
+  <% @teams.each do |team| %>
+    <div class="row">
+      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <a href='/teams/<%team.id%>'>
+          <%= team.team_name %>
+        </a>
+      </div>
+
+      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <%= team.bio %>
+      </div>
+
+      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <%= team.coachID %>
+      </div>
+
+      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <%= League.where(id: team.league_id).first.league_name %>
+      </div>
+    </div>
+  <% end %>
+
+</html>

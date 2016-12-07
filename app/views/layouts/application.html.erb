@@ -1,142 +1,49 @@
 <!DOCTYPE html>
 <html>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <head>
     <title>eSports</title>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
   </head>
-
   <body>
+    <div class="w3-content w3-display-container" style="height:250px;width:100%">
+      <img class="mySlides" src="/images/league_1.jpg" style="height:250px;width:100%">
+      <img class="mySlides" src="/images/league_2.jpg" style="height:250px;width:100%">
 
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">eSports</a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <!-- Leagues spilt button -->
-            <li class="header-pad">
-              <div class="btn-group">
-                <button type="button" class="btn btn-default"><li class="<%= 'active' if current_page?(leagues_path) %>"><%= link_to "Leagues", leagues_path %></li></button>
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="caret"></span>
-                  <span class="sr-only">Toggle Dropdown</span>
-                </button>
-                <ul class="dropdown-menu">
-                  <% League.select("league_name").each do |league| %>
-                    <a href='/leagues/<%= league.id %>'><li><%= league.league_name %></li></a>
-                  <% end %>
-                </ul>
-              </div>
-            </li>
-            <!-- Teams spilt button -->
-            <li class="header-pad">
-              <div class="btn-group">
-                <button type="button" class="btn btn-default"><li class="<%= 'active' if current_page?(teams_path) %>"><%= link_to "Teams", teams_path %></li></button>
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="caret"></span>
-                  <span class="sr-only">Toggle Dropdown</span>
-                </button>
-                <ul class="dropdown-menu">
-                  <% League.all.each do |league| %>
-                    <ul caria-labelledby="dropdownMenuDivider">
-                      <h4><a href='/leagues/<%= league.id %>'><%= league.league_name %></a></h4>
-                      <li role="separator" class="divider"></li>
-                      <% Team.where(league_id: league.id).each do |team| %>
-                        <li class="teams"><a href='/teams/<%= team.id %>'><%= team.team_name %></a></li>
-                      <% end %>
-                    </ul>
-                  <% end %>
-                </ul>
-              </div>
-            </li>
-            <!-- Matches spilt button -->
-            <li class="header-pad">
-              <div class="btn-group">
-                <button type="button" class="btn btn-default"><li class="<%= 'active' if current_page?(matches_path) %>"><%= link_to "Matches", matches_path %></li></button>
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="caret"></span>
-                  <span class="sr-only">Toggle Dropdown</span>
-                </button>
-                <ul class="dropdown-menu">
-                  Upcoming Matches
-                  <% Match.all.sort_by{|a| a.match_date_time}.take(3).each do |match| %>
-                    <ul caria-labelledby="dropdownMenuDivider">
-                      <h4><a href='/leagues/<%= match.league_id %>'><%= League.where(id: match.league_id).select("league_name").first.league_name %></a></h4>
-                      <li role="separator" class="divider"></li>
-                      <a href='/matches/<%= match.id %>'><%= Team.where(id: match.team1ID).select("team_name").first.team_name %> vs <%= Team.where(id: match.team2ID).select("team_name").first.team_name %></a>
-                      <br>
-                      <small><%= match.match_date_time %></small>
-                    </ul>
-                  <% end %>
-                  <br>
-                  Current Matches
-                  <% result = Match.where("match_date_time > ? AND match_date_time < ?", DateTime.now - (2/24.0), DateTime.now + (4/24.0)).sort_by{|a| a.match_date_time}.take(3) %>
-                  <% if result.count > 0 %>
-                    <% result.each do |match| %>
-                      <ul caria-labelledby="dropdownMenuDivider">
-                        <h4><a href='/leagues/<%= match.league_id %>'><%= League.where(id: match.league_id).select("league_name").first.league_name %></a></h4>
-                        <li role="separator" class="divider"></li>
-                        <a href='/matches/<%= match.id %>'><%= Team.where(id: match.team1ID).select("team_name").first.team_name %> vs <%= Team.where(id: match.team2ID).select("team_name").first.team_name %></a>
-                        <br>
-                        <small><%= match.match_date_time %></small>
-                      </ul>
-                    <% end %>
-                  <% else %>
-                    <p class="no_matches">No current matches</p>
-                  <% end %>
-                </ul>
-              </div>
-            </li>
-            <!-- Search bar and submit button -->
-            <li class="header-pad">
-              <form class="header-pad form-inline">
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Search...">
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-              </form>
-            </li>
-            <!-- Registration/Sign in link/button -->
-          <li class="header-pad">
-            <%= link_to "Favourites", favorites_path%>
+      <img class="mySlides" src="/images/league_4.jpg" style="height:250px;width:100%">
 
-          </li>
-          <li class="header-pad">
-            <%= link_to "Teams", teams_path%>
-          </li>
-          <li class="header-pad">
-            <%= link_to "Players", players_path%>
-          </li>
-            <li class="header-pad">
 
-<% if user_signed_in? %>
-<Signed in as <%= current_user.email %>. Not You?
-<%= link_to "Hello, #{current_user.first_name}","#" %></li>
-<%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "btn btn-secondary" %>
-<% else %>
-</li>
-<li class="header-pad">
-<%= link_to "Sign up", new_user_registration_path, class: "btn btn-secondary"%> </li>
-<li class="header-pad">
-<%= link_to "Sign in", new_user_session_path, class: "btn btn-secondary" %>
-</li>
-<% end %>
-</li>
-</ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-    <%= yield %>
+      <a class="w3-btn-floating w3-display-left" onclick="plusDivs(-1)">&#10094;</a>
+      <a class="w3-btn-floating w3-display-right" onclick="plusDivs(1)">&#10095;</a>
+    </div>
+
+    <script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      if (n > x.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = x.length}
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";
+      }
+      x[slideIndex-1].style.display = "block";
+    }
+    </script>
+
+    <%= render "layouts/header" %>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <%= render "layouts/footer" %>
   </body>
 </html>
