@@ -12,7 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20161220601843) do
 
-
   create_table "favorites", force: :cascade do |t|
     t.string   "teamID"
     t.string   "playerID"
