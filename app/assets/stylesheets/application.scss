@@ -36,6 +36,12 @@ p, ol, ul, td {
   white-space: nowrap;
 }
 
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
 a {
   color: #000;
 
@@ -104,7 +110,58 @@ td {
   padding: 5px;
 }
 
+//Home page
+.img-fluid{
+    width: 100px;
+    height: 50px;
+   background-color: black;
+
+}
+.nav-sidebar{
+  background-color: black;
+}
+
+.img-cup{
+  width: 100%;
+  height: 325px;
+}
+
+.img-intel{
+  width: 20%;
+  height: 100px;
+}
+
+.text-main{
+  font-style: italic;
+  font-size: 15px;
+  color: white;
+}
+
+.text-bold{
+  font-style: oblique;
+  font-size: 20px;
+  color: white;
+}
+
+.nav-sidebar{
+    border-style: solid;
+    border-bottom-style: none;
+}
+
+//Nav bar split buttons
+
+.header-pad {
+  padding-top: 5px;
+  padding-bottom: 9px;
+  padding-right: 10px;
+  padding-left: 15px;
+}
+
 //Teams
+li.teams {
+  list-style-type: none;
+}
+
 p.no_matches {
   font-weight: bold;
 }
@@ -122,6 +179,18 @@ img.league_logo {
 }
 
 //Header
+//Slideshow
+//img.mySlides {
+ // max-height: 250px;
+  //Adding the width styling will strech the images
+
+ // width: 100%;
+//  display: none;
+  //margin: auto;
+//}
+
+
+
 li.signed_in {
    color: lightgray;
  }

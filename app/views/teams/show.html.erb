@@ -21,7 +21,7 @@
 <h3>Players</h3>
 <ul>
 <% if Player.where(team_id: @team.id).count > 0; %>
-  <% Player.where(team_id: @team.id).each do |player|; user = User.where(id: player.user_id).first %>
+  <% Player.where(team_id: @team.id).each do |player|; user = User.where(player_id: player.id).first %>
     <li class="players"><a href='/players/<%= player.id %>'><%= user.first_name %> <%= user.last_name %></a>, <%= player.in_game_role %></a></li>
   <% end %>
 <% else %>
