@@ -1,22 +1,42 @@
 <!DOCTYPE html>
 <html>
+  <div class="home_favorites">
+    <% if user_signed_in? %>
+      <h1><%= current_user.first_name %> <%= current_user.last_name %>'s Favorites</h1>
+      <h6><a href="<%= favorites_url %>">Add / Edit Favorites</a></h6>
+      <% favorites = Favorite.where(user_id: current_user.id).all; if favorites.length > 0 %>
+        <% Favorite.where(user_id: current_user.id).all.each do |favorite| %>
+        <div class="row">
+          <div class="col-xs-12">
+            <% if favorite.teamID != "" %>
+            <% team = Team.where(id: favorite.teamID).first %>
+            <a href="/teams/<%= team.id %>"><%= team.team_name %></a>
+            <% else %>
+            <% player = Player.where(id: favorite.playerID).first %>
+            <a href="/players/<%= player.id %>"><%= player.ign %></a>
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+      <% else %>
+        <p>User has no favorites. Click <a href="/favorites">here</a> to add favorites!</p>
+      <% end %>
+    <% end %>
+  </div>
 
-  <center>
-
-  <h1>Upcoming Matches</h1>
-
-  <%= image_tag("league_1.jpg", :class => "league_logo", :id => "league_1", :title => "Team 1 vs Team 2 today @ 10:30 AM", :size => "400x800") %>
-  <br>
-  <%= image_tag("league_2.jpg", :class => "league_logo", :id => "league_2", :title => "Team 3 vs Team 4 today @ 12:30 PM", :size => "400x800") %>
-  <br>
-  <%= image_tag("league_3.jpg", :class => "league_logo", :id => "league_3", :title => "Team 1 vs Team 4 tomorrow @ 10:30 AM", :size => "400x800") %>
-  <br>
-  <%= image_tag("league_4.jpg", :class => "league_logo", :id => "league_4", :title => "Team 2 vs Team 3 tomorrow @ 12:30 PM", :size => "400x800") %>
-  <br>
-  <br>
-
-  <h1>Game Snapshots</h1>
-
-  </center>
-
+  <div class="upcoming_matches">
+    <h1>Upcoming Matches</h1>
+    <%= image_tag("league_1.jpg", :class => "league_logo", :id => "league_1", :title => "Team 1 vs Team 2 today @ 10:30 AM", :size => "400x800") %>
+    <br>
+    <%= image_tag("league_2.jpg", :class => "league_logo", :id => "league_2", :title => "Team 3 vs Team 4 today @ 12:30 PM", :size => "400x800") %>
+    <br>
+    <%= image_tag("league_3.jpg", :class => "league_logo", :id => "league_3", :title => "Team 1 vs Team 4 tomorrow @ 10:30 AM", :size => "400x800") %>
+    <br>
+    <%= image_tag("league_4.jpg", :class => "league_logo", :id => "league_4", :title => "Team 2 vs Team 3 tomorrow @ 12:30 PM", :size => "400x800") %>
+    <br>
+  </div>
+  <div class="game_snapshots">
+    <h1>Game Snapshots</h1>
+    <!-- Youtube videos -->
+  </div>
 </html>
