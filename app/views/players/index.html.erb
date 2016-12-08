@@ -17,9 +17,10 @@
 
   <tbody>
     <% @players.each do |player|%>
+    <% user = User.where(id: player.user_id).first %>
       <tr>
-        <td></td>
-        <td></td>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
         <td><%= player.ign %></td>
         <td><%= player.in_game_role %></td>
         <td><%= player.country %></td>
@@ -30,5 +31,3 @@
     <% end %>
   </tbody>
 </table>
-
-<%= link_to "new players", new_player_path%>
