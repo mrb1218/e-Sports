@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<% user = User.where(id: @player.user_id).first %>
+<% user = User.where(player_id: @player.id).first %>
 
 <h1><%= @player.ign %></h1>
 <h4><%= user.first_name %> <%= user.last_name %></h4>

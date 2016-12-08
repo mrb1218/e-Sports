@@ -16,8 +16,7 @@
   </thead>
 
   <tbody>
-    <% @players.each do |player|%>
-    <% user = User.where(id: player.user_id).first %>
+    <% @players.each do |player|; user = User.where(player_id: player.id).first %>
       <tr>
         <td><%= user.first_name %></td>
         <td><%= user.last_name %></td>
