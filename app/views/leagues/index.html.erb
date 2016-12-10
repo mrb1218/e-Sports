@@ -35,6 +35,11 @@
             $<%= league.prize_money %>
           </h4>
         </div>
+        <div>
+          <h4>
+            <%= link_to "Register", new_league_team_path(league.id), class: "btn btn-primary"%>
+          </h4>
+        </div>
       </div>
     <% end %>
   </center>
