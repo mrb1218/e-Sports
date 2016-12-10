@@ -10,36 +10,6 @@
   </head>
 
   <body>
-    <!-- Slideshow -->
-    <div class="w3-content w3-display-container" style="height:250px;width:100%">
-      <img class="mySlides" src="/assets/league_1.jpg" style="height:250px;width:100%">
-      <img class="mySlides" src="/assets/league_2.jpg" style="height:250px;width:100%">
-      <img class="mySlides" src="/assets/league_3.jpg" style="height:250px;width:100%">
-      <img class="mySlides" src="/assets/league_4.jpg" style="height:250px;width:100%">
-      <a class="w3-btn-floating w3-display-left" onclick="plusDivs(-1)">&#10094;</a>
-      <a class="w3-btn-floating w3-display-right" onclick="plusDivs(1)">&#10095;</a>
-    </div>
-
-    <script>
-    var slideIndex = 1;
-    showDivs(slideIndex);
-
-    function plusDivs(n) {
-      showDivs(slideIndex += n);
-    }
-
-    function showDivs(n) {
-      var i;
-      var x = document.getElementsByClassName("mySlides");
-      if (n > x.length) {slideIndex = 1}
-      if (n < 1) {slideIndex = x.length}
-      for (i = 0; i < x.length; i++) {
-         x[i].style.display = "none";
-      }
-      x[slideIndex-1].style.display = "block";
-    }
-    </script>
-
     <%= render "layouts/header" %>
     <div class="container">
       <%= yield %>
