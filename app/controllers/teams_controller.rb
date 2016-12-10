@@ -1,6 +1,5 @@
 class TeamsController < ApplicationController
   before_action :set_team, only: [:show, :edit, :update, :destroy]
-
   # GET /teams
   # GET /teams.json
   def index
@@ -24,6 +23,7 @@ class TeamsController < ApplicationController
   # POST /teams
   # POST /teams.json
   def create
+    binding.pry
     @team = Team.new(team_params)
 
     respond_to do |format|
@@ -69,6 +69,6 @@ class TeamsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def team_params
-      params.require(:team).permit(:leagueID, :bio, :coachID, :team_name, :league_id)
+      params.require(:team).permit(:bio, :coachID, :team_name, :league_id)
     end
 end

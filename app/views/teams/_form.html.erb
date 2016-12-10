@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= f.label :coachID %>
-    <%= f.text_field :coachID %>
+    <%= f.text_field :coachID, :value => current_user.id%>
   </div>
 
   <div class="field">
@@ -26,10 +26,6 @@
     <%= f.text_field :team_name %>
   </div>
 
-  <div class="field">
-    <%= f.label :league_id %>
-    <%= f.text_field :league_id %>
-  </div>
 
   <div class="actions">
     <%= f.submit %>

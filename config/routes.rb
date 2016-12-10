@@ -8,11 +8,15 @@ Rails.application.routes.draw do
   #List resources
   resources :matches
   resources :leagues
-  resources :statistics
   resources :teams
   resources :players
   resources :seasons
   resources :favorites
+  resources :statistics
+
+  resources :leagues do
+    resources :teams
+  end
 
   #Redirections
   get 'schedule', to: 'matches#schedule'

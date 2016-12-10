@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   #before_action :authenticate_user!
 
-  helper_method :mailbox, :conversation
+  helper_method :mailbox, :conversation, :current_league
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -15,6 +15,10 @@ class ApplicationController < ActionController::Base
   def conversation
     @conversation ||= mailbox.conversations.find(params[:id])
   end
+
+  def current_league
+  end
+
 
   protected
 
