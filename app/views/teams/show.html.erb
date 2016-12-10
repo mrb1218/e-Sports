@@ -3,7 +3,7 @@
 <div class="row">
   <div class="col-xs-12 col-sm-6">
     <h1><strong><%= @team.team_name %></strong></h1>
-    <img class="team_logo" src="/assets/team_<%= @team.id %>.jpg" style="width:80%"/>
+    <img class="team_logo" src="/assets/team_<%= @team.id %>.logo" style="width:80%"/>
     <h3><%= League.find(String(@team.league_id)).league_name %></h3>
     <p><strong>Coach:</strong></p>
     <p class="team-bio"><%= @team.bio %></p>
