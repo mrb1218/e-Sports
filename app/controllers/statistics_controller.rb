@@ -5,6 +5,7 @@ class StatisticsController < ApplicationController
   # GET /statistics.json
   def index
     @statistics = Statistic.all
+    @matches = Match.all
   end
 
   # GET /statistics/1

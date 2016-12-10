@@ -1,7 +1,7 @@
 class Statistic < ApplicationRecord
   resourcify
-  has_one :team
-  has_one :match
-  has_one :player
+  belongs_to :team
+  belongs_to :match
+  belongs_to :player
   belongs_to :season
 end
