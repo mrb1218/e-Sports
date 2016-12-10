@@ -184,6 +184,15 @@ div.match {
     display:inline-block;
     width:50px; /* Adjust this */
 }
+@-moz-document url-prefix() {
+    fieldset {
+        display: table-cell;
+    }
+}
+
+select {
+    max-width: 100%;
+}
 /*----------------------------------------------Half Grid-------------------------------------*/
 
 .one_half{width:470px;}
