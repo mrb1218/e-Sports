@@ -5,55 +5,141 @@
       <h1><%= current_user.first_name %> <%= current_user.last_name %>'s Favorites</h1>
       <h6><a href="<%= favorites_url %>">Add / Edit Favorites</a></h6>
       <% favorites = Favorite.where(user_id: current_user.id).all; if favorites.length > 0 %>
-        <% Favorite.where(user_id: current_user.id).all.each do |favorite| %>
-        <div class="row">
-          <div class="col-xs-12">
-            <% if favorite.teamID != "" %>
-            <% team = Team.where(id: favorite.teamID).first %>
-            <a href="/teams/<%= team.id %>"><%= team.team_name %></a>
-            <% else %>
-            <% player = Player.where(id: favorite.playerID).first %>
-            <a href="/players/<%= player.id %>"><%= player.ign %></a>
-            <% end %>
-          </div>
+      <% Favorite.where(user_id: current_user.id).all.each do |favorite| %>
+      <div class="row">
+        <div class="col-xs-12">
+          <% if favorite.teamID != "" %>
+          <% team = Team.where(id: favorite.teamID).first %>
+          <a href="/teams/<%= team.id %>"><%= team.team_name %></a>
+          <% else %>
+          <% player = Player.where(id: favorite.playerID).first %>
+          <a href="/players/<%= player.id %>"><%= player.ign %></a>
+          <% end %>
         </div>
-        <% end %>
+      </div>
+      <% end %>
       <% else %>
         <p>User has no favorites. Click <a href="/favorites">here</a> to add favorites!</p>
       <% end %>
     <% end %>
   </div>
 
-  <div class="upcoming_matches">
-    <h1>Upcoming Matches</h1>
-    <% League.all.each do |league| %>
-      <div class="row">
-        <div class="col-sm-4">
-          <img src="/assets/league_<%= league.id %>.jpg" class="league_logo" id="league_<%= league.id %>"/>
+  <!-- Upcoming Mathces -->
+  <h1>Upcoming Matches</h1>
+  <hr>
+    <style>
+          table, th, td {
+              border: 1px solid grey ;
+                        }
+        </style>
+    <table class="table table-bordered table-inverse">
+      <tbody>
+        <tr>
+          <th rowspan="2">
+            <div class="col-lg-1 col-sm-1.5 col-xs-1.5">
+              <%= image_tag("csgo1.jpg", width:"450px", height: "200px")%>
+            </div>
+          </th>
+      <td>
+        <div class="col-sm-1.5 col-xs-1 col-lg-2">
+          <%= image_tag("team_7.png", width:"90px", height: "70px")%>
         </div>
-        <div class="col-sm-8">
-          <p>The immediate Match info for this league goes here</p>
+        <div class="col-sm-7 col-md-3 col-lg-1">
+          <%= image_tag("vs.png", width:"26px", height: "15px")%>
         </div>
+        <div class="col-sm-7 col-md-3 col-lg-3">
+          <%= image_tag("team_11.png", width:"90px", height: "70px")%>
+        </div>
+        <div class="col-sm-7 col-md-3 col-lg-4">
+          <font face="Serif" color="#E1A01E">December 19, 2016 @ 15:30 MT</font>
+        </div>
+      </td>
+      </tr>
+    <tr>
+      <td colspan="2">
+        <div class="col-sm-1.5 col-xs-1 col-lg-2">
+          <%= image_tag("team_5.png", width:"90px", height: "70px")%>
+        </div>
+        <div class="col-sm-7 col-md-3 col-lg-1">
+          <%= image_tag("vs.png", width:"26px", height: "15px")%>
+        </div>
+        <div class="col-sm-7 col-md-3 col-lg-3">
+          <%= image_tag("team_14.png", width:"90px", height: "70px")%>
+        </div>
+        <div class="col-sm-7 col-md-3 col-lg-4">
+          <font face="Serif" color="#E1A01E">December 17, 2016 @ 13:00 MT</font>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+
+<!-- Upcoming Events Section -->
+
+<h1><font face="Serif" color="#ffffff">Upcoming Events</font></h1>
+<hr>
+<div class="container">
+  <div class="row">
+      <div class="col-lg-2">
+        <%= image_tag("giveaway.jpg", width:"150px", height: "150px")%>
       </div>
-    <% end %>
+    <div class="col-sm-7 col-md-3 col-lg-6">
+      <font face="Courier New" color="#474D95">3 Dec 2016 </font>
+      <br>
+      Guys!
+      <br>
+    <font face="sans-serif">  We are going to give away items related to the event. Follow us on Facebook, Twitter and Twicht for a chance to receive one of the followings: 1 x NVIDA GTX 1080 Founder Edition, 2 x Razer Tournament Mechanical Keyboards, 1 x i7-6990k, 2 x Corsair 8GB DDR4 RAM ... </font>
+    </div>
   </div>
+</div>
 
-  <div class="game_snapshots">
-    <h1>Game Snapshots</h1>
-    <!-- Youtube videos -->
-    <div class="row">
-      <div class="col-xs-12 col-md-6">
-        <iframe width="100%" height="349" src="//www.youtube.com/embed/_fOssLa1R0w" allowfullscreen>
-          <html lang="en" dir="ltr">
-        </iframe>
-      </div>
 
-      <div class="col-xs-12 col-md-6">
-        <iframe width="100%" height="349" src="//www.youtube.com/embed/02I5vVxlJhU" allowfullscreen>
-          <html lang="en" dir="ltr">
-        </iframe>
-        <br>
-      </div>
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2">
+        <%= image_tag("inferno.jpg", width:"150px", height: "140px")%>
+    </div>
+    <div class="col-sm-7 col-md-3 col-lg-6">
+      <font face="Courier New" color="#474D95">5 Dec 2016 </font>
+      <br>
+    <font face="sans-serif">From its iconic layout to its core gameplay, Inferno has been an instant classic and a mainstay in competitive CS:GO through the years. Inferno is now available in the Reserves Map Group. Try it out and give us your feedback! </font>
+    </div>
+  </div>
+</div>
+<br>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-2">
+        <%= image_tag("faker.jpg", width:"150px", height: "145px")%>
+    </div>
+    <div class="col-sm-5 col-md-3 col-lg-6">
+      <font face="Courier New" color="#474D95">9 Dec 2016 </font>
+    <br>
+    <font face="sans-serif"> The LCK Champion has finally arrived in the states. Its brightest star "Faker" is going to have an interview with us on Saturday (12/18) at 13:00 MT. Stay tuned! </font>
+    </div>
+  </div>
+</div>
+
+
+<div class="game_snapshots">
+  <h1>Latest Videos</h1>
+  <!-- Youtube videos -->
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <iframe width="100%" height="349" src="//www.youtube.com/embed/_fOssLa1R0w" allowfullscreen>
+        <html lang="en" dir="ltr">
+      </iframe>
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+      <iframe width="100%" height="349" src="//www.youtube.com/embed/02I5vVxlJhU" allowfullscreen>
+        <html lang="en" dir="ltr">
+      </iframe>
+      <br>
     </div>
 
     <div class="row">

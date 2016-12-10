@@ -15,5 +15,9 @@
       <%= yield %>
     </div>
     <%= render "layouts/footer" %>
+    <%= form_tag(searches_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
   </body>
 </html>
