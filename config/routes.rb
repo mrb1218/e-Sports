@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :searches
+  get 'search/index'
+
   #Home page is at pages/index.html(.erb)
   root 'pages#index'
 
