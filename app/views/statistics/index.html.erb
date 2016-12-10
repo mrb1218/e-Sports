@@ -2,12 +2,10 @@
 
 <h1>Results</h1>
   <% @matches.each do |match| %>
-  <div class = "table_responsive">
+  <div class = "col-sm-6" "col-lg-4">
     <div class= "table" style="border:1px solid black;">
-        <b>Match: <thead><%= match.match_date_time.to_date %></thead></b>
+        <b>Match: <%= match.match_date_time.to_date %></b>
             <div class="col">
-              <div class="r">
-                <table>
                 <b>Team:</b> <%= Team.where(id: match.team1ID).first.team_name %>
                 <%=  link_to match.team1Score, match if match.team1Score > match.team2Score %>
                 <%= match.team1Score if match.team1Score < match.team2Score %>
@@ -20,11 +18,10 @@
               <div class="r">
                 <b>League:</b> <%= League.where(id: match.league_id).first.league_name %>
               </div>
-            </div>
           <br>
           <br>
-        </div>
+    </div>
+  </div>
           <% end %>
-      </div>
 
       </html>
