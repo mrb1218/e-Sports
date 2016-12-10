@@ -1,19 +1,18 @@
 <p id="notice"><%= notice %></p>
 
+<% if @favorite.teamID != nil && @favorite.teamID != "" %>
 <p>
   <strong>Teamid:</strong>
-  <%= @favorite.teamID %>
+  <%= Team.where(id: @favorite.teamID).first.team_name %>
 </p>
+<% end %>
 
+<% if @favorite.playerID != nil && @favorite.playerID != "" %>
 <p>
   <strong>Playerid:</strong>
-  <%= @favorite.playerID %>
+  <%= Player.where(id: @favorite.playerID).first.ign %>
 </p>
-
-<p>
-  <strong>User:</strong>
-  <%= @favorite.user %>
-</p>
+<% end %>
 
 <%= link_to 'Edit', edit_favorite_path(@favorite) %> |
 <%= link_to 'Back', favorites_path %>

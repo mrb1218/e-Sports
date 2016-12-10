@@ -28,3 +28,9 @@ function carousel() {
     x[myIndex-1].style.display = "block";
     setTimeout(carousel, 4000); // Change image every 4 seconds
 }
+
+$(document).ready(function(){
+    $("#search").keyup(function() {
+      console.log("search bar value = " + $("#search").val());
+    });
+});
