@@ -180,6 +180,10 @@ li.signed_in {
 
 .two_half, .three_third, .four_quarter, .five_fifth{display:block; width:100%; clear:both;}
 
+div.match {
+    display:inline-block;
+    width:50px; /* Adjust this */
+}
 /*----------------------------------------------Half Grid-------------------------------------*/
 
 .one_half{width:470px;}

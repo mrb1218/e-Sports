@@ -16,7 +16,6 @@ Rails.application.routes.draw do
 
   #Redirections
   get 'schedule', to: 'matches#schedule'
-  get 'team_stats', to: 'statistics#team'
   get 'about', to: 'pages#about'
   get 'contact', to: 'pages#contact'
 

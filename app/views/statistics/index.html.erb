@@ -1,37 +1,39 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Statistics</h1>
+<h1>Results</h1>
+<div class="table-responsive">
+  <table class="table" style="overflow-x: auto">
+  <table style="width:auto">
+  <% @matches.each do |match| %>
+    <div class="r">
+      <div class="col">
+        <b>Match: <thead><%= match.match_date_time.to_date %></thead></b>
+        <br>
+      </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Games played</th>
-      <th>Kills</th>
-      <th>Deaths</th>
-      <th>Wins</th>
-      <th>Losses</th>
-      <th>Ties</th>
-      <th>Team</th>
-      <th>Match</th>
-      <th>Season</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+            <left>
+            <div class="col">
+              <div class="r">
+                <table>
+                <b>Team:</b> <%= Team.where(id: match.team1ID).first.team_name %>
+                <%=  link_to match.team1Score, match if match.team1Score > match.team2Score %>
+                <%= match.team1Score if match.team1Score < match.team2Score %>
+              </div>
+              <div class="r">
+                <b>Team:</b> <%= Team.where(id: match.team2ID).first.team_name %>
+                <%=  link_to match.team2Score, match if match.team1Score < match.team2Score %>
+                <%= match.team1Score if match.team1Score > match.team2Score %>
+              </div>
 
-  <tbody>
-    <% @statistics.each do |statistic| %>
-      <tr>
-        <td><%= statistic.games_played %></td>
-        <td><%= statistic.kills %></td>
-        <td><%= statistic.deaths %></td>
-        <td><%= statistic.wins %></td>
-        <td><%= statistic.losses %></td>
-        <td><%= statistic.ties %></td>
-        <td><%= statistic.team %></td>
-        <td><%= statistic.match %></td>
-        <td><%= statistic.season %></td>
-        <td><%= link_to 'Show', statistic %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+
+              <div class="r">
+                <b>League:</b> <%= League.where(id: match.league_id).first.league_name %>
+              </div>
+            </div>
+          <br>
+          <br>
+        </table>
+        </div>
+          <% end %>
+
+      </html>
