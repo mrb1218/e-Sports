@@ -12,15 +12,17 @@
     <h3>Players</h3>
       <% players = Player.where(team_id: @team.id); if players.count > 0 %>
       <div class="list-group">
-        <% players.each do |player|; user = User.where(player_id: player.id).first %>
+        <% players.each do |player| %>
         <a href='/players/<%= player.id %>' class="list-group-item players">
           <h4 class="list-group-item-heading"><%= player.ign %></h4>
           <%= player.in_game_role %>
         </a>
-        <% end %>
+        <%= link_to "Add Player", new_team_player_path(@team.id) %>
+              <% end %>
       </div>
       <% else %>
         <p class="no-players">No players on this team</p>
+        <%= link_to "Add Player", new_team_player_path(@team.id) %>
       <% end %>
   </div>
 </div>

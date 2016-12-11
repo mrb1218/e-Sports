@@ -1,3 +1,4 @@
+<p id="notice"><%= notice %></p>
 <%= form_for(player) do |f| %>
   <% if player.errors.any? %>
     <div id="error_explanation">
@@ -32,8 +33,13 @@
   </div>
 
   <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
     <%= f.label :team_id %>
-    <%= f.text_field :team_id %>
+    <%= f.text_field :team_id, value: params[:team_id], :readonly => true %>
   </div>
 
   <div class="actions">
