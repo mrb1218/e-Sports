@@ -17,17 +17,27 @@
 				<s class="padding-right"><a href="/contact">Contact</a></s>
   		</p>
       <br>
-      	<div>
+    <div class="row">
+			<div class="col-lg-6">
   			<h6>eSports &copy; 2016</h6>
-			<h6>Main Event - G Center</h6>
-			<h6>Dec 25 - 30, 2016</h6>
+				<h6>Main Event - G Center</h6>
+				<h6>Dec 25 - 30, 2016</h6>
+			</div>
+
+			<div class="col-lg-6" align="right">
+				<br>
+				<br>
+				<img src="/assets/intel.png" style="width: 10%; height: 10%"/>
+				<img src="/assets/EA_Games_logo.jpg" style="width: 10%; height: 10%"/>
+				<img src="/assets/Unreal_engine_logo.png" style="width: 10%; height: 10%"/>
+			</div>
 		</div>
 
-		<div style="float:right;">
-			<%= form_tag(searches_path, :method => "get", id: "search-form") do %>
+		<div style="float:right">
+		<!--	<%= form_tag(searches_path, :method => "get", id: "search-form") do %>
     <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
-    <%= submit_tag "Search", :name => nil %>
-<% end %>
+    <%= submit_tag "Search", :name => nil %> -->
+<!--<% end %> -->
 		</div>
 
   	</div>
