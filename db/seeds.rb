@@ -15,8 +15,8 @@ leagues = League.create([
 Team.delete_all
 #Create teams
 teams = Team.create([
-  { id: '1', bio: 'This is team 1, SKT T1', coachID: '', team_name: 'SKT T1', league_id: leagues[0].id},
-  { id: '2', bio: 'This is team 2, Samsung Galaxy', coachID: '', team_name: 'Samsung Galaxy', league_id: leagues[0].id},
+  { id: '1', bio: 'This is team 1, SKT T1', coachID: '6', team_name: 'SKT T1', league_id: leagues[0].id},
+  { id: '2', bio: 'This is team 2, Samsung Galaxy', coachID: '12', team_name: 'Samsung Galaxy', league_id: leagues[0].id},
   { id: '3', bio: 'This is team 3, Saigon Jokers', coachID: '', team_name: 'Saigon Jokers', league_id: leagues[0].id},
   { id: '4', bio: 'This is team 4, Team Solomid', coachID: '', team_name: 'Team Solomid', league_id: leagues[0].id},
   { id: '5', bio: 'This is team 5, NiP', coachID: '', team_name: 'NiP', league_id: leagues[1].id},
@@ -83,7 +83,6 @@ users = User.create([
   { first_name: 'Jordan', last_name: 'Gilbert', region: 'USA', email: 'skadoodle@cloud9.csgo.com', password: 'test12' },
   #Coach
   #Add more users here
-
   { first_name: 'Danan', last_name: 'Flander', region: 'USA', email: 'kaniggit@cloud9.csgo.com', password: 'test12'},
   #Admin
   { first_name: 'Admin', last_name: 'Admin', region: 'USA', email: 'admin@esports.com', password: 'test12' },
