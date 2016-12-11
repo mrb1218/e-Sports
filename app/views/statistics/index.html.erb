@@ -1,27 +1,29 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Results</h1>
-  <% @matches.each do |match| %>
-  <div class = "col-sm-6" "col-lg-4">
-    <div class= "table" style="border:1px solid black;">
-        <b>Match: <%= match.match_date_time.to_date %></b>
-            <div class="col">
-                <b>Team:</b> <%= Team.where(id: match.team1ID).first.team_name %>
-                <%=  link_to match.team1Score, match if match.team1Score > match.team2Score %>
-                <%= match.team1Score if match.team1Score < match.team2Score %>
-              </div>
-              <div class="r">
-                <b>Team:</b> <%= Team.where(id: match.team2ID).first.team_name %>
-                <%=  link_to match.team2Score, match if match.team1Score < match.team2Score %>
-                <%= match.team1Score if match.team1Score > match.team2Score %>
-              </div>
-              <div class="r">
-                <b>League:</b> <%= League.where(id: match.league_id).first.league_name %>
-              </div>
-          <br>
-          <br>
+<% @matches.each do |match| %>
+<div class = "col-xs-6 col-lg-4">
+  <div class="list-group">
+    <a href = '/matches/<%=match.id%>' class="list-group-item">
+        <b><%= League.where(id: match.league_id).first.league_name %> <br>
+        <%= match.match_date_time.to_date %></b>
+        <table>
+            <tbody>
+            <tr>
+              <td> <%= Team.where(id: match.team1ID).first.team_name %></td>
+              <td> <%= match.team1Score %></td>
+              </tr><br>
+            <tr>
+              <td>  <%= Team.where(id: match.team2ID).first.team_name %></td>
+              <td>  <%= match.team2Score %></td>
+              </tr>
+            </tbody>
+        </table>
+        </a>
     </div>
   </div>
+
+
           <% end %>
 
       </html>

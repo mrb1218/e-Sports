@@ -1,31 +1,45 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Favorites</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Teamid</th>
-      <th>Playerid</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @favorites.each do |favorite| %>
-      <tr>
-        <td><%= favorite.teamID %></td>
-        <td><%= favorite.playerID %></td>
-        <td><%= favorite.user %></td>
-        <td><%= link_to 'Show', favorite %></td>
-        <td><%= link_to 'Edit', edit_favorite_path(favorite) %></td>
-        <td><%= link_to 'Destroy', favorite, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<% if user_signed_in? %>
+  <% Favorite.where(user_id: current_user.id).each do |favorite| %>
+    <div class="row">
+    <% if favorite.teamID != "" %>
+      <% team = Team.where(id: favorite.teamID).first %>
+      <div class="col-xs-4">
+        <a href="/teams/<%= team.id %>"><%= team.team_name %></a>
+      </div>
+      <div class="col-xs-4">
+        <%= link_to 'Edit', edit_favorite_path(favorite) %>
+      </div>
+      <div class="col-xs-4">
+        <%= link_to 'Delete', favorite, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% else %>
+      <% if favorite.playerID != "" %>
+      <% player = Player.where(id: favorite.playerID).first %>
+      <div class="col-xs-4">
+        <a href="/players/<%= player.id %>"><%= player.ign %></a>
+      </div>
+      <div class="col-xs-4">
+        <%= link_to 'Edit', edit_favorite_path(favorite) %>
+      </div>
+      <div class="col-xs-4">
+        <%= link_to 'Delete', favorite, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+      <% else %>
+      <p>Invalid favorite object. Team ID and Player ID are set</p>
+      <% end %>
     <% end %>
-  </tbody>
-</table>
+  </div> <!-- div.row -->
+  <% end %>
 
-<br>
+  <div class="row">
+    <div class="col-xs-4 col-xs-offset-4">
+      <%= link_to 'New Favorite', new_favorite_path %>
+    </div>
+  </div>
 
-<%= link_to 'New Favorite', new_favorite_path %>
+  <p id="notice"><%= notice %></p>
+
+<% else %>
+  <p>Please sign in to add and edit favorites</p>
+<% end %>

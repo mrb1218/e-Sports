@@ -5,6 +5,11 @@ class LeaguesController < ApplicationController
   # GET /leagues.json
   def index
     @leagues = League.all
+    if params[:search]
+      @leagues = League.search(params[:search]).order("created_at DESC")
+    else
+      @leagues = League.all.order("created_at DESC")
+    end
   end
 
   # GET /leagues/1
