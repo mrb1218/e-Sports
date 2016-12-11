@@ -37,13 +37,13 @@
   <% match = Match.where(league_id: league.id).order('match_date_time ASC').first; if match != nil %>
   <% team1 = Team.where(id: match.team1ID).first; team2 = Team.where(id: match.team2ID).first; %>
     <a href="/teams/<%= team1.id %>">
-      <img class="upcoming_matches_team_logo" src="/assets/team_<%= team1.id %>.png"/>
+      <img class="upcoming_matches_team_logo" src="/assets/images/team_<%= team1.id %>.png"/>
     </a>
     <a href="/matches/<%= match.id %>">
       <%= match.match_date_time.strftime("%m-%d-%Y @ %H:%M") %>
     </a>
     <a href="/teams/<%= team2.id %>">
-      <img class="upcoming_matches_team_logo" src="/assets/team_<%= team2.id %>.png"/>
+      <img class="upcoming_matches_team_logo" src="/assets/images/team_<%= team2.id %>.png"/>
     </a>
   <% else %>
     <h3>No upcoming matches for this team</h3>
