@@ -19,6 +19,9 @@
     <% else %>
       <p>User has no favorites. Click <a href="/favorites">here</a> to add favorites!</p>
     <% end %>
+    <br>
+     <a href="/users/<%= current_user.id %>/edit"> Edit Profile
+
   <% end %>
 </div>
 
