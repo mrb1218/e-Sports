@@ -25,17 +25,31 @@ class PlayersController < ApplicationController
   # POST /players.json
   def create
     @player = Player.new(player_params)
-
-    respond_to do |format|
-      if @player.save
-        format.html { redirect_to @player, notice: 'Player was successfully created.' }
-        format.json { render :show, status: :created, location: @player }
+    user= User.find_by_email(String(@player.email))
+    registeredPlayer = Player.find_by_user_id(String(user.id))
+    if registeredPlayer ==nil
+    if user != nil
+      @player.user_id = user.id
+      respond_to do |format|
+        if @player.save
+          format.html { redirect_to @player, notice: 'Player was successfully created.' }
+          format.json { render :show, status: :created, location: @player }
       else
         format.html { render :new }
         format.json { render json: @player.errors, status: :unprocessable_entity }
       end
     end
+    else
+      respond_to do |format|
+      format.html { redirect_to new_team_player_path(Team.find(String(@player.team_id)).id), notice: 'No Registered user found'}
+    end
   end
+else
+  respond_to do |format|
+  format.html { redirect_to new_team_player_path(Team.find(String(@player.team_id)).id), notice: 'Player already registered for a game'}
+  end
+end
+end
 
   # PATCH/PUT /players/1
   # PATCH/PUT /players/1.json
@@ -69,6 +83,6 @@ class PlayersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def player_params
-      params.require(:player).permit(:ign, :age, :country, :in_game_role, :team_id)
+      params.require(:player).permit(:ign, :age, :country, :in_game_role, :team_id, :email)
     end
 end

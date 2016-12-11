@@ -17,9 +17,19 @@
 				<s class="padding-right"><a href="/contact">Contact</a></s>
   		</p>
       <br>
-  		<p>eSports &copy; 2016</p>
-			<p>Main Event - G Center</p>
-			<p>Dec 25 - 30, 2016</p>
+      	<div>
+  			<h6>eSports &copy; 2016</h6>
+			<h6>Main Event - G Center</h6>
+			<h6>Dec 25 - 30, 2016</h6>
+		</div>
+
+		<div style="float:right;">
+			<%= form_tag(searches_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+		</div>
+
   	</div>
   </footer>
 </body>

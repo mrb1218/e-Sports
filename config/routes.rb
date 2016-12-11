@@ -22,6 +22,9 @@ Rails.application.routes.draw do
       resources :players
     end
   end
+  resources :teams do
+    resources :players
+  end
 
   #Redirections
   get 'schedule', to: 'matches#schedule'
