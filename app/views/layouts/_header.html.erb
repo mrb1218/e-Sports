@@ -1,19 +1,9 @@
-  <!-- Slideshow -->
- <!-- <div class="slideshow-container">
-    <img class="mySlides" src="/images/Cup.png">
-    <img class="mySlides" src="/images/league_1.jpg">
-    <img class="mySlides" src="/images/league_2.jpg">
-    <img class="mySlides" src="/images/league_3.jpg">
-    <img class="mySlides" src="/images/league_4.jpg">
-  </div>
-
-
-  <div class="w3-content w3-display-container" style="height:250px;width:100%">
-  <img class="mySlides" src="/images/league_1.jpg" style="height:250px;width:100%">
-  <img class="mySlides" src="/images/league_2.jpg" style="height:250px;width:100%">
-  <img class="mySlides" src="/images/league_3" style="height:250px;width:100%">
-  <img class="mySlides" src="/images/league_4.jpg" style="height:250px;width:100%">
-
+<!-- Slideshow -->
+<div class="w3-content w3-display-container" style="height:250px;width:100%">
+  <img class="mySlides" src="/assets/league_1.jpg" style="height:250px;width:100%">
+  <img class="mySlides" src="/assets/league_2.jpg" style="height:250px;width:100%">
+  <img class="mySlides" src="/assets/league_3.jpg" style="height:250px;width:100%">
+  <img class="mySlides" src="/assets/league_4.jpg" style="height:250px;width:100%">
   <a class="w3-btn-floating w3-display-left" onclick="plusDivs(-1)">&#10094;</a>
   <a class="w3-btn-floating w3-display-right" onclick="plusDivs(1)">&#10095;</a>
 </div>
@@ -38,45 +28,23 @@ function showDivs(n) {
 }
 </script>
 
-
-  <!-- script to start automatic slideshow
-  <script>
-    var myIndex = 0;
-    carousel();
-  </script>
--->
-  <!-- Header nav bar -->
-  <header>
-    <div class="nav">
-      <ul>
-        <li><a href="/">eSports</a></li>
-        <li><a href="/leagues">Leagues</a></li>
-        <li><a href="/teams">Teams</a></li>
-        <li><a href="/schedule">Schedule</a></li>
-        <li><a href="/statistics">Results</a></li>
-        <li><a href="/about">About</a></li>
-        <% if user_signed_in? %>
-        <li><%= link_to "Inbox", mailbox_inbox_path %></li>
-        <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "btn btn-secondary" %></li>
-        <% else %>
-          <li><%= link_to "Sign up", new_user_registration_path %></li>
-          <li><%= link_to "Sign in", new_user_session_path %></li>
-        <% end %>
-      </ul>
-      <!-- Search bar -->
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 col-md-offset-3">
-            <form action="" class="search-form">
-              <div class="form-group has-feedback">
-                <label for="search" class="sr-only">Search</label>
-                <input type="text" class="form-control" name="search" id="search" placeholder="search">
-                <span class="glyphicon glyphicon-search form-control-feedback"></span>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
- </header>
+<!-- Header nav bar -->
+<header>
+  <div class="nav">
+    <ul>
+      <li><a href="/">eSports</a></li>
+      <li><a href="/leagues">Leagues</a></li>
+      <li><a href="/teams">Teams</a></li>
+      <li><a href="/schedule">Schedule</a></li>
+      <li><a href="/statistics">Results</a></li>
+      <li><a href="/about">About</a></li>
+      <% if user_signed_in? %>
+      <li><%= link_to "Inbox", mailbox_inbox_path %></li>
+      <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "btn btn-secondary" %></li>
+      <% else %>
+        <li><%= link_to "Sign up", new_user_registration_path %></li>
+        <li><%= link_to "Sign in", new_user_session_path %></li>
+      <% end %>
+    </ul>
+  </div>
+</header>

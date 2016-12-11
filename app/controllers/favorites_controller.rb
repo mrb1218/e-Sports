@@ -25,14 +25,20 @@ class FavoritesController < ApplicationController
   # POST /favorites.json
   def create
     @favorite = Favorite.new(favorite_params)
+    @favorite.user_id = current_user.id
 
     respond_to do |format|
-      if @favorite.save
-        format.html { redirect_to @favorite, notice: 'Favorite was successfully created.' }
-        format.json { render :show, status: :created, location: @favorite }
+      if @favorite.teamID != "" && @favorite.playerID != ""
+        format.html { redirect_to new_favorite_path}
+        format.json { render json: 'Favorite cannot have both a team and player', status: :unprocessable_entity }
       else
-        format.html { render :new }
-        format.json { render json: @favorite.errors, status: :unprocessable_entity }
+        if @favorite.save
+          format.html { redirect_to favorites_url }
+          format.json { render :show, status: :created, location: @favorite }
+        else
+          format.html { render :new }
+          format.json { render json: @favorite.errors, status: :unprocessable_entity }
+        end
       end
     end
   end

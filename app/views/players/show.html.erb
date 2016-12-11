@@ -1,10 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<% user = User.where(player_id: @player.id).first %>
+<% user = User.where(id: @player.user_id).first %>
 
-<h2><%= @player.ign %></h2>
+<h1><%= @player.ign %></h1>
+<h4><%= user.first_name %> <%= user.last_name %></h4>
 
-<h4><%= current_user.first_name %> <%= current_user.last_name %></h4>
 <p>
   <strong>Age:</strong>
   <%= @player.age %>
