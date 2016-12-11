@@ -15,8 +15,8 @@ leagues = League.create([
 Team.delete_all
 #Create teams
 teams = Team.create([
-  { id: '1', bio: 'This is team 1, SKT T1', coachID: '', team_name: 'SKT T1', league_id: leagues[0].id},
-  { id: '2', bio: 'This is team 2, Samsung Galaxy', coachID: '', team_name: 'Samsung Galaxy', league_id: leagues[0].id},
+  { id: '1', bio: 'This is team 1, SKT T1', coachID: '6', team_name: 'SKT T1', league_id: leagues[0].id},
+  { id: '2', bio: 'This is team 2, Samsung Galaxy', coachID: '12', team_name: 'Samsung Galaxy', league_id: leagues[0].id},
   { id: '3', bio: 'This is team 3, Saigon Jokers', coachID: '', team_name: 'Saigon Jokers', league_id: leagues[0].id},
   { id: '4', bio: 'This is team 4, Team Solomid', coachID: '', team_name: 'Team Solomid', league_id: leagues[0].id},
   { id: '5', bio: 'This is team 5, NiP', coachID: '', team_name: 'NiP', league_id: leagues[1].id},
@@ -58,7 +58,7 @@ users = User.create([
   { id: '4', first_name: 'Jun-sik', last_name: 'Bae', region: 'S.Korea', email: 'bang@skt.lol.com', password: 'test12' },
   { id: '5', first_name: 'Jae-wan', last_name: 'Lee', region: 'S.Korea', email: 'wolf@skt.lol.com', password: 'test12' },
   #Coach
-  { id: '6', first_name: 'Jeong-gyun', last_name: 'Kim',region: 'S.Korea', email: 'kkoma@skt.lol.com', password: 'test12', coachID: 'Lol1111'},
+  { id: '6', first_name: 'Jeong-gyun', last_name: 'Kim',region: 'S.Korea', email: 'kkoma@skt.lol.com', password: 'test12', coachID: '6'},
   ####-----  Team Solomid
   { id: '7', first_name: 'Kevin', last_name: 'Yarnell', region: 'USA', email: 'hauntzer@tsm.lol.com', password: 'test12' },
   { id: '8', first_name: 'Dennis', last_name: 'Johnsen', region: 'Denmark', email: 'svenskeren@tsm.lol.com', password: 'test12' },
@@ -66,7 +66,7 @@ users = User.create([
   { id: '10', first_name: 'Vincent', last_name: 'Wang', region: 'China', email: 'biofrost@tsm.lol.com', password: 'test12' },
   { id: '11', first_name: 'Yiliang', last_name: 'Peng', region: 'USA', email: 'doublelift@tsm.lol.com', password: 'test12' },
   #Coach
-  { id: '12', first_name: 'Parth', last_name: 'Naidu',region: 'India',email: 'parthenaan@skt.lol.com', password: 'test12', coachID: 'Lol1112' },
+  { id: '12', first_name: 'Parth', last_name: 'Naidu',region: 'India',email: 'parthenaan@skt.lol.com', password: 'test12', coachID: '12' },
   ####------  NiP
   { id: '13', first_name: 'Patrik', last_name: 'Lindberg', region: 'Sweden', email: 'f0rest@nip.csgo.com', password: 'test12' },
   { id: '14', first_name: 'Christopher', last_name: 'Alesund', region: 'Sweden',email: 'getright@nip.csgo.com', password: 'test12' },

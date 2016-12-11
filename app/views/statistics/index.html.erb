@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Results</h1>
-<% @matches.each do |match| %>
+  <% past_matches = @matches.all %>
+<% past_matches.each do |match| %>
 <div class = "col-xs-6 col-lg-4">
   <div class="list-group">
     <a href = '/matches/<%=match.id%>' class="list-group-item">
