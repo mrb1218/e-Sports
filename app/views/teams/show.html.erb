@@ -19,8 +19,9 @@
           <h4 class="list-group-item-heading"><%= player.ign %></h4>
           <%= player.in_game_role %>
         </a>
-        <%= link_to "Add Player", new_team_player_path(@team.id) %>
+        
               <% end %>
+        <%= link_to "Add Player", new_team_player_path(@team.id) %>
       </div>
       <% else %>
         <p class="no-players">No players on this team</p>
@@ -29,5 +30,6 @@
         <%= link_to "Add Player", new_team_player_path(@team.id) %>
 
       <% end %>
+      
   </div>
 </div>

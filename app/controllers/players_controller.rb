@@ -26,30 +26,30 @@ class PlayersController < ApplicationController
   def create
     @player = Player.new(player_params)
     user= User.find_by_email(String(@player.email))
-    registeredPlayer = Player.find_by_user_id(String(user.id))
-    if registeredPlayer ==nil
-    if user != nil
-      @player.user_id = user.id
-      respond_to do |format|
-        if @player.save
-          format.html { redirect_to @player, notice: 'Player was successfully created.' }
-          format.json { render :show, status: :created, location: @player }
+    if user!=nil
+      registeredPlayer = Player.find_by_user_id(String(user.id))
+      if registeredPlayer ==nil
+        @player.user_id = user.id
+        respond_to do |format|
+          if @player.save
+            format.html { redirect_to team_path(Team.find(String(@player.team_id)).id), notice: 'Player was successfully created.' }
+            format.json { render :show, status: :created, location: @player }
+          else
+            format.html { render :new }
+            format.json { render json: @player.errors, status: :unprocessable_entity }
+          end
+        end
       else
-        format.html { render :new }
-        format.json { render json: @player.errors, status: :unprocessable_entity }
+        respond_to do |format|
+          format.html { redirect_to new_team_player_path(Team.find(String(@player.team_id)).id), notice: 'Player already registered for a game'}
+        end
       end
-    end
     else
       respond_to do |format|
-      format.html { redirect_to new_team_player_path(Team.find(String(@player.team_id)).id), notice: 'No Registered user found'}
+        format.html { redirect_to new_team_player_path(Team.find(String(@player.team_id)).id), notice: 'No Registered user found'}
+      end
     end
   end
-else
-  respond_to do |format|
-  format.html { redirect_to new_team_player_path(Team.find(String(@player.team_id)).id), notice: 'Player already registered for a game'}
-  end
-end
-end
 
   # PATCH/PUT /players/1
   # PATCH/PUT /players/1.json
