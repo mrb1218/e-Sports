@@ -1,50 +1,30 @@
-<!DOCTYPE html>
-<html>
+<p id="notice"><%= notice %></p>
 
-  <p id="notice">
-    <%= notice %>
-  </p>
+<h1>Teams</h1>
 
-  <h1>Teams</h1>
-
-  <div class="row">
-    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-      <h3>Team name:</h3>
-    </div>
-
-    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-      <h3>Bio:</h3>
-    </div>
-
-    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-      <h3>Coach:</h3>
-    </div>
-
-    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-      <h3>League:</h3>
-    </div>
-  </div>
-
+<center>
   <% @teams.each do |team| %>
     <div class="row">
-      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-        <a href='/teams/<%team.id%>'>
-          <%= team.team_name %>
-        </a>
+      <div class="col-sm-4">
+        <div class="row" style="padding: 5px;">
+          <a href='/teams/<%=team.id%>'>
+            <img src="/assets/team_<%= team.id %>.jpg" class="img-fluid" style="width: 40%; height: 40%"/>
+          </a>
+        </div>
+      </div>
+      <br>
+      <div id="team_info" class="col-sm-8">
+        <div class="row">
+          <b>Bio:</b> <%= team.bio %>
+        </div>
+        <div class="row">
+          <b>Coach:</b> <%= team.coachID %>
+        </div>
+        <div class="row">
+          <h3><%= League.where(id: team.league_id).first.league_name %></h3>
+        </div>
       </div>
 
-      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-        <%= team.bio %>
-      </div>
-
-      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-        <%= team.coachID %>
-      </div>
-
-      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-        <%= League.where(id: team.league_id).first.league_name %>
-      </div>
     </div>
   <% end %>
-
-</html>
+</center>

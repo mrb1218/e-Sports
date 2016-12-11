@@ -30,9 +30,7 @@ function carousel() {
 }
 
 $(document).ready(function(){
-    $("img").hover(function(){
-        $(this).css("background-color", "yellow");
-        }, function(){
-        $(this).css("background-color", "pink");
+    $("#search").keyup(function() {
+      console.log("search bar value = " + $("#search").val());
     });
 });

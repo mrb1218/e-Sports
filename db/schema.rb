@@ -128,6 +128,13 @@ ActiveRecord::Schema.define(version: 20161220601844) do
     t.index ["name"], name: "index_roles_on_name"
   end
 
+  create_table "searches", force: :cascade do |t|
+    t.string   "name"
+    t.string   "String"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "seasons", force: :cascade do |t|
     t.string   "season_name"
     t.datetime "created_at",  null: false
