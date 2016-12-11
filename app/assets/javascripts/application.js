@@ -16,6 +16,7 @@
 //= require bootstrap-sprockets
 //= require_tree.
 
+
 $(document).ready(function(){
     $("#search").keyup(function() {
       console.log("search bar value = " + $("#search").val());
