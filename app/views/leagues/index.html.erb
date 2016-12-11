@@ -13,8 +13,11 @@
         <h2>League:</h2>
       </div>
 
-      <div class="col-lg-6">
+      <div class="col-lg-3">
         <h2>Prize:</h2>
+      </div>
+      <div class="col-lg-3">
+        <h2>Register</h2>
       </div>
     </div>
 
@@ -30,12 +33,12 @@
           <br>
         </div>
 
-        <div class="col-lg-6">
+        <div class="col-lg-3">
           <h4>
             $<%= league.prize_money %>
           </h4>
         </div>
-        <div>
+        <div class="col-lg-3">
           <h4>
             <%= link_to "Register", new_league_team_path(league.id), class: "btn btn-primary"%>
           </h4>
