@@ -18,7 +18,9 @@ Rails.application.routes.draw do
   resources :statistics
 
   resources :leagues do
-    resources :teams
+    resources :teams do
+      resources :players
+    end
   end
 
   #Redirections
