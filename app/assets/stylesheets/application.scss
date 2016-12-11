@@ -25,7 +25,16 @@
 .field_name{
   color: white
 }
-//From Scaffolds
+
+p.notice {
+  padding: 5px;
+}
+
+p {
+  margin: auto;
+  padding: 0px;
+}
+
 body {
   background-color:#2d332d;
   color: #E4E2F1  ;
@@ -92,6 +101,11 @@ div {
 
 label {
   display: block;
+}
+
+//Matches
+.match_header, .match_team {
+  text-align: center;
 }
 
 //League, Team, Match, Player
