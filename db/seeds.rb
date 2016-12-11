@@ -58,7 +58,7 @@ users = User.create([
   { first_name: 'Jun-sik', last_name: 'Bae', region: 'S.Korea', email: 'bang@skt.lol.com', password: 'test12' },
   { first_name: 'Jae-wan', last_name: 'Lee', region: 'S.Korea', email: 'wolf@skt.lol.com', password: 'test12' },
   #Coach
-  { first_name: 'Jeong-gyun', last_name: 'Kim',region: 'S.Korea', email: 'kkoma@skt.lol.com', password: 'test12', coachID: 'Lol1111'},
+  { first_name: 'Jeong-gyun', last_name: 'Kim',region: 'S.Korea', email: 'kkoma@skt.lol.com', password: 'test12' },
   ####-----  Team Solomid
   { first_name: 'Kevin', last_name: 'Yarnell', region: 'USA', email: 'hauntzer@tsm.lol.com', password: 'test12' },
   { first_name: 'Dennis', last_name: 'Johnsen', region: 'Denmark', email: 'svenskeren@tsm.lol.com', password: 'test12' },
@@ -66,7 +66,7 @@ users = User.create([
   { first_name: 'Vincent', last_name: 'Wang', region: 'China', email: 'biofrost@tsm.lol.com', password: 'test12' },
   { first_name: 'Yiliang', last_name: 'Peng', region: 'USA', email: 'doublelift@tsm.lol.com', password: 'test12' },
   #Coach
-  { first_name: 'Parth', last_name: 'Naidu',region: 'India',email: 'parthenaan@skt.lol.com', password: 'test12', coachID: 'Lol1112' },
+  { first_name: 'Parth', last_name: 'Naidu',region: 'India',email: 'parthenaan@skt.lol.com', password: 'test12' },
   ####------  NiP
   { first_name: 'Patrik', last_name: 'Lindberg', region: 'Sweden', email: 'f0rest@nip.csgo.com', password: 'test12' },
   { first_name: 'Christopher', last_name: 'Alesund', region: 'Sweden',email: 'getright@nip.csgo.com', password: 'test12' },
@@ -74,7 +74,7 @@ users = User.create([
   { first_name: 'Richard', last_name: 'Landstrorm', region: 'Sweden', email: 'xizt@nip.csgo.com', password: 'test12' },
   { first_name: 'Jacob', last_name: 'Mourujarvi', region: 'Sweden', email: 'pyth@nip.csgo.com', password: 'test12' },
   #Coach
-  { first_name: 'Bjorn', last_name: 'Pers', region: 'Sweden',email: 'bjornpers@nip.csgo.com', password: 'test12', coachID: 'CS1112'},
+  { first_name: 'Bjorn', last_name: 'Pers', region: 'Sweden',email: 'bjornpers@nip.csgo.com', password: 'test12' },
   ####------  Cloud 9
   { first_name: 'Jake', last_name: 'Yip', region: 'USA', email: 'stewie2k@cloud9.csgo.com', password: 'test12' },
   { first_name: 'Timothy', last_name: 'Ta', region: 'USA', email: 'autimatic@cloud9.csgo.com', password: 'test12' },
@@ -84,11 +84,11 @@ users = User.create([
   #Coach
   #Add more users here
 
-  { first_name: 'Danan', last_name: 'Flander', region: 'USA', email: 'kaniggit@cloud9.csgo.com', password: 'test12', coachID: 'CS1111' },
+  { first_name: 'Danan', last_name: 'Flander', region: 'USA', email: 'kaniggit@cloud9.csgo.com', password: 'test12'},
   #Admin
-  { first_name: 'Admin', last_name: 'Admin', region: 'USA', email: 'admin@esports.com', password: 'test12', coachID: '' },
+  { first_name: 'Admin', last_name: 'Admin', region: 'USA', email: 'admin@esports.com', password: 'test12' },
   #Our data
-  { first_name: 'Matthew', last_name: 'Greci', region: 'USA', email: 'mgreci@unm.edu', password: 'test12', coachID: '' }
+  { first_name: 'Matthew', last_name: 'Greci', region: 'USA', email: 'mgreci@unm.edu', password: 'test12' }
 ])
 
 #Delete all Players

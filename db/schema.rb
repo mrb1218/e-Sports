@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161220601845) do
+ActiveRecord::Schema.define(version: 20161220601846) do
 
   create_table "favorites", force: :cascade do |t|
     t.string   "teamID"
@@ -181,7 +181,6 @@ ActiveRecord::Schema.define(version: 20161220601845) do
     t.string   "last_name"
     t.string   "email"
     t.string   "phone_number"
-    t.string   "coachID"
     t.string   "region"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
