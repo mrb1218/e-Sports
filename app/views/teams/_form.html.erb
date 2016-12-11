@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= f.label :coachID %>
-    <%= f.text_field :coachID, :value => current_user.id :readonly => true%>
+    <%= f.text_field :coachID, :value => current_user.id, :readonly => true%>
   </div>
 
   <div class="field">
@@ -27,7 +27,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :league_id %> 
+    <%= f.label :league_id %>
     <%= f.text_field :league_id, value: params[:league_id], :readonly => true %>
   </div>
 
