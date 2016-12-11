@@ -25,56 +25,35 @@
 <!-- Upcoming Mathces -->
 <h1>Upcoming Matches</h1>
 <hr>
-  <style>
-        table, th, td {
-            border: 1px solid grey ;
-                      }
-      </style>
-  <table class="table table-bordered table-inverse">
-    <tbody>
-      <tr>
-        <th rowspan="2">
-          <div class="col-lg-1 col-sm-1.5 col-xs-1.5">
-            <%= image_tag("csgo1.jpg", width:"450px", height: "200px")%>
-          </div>
-        </th>
-    <td>
-      <div class="col-sm-1.5 col-xs-1 col-lg-2">
-        <%= image_tag("team_7.png", width:"90px", height: "70px")%>
-      </div>
-      <div class="col-sm-7 col-md-3 col-lg-1">
-        <%= image_tag("vs.png", width:"26px", height: "15px")%>
-      </div>
-      <div class="col-sm-7 col-md-3 col-lg-3">
-        <%= image_tag("team_11.png", width:"90px", height: "70px")%>
-      </div>
-      <div class="col-sm-7 col-md-3 col-lg-4">
-        <font face="Serif" color="#E1A01E">December 19, 2016 @ 15:30 MT</font>
-      </div>
-    </td>
-    </tr>
-  <tr>
-    <td colspan="2">
-      <div class="col-sm-1.5 col-xs-1 col-lg-2">
-        <%= image_tag("team_5.png", width:"90px", height: "70px")%>
-      </div>
-      <div class="col-sm-7 col-md-3 col-lg-1">
-        <%= image_tag("vs.png", width:"26px", height: "15px")%>
-      </div>
-      <div class="col-sm-7 col-md-3 col-lg-3">
-        <%= image_tag("team_14.png", width:"90px", height: "70px")%>
-      </div>
-      <div class="col-sm-7 col-md-3 col-lg-4">
-        <font face="Serif" color="#E1A01E">December 17, 2016 @ 13:00 MT</font>
-      </div>
-    </td>
-  </tr>
-  </tbody>
-</table>
-
+<% League.all.each do |league| %>
+<div class="row" style="border:1px solid lightgray">
+  <div class="col-xs-12 col-sm-6">
+    <!-- image -->
+    <a href="/leagues/<%= league.id %>">
+      <img src="/assets/league_<%= league.id %>.jpg" style="width:100%;padding-top:2px;padding-bottom:6px;"/>
+    </a>
+  </div>
+  <div class="col-xs-12 col-sm-6 upcoming_match">
+  <% match = Match.where(league_id: league.id).order('match_date_time ASC').first; if match != nil %>
+  <% team1 = Team.where(id: match.team1ID).first; team2 = Team.where(id: match.team2ID).first; %>
+    <a href="/teams/<%= team1.id %>">
+      <img class="upcoming_matches_team_logo" src="/assets/team_<%= team1.id %>"/>
+    </a>
+    <a href="/matches/<%= match.id %>">
+      <%= match.match_date_time.strftime("%m-%d-%Y @ %H:%M") %>
+    </a>
+    <a href="/teams/<%= team2.id %>">
+      <img class="upcoming_matches_team_logo" src="/assets/team_<%= team2.id %>"/>
+    </a>
+  <% else %>
+    <h3>No upcoming matches for this team</h3>
+  <% end %>
+  </div>
+</div>
+<% end %>
 
 <!-- Upcoming Events Section -->
-<h1><font face="Serif" color="#ffffff">Upcoming Events</font></h1>
+<h1><br><br><font face="Serif" color="#ffffff">Upcoming Events</font></h1>
 <hr>
 <div class="container">
   <div class="row">
@@ -104,7 +83,7 @@
   </div>
 </div>
 <br>
-<div class="container-fluid">
+<div class="container">
   <div class="row">
     <div class="col-md-2">
         <%= image_tag("faker.jpg", width:"150px", height: "145px")%>
@@ -119,7 +98,7 @@
 
 <!-- Youtube videos -->
 <div class="game_snapshots">
-  <h1>Latest Videos</h1>
+  <h1><br><br>Latest Videos</h1>
   <div class="row">
     <div class="col-xs-12 col-md-6">
       <iframe width="100%" height="349" src="//www.youtube.com/embed/_fOssLa1R0w" allowfullscreen>
