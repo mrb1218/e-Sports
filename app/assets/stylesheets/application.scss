@@ -36,6 +36,7 @@ a {
   &:hover {
     //color: #fff;
     //background-color: #000;
+    background-color: transparent;
     cursor: pointer;
   }
 }
@@ -108,8 +109,13 @@ img.league_logo {
 
 //Home page
 img.upcoming_matches_team_logo {
-  height:25%;
-  width:25%;
+  height: 25%;
+  width: 25%;
+}
+
+.upcoming_match {
+  vertical-align: middle;
+  text-align: center;
 }
 
 li.signed_in {
