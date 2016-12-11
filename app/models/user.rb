@@ -22,4 +22,10 @@ class User < ApplicationRecord
   def mailboxer_email(object)
     self.email
   end
+
+  def self.search(search)
+      where("first_name LIKE ?", "%#{search}%") 
+  end
+
+
 end

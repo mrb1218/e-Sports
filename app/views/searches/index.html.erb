@@ -14,7 +14,7 @@
     <% @searches.each do |search| %>
       <tr>
 
-       <!-- <td><%= link_to search.attributes.keys, search %></td>-->
+     
         <% if search.has_attribute?("league_name") %>    
           <td><%= link_to search.league_name, search %></td>
         <% end %>
@@ -37,9 +37,36 @@
     <% @searches.each do |search| %>
       <tr>
 
-       <!-- <td><%= link_to search.attributes.keys, search %></td>-->
+      
         <% if search.has_attribute?("team_name") %>    
           <td><%= link_to search.team_name, search %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Players Found</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @searches.each do |search| %>
+      <tr>
+      <!--
+    
+        <% if search.has_attribute?("first_name") %> 
+          <% if Player.exists?(:user_id => search["id"]) %>  
+             <td><%= link_to search.first_name, player_path(search["id"] ) %></td>
+          <% end %>
+        <% end %>-->
+
+        <% if search.has_attribute?("ign") %>    
+          <td><%= link_to search.ign, search %></td>
         <% end %>
       </tr>
     <% end %>
