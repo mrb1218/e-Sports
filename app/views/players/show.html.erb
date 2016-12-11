@@ -32,3 +32,7 @@
 </div>
 
 <%= link_to 'All Players', players_path %>
+<% if (user_signed_in? && (current_user.id == @player.user_id)) %>
+  <%= link_to 'Edit Information', edit_player_path %>
+<% end %>
+
