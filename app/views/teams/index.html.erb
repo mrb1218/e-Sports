@@ -18,8 +18,11 @@
           <b>Bio:</b> <%= team.bio %>
         </div>
         <div class="row">
-          <b>Coach:</b> <%= coach = User.where(String(team.coachID)).first.first_name if team.coachID %>
-                        <%= coach = User.where(String(team.coachID)).first.last_name if team.coachID %>
+          <% if team.coachID != ''%>
+          <b>Coach:</b> <%= User.find(String(team.coachID)).first_name %>
+                        <%= User.find(String(team.coachID)).last_name %>
+          <% else %> No coach for this team
+          <% end %></strong></h4>
         </div>
         <div class="row">
           <h3><%= League.where(id: team.league_id).first.league_name %></h3>
