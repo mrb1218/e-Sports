@@ -1,4 +1,9 @@
 <%= form_for(team) do |f| %>
+  <% if flash[:alert] %>
+      <div id="alert">
+         <%= flash[:alert] %>
+      </div>
+  <% end %>
   <% if team.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(team.errors.count, "error") %> prohibited this team from being saved:</h2>
