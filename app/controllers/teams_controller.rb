@@ -23,7 +23,7 @@ class TeamsController < ApplicationController
   # POST /teams
   # POST /teams.json
   def create
-    binding.pry
+    
     @team = Team.new(team_params)
 
     respond_to do |format|
