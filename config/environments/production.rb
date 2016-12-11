@@ -32,8 +32,8 @@ Rails.application.configure do
   domain: "esportsnate.herokuapp.com",
   authentication: "plain",
   enable_starttls_auto: true,
-  user_name: ,
-  password:
+  user_name: 'natejarvis7',
+  password: 'element77'
 }
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
