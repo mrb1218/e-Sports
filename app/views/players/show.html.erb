@@ -1,28 +1,34 @@
 <p id="notice"><%= notice %></p>
 
+<div class="col-xs-12 col-sm-6">
 <% user = User.where(id: @player.user_id).first %>
-
-<h1><%= @player.ign %></h1>
-
-
-<p>
+<h2><%= @player.ign %></h2>
+<h5>
   <strong>Age:</strong>
   <%= @player.age %>
-</p>
-
-<p>
+</h5>
+<h5>
   <strong>Country:</strong>
   <%= @player.country %>
-</p>
-
-<p>
+</h5>
+<h5>
   <strong>In game role:</strong>
   <%= @player.in_game_role %>
-</p>
-
-<p>
+</h5>
+<h5>
   <strong>Team:</strong>
   <%= Team.where(id: @player.team_id).first.team_name %>
-</p>
+</h5>
+</div>
+<div class="col-xs-12 col-sm-6"><h3>Player Stats:</h3>
+  <% player_stats = Statistic.where(player_id: @player.id); %>
+  <div class="list-group">
+  <b> Kills:</b>  <%= player_stats.sum("kills") %><br>
+  <b> Deaths:</b>  <%= player_stats.sum("deaths") %><br>
+  <b> Wins:</b>  <%= player_stats.sum("wins") %><br>
+  <b> Losses:</b>  <%= player_stats.sum("losses") %><br>
+  <b> Ties:</b>  <%= player_stats.sum("ties") %><br>
+  </div>
+</div>
 
 <%= link_to 'All Players', players_path %>

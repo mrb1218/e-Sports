@@ -6,6 +6,6 @@ class Team < ApplicationRecord
   has_many :players
 
   def self.search(search)
-  		where("team_name LIKE ?", "%#{search}%") 
-	end
+  		where("team_name LIKE ?", "%#{search}%")
+	   end
 end

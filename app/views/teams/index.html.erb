@@ -18,7 +18,11 @@
           <b>Bio:</b> <%= team.bio %>
         </div>
         <div class="row">
-          <b>Coach:</b> <%= team.coachID %>
+          <% if team.coachID != ''%>
+          <b>Coach:</b> <%= User.find(String(team.coachID)).first_name %>
+                        <%= User.find(String(team.coachID)).last_name %>
+          <% else %> No coach for this team
+          <% end %></strong></h4>
         </div>
         <div class="row">
           <h3><%= League.where(id: team.league_id).first.league_name %></h3>

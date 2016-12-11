@@ -17,9 +17,26 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-//From Scaffolds
+//Field styling
+.field {
+  color:black
+}
+
+.field_name{
+  color: white
+}
+
+p.notice {
+  padding: 5px;
+}
+
+p {
+  margin: auto;
+  padding: 0px;
+}
+
 body {
-  background-color:#22262D;
+  background-color:#2d332d;
   color: #E4E2F1  ;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -84,6 +101,11 @@ div {
 
 label {
   display: block;
+}
+
+//Matches
+.match_header, .match_team {
+  text-align: center;
 }
 
 //League, Team, Match, Player
