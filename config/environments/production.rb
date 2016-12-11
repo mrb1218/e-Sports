@@ -26,15 +26,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default :charset => "utf-8"
 
-  config.action_mailer.smtp_settings = {
-  address: "smtp.gmail.com",
-  port: 587,
-  domain: "esportsnate.herokuapp.com",
-  authentication: "plain",
-  enable_starttls_auto: true,
-  user_name: 'natejarvis7',
-  password: 'element77'
-}
+
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
