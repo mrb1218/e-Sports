@@ -19,13 +19,13 @@
       <br>
       	<div>
   			<h6>eSports &copy; 2016</h6>
-			<h6>Main Event - G Center</h6>
+			<h6>Main Event - G Play Civic Center</h6>
 			<h6>Dec 25 - 30, 2016</h6>
 		</div>
 
 		<div style="float:right;">
 			<%= form_tag(searches_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
+    <span class="field"><%= text_field_tag :search, params[:search], placeholder: "Search..." %></span>
     <%= submit_tag "Search", :name => nil %>
 <% end %>
 		</div>
