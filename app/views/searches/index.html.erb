@@ -2,73 +2,35 @@
 
 <h1>Search results</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Leagues Found</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="row">
+  <div class="col-xs-12 col-md-4">
+    <h2>Leagues Found</h2>
+    <div class="list-group">
     <% @searches.each do |search| %>
-      <tr>
-
-     
-        <% if search.has_attribute?("league_name") %>    
-          <td><%= link_to search.league_name, search %></td>
-        <% end %>
-      </tr>
+      <% if search.has_attribute?("league_name") %>
+        <%= link_to search.league_name, search , class: "list-group-item" %>
+      <% end %>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<table>
-  <thead>
-    <tr>
-      <th>Teams Found</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+    </div>
+  </div>
+  <div class="col-xs-12 col-md-4">
+    <h2>Teams Found</h2>
+    <div class="list-group">
     <% @searches.each do |search| %>
-      <tr>
-
-      
-        <% if search.has_attribute?("team_name") %>    
-          <td><%= link_to search.team_name, search %></td>
-        <% end %>
-      </tr>
+      <% if search.has_attribute?("team_name") %>
+        <%= link_to search.team_name, search, class: "list-group-item" %>
+      <% end %>
     <% end %>
-  </tbody>
-</table>
-
-<table>
-  <thead>
-    <tr>
-      <th>Players Found</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+    </div>
+  </div>
+  <div class="col-xs-12 col-md-4">
+    <h2>Players Found</h2>
+    <div class="list-group">
     <% @searches.each do |search| %>
-      <tr>
-      <!--
-    
-        <% if search.has_attribute?("first_name") %> 
-          <% if Player.exists?(:user_id => search["id"]) %>  
-             <td><%= link_to search.first_name, player_path(search["id"] ) %></td>
-          <% end %>
-        <% end %>-->
-
-        <% if search.has_attribute?("ign") %>    
-          <td><%= link_to search.ign, search %></td>
-        <% end %>
-      </tr>
+      <% if search.has_attribute?("ign") %>
+        <%= link_to search.ign, search, class: "list-group-item" %>
+      <% end %>
     <% end %>
-  </tbody>
-</table>
+    </div>
+  </div>
+</div>
