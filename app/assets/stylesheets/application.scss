@@ -259,7 +259,7 @@ div.upcoming_matches {
 .footer-distributed .footer-left p{
 	color:  #8f9296;
 	font-size: 14px;
-	margin: 0;
+	margin: 0 10px 0;
 }
 
 /* Footer links */
@@ -304,6 +304,17 @@ s {
     padding-right: 15px;
     padding-bottom: 50px;
     padding-left: 80px;
+}
+
+/* For sponsors alignemnt */
+.footer-logo{
+  margin: 0px;
+  margin-top: 0px;
+  width: 1000px;
+  height: 50px;
+}
+.footer-logo .footer-sponsor s{
+  padding-right: 1%;
 }
 
 /* If you don't want the footer to be responsive, remove these media queries */

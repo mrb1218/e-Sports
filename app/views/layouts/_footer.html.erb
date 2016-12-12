@@ -9,7 +9,20 @@
 			<a href="#"><i class="fa fa-twitch"></i></a>
 			<a href="#"><i class="fa fa-youtube"></i></a>
   	</div>
-		<div class="footer-left">
+
+	<footer class="footer-logo">
+			<div class="footer-sponsor">
+				<img src="/assets/sponsor_3.png" style="width: 5%; height: 5%"/>
+				<s class="padding-right"><img src="/assets/sponsor_2.png" style="width: 5%; height: 5%"/></s>
+				<s class="padding-right"><img src="/assets/sponsor_6.png" style="width: 5%; height: 5%"/></s>
+				<s class="padding-right"><img src="/assets/sponsor_4.png" style="width: 5%; height: 5%"/></s>
+				<s class="padding-right"><img src="/assets/sponsor_5.png" style="width: 5%; height: 5%"/></s>
+				<s class="padding-right"><img src="/assets/sponsor_1.png" style="width: 5%; height: 5%"/></s>
+				<s class="padding-right"><img src="/assets/sponsor_7.png" style="width: 4%; height: 4%"/></s>
+			</div>
+	</footer>
+	<hr>
+ <div class="footer-left">
   		<p class="footer-links">
   			<a href="/">eSports</a>
 				<s class="padding-right"><a href="/leagues">Leagues</a></s>
@@ -22,21 +35,6 @@
 			<h6>Main Event - G Play Civic Center</h6>
 			<h6>Dec 25 - 30, 2016</h6>
 		</div>
-		<div style="float:right;">
-			<%= form_tag(searches_path, :method => "get", id: "search-form") do %>
-    <span class="field"><%= text_field_tag :search, params[:search], placeholder: "Search..." %></span>
-    <%= submit_tag "Search", :name => nil %>
-<% end %>
-		</div>
-
-
-				<div class="col-lg-6" align="right">
-					<br>
-					<br>
-					<img src="/assets/intel.png" style="width: 10%; height: 10%"/>
-					<img src="/assets/EA_Sports_logo.png" style="width: 10%; height: 10%"/>
-					<img src="/assets/Unreal_engine_logo.png" style="width: 10%; height: 10%"/>
-				</div>
 			</div>
   	</div>
   </footer>

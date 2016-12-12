@@ -52,6 +52,22 @@
     <h3>No upcoming matches for this team</h3>
   <% end %>
   </div>
+  <div class="col-xs-12 col-sm-6 upcoming_match">
+  <% match = Match.where(league_id: league.id).order('match_date_time ASC').second; if match != nil %>
+  <% team1 = Team.where(id: match.team1ID).first; team2 = Team.where(id: match.team2ID).first; %>
+    <a href="/teams/<%= team1.id %>">
+      <img class="upcoming_matches_team_logo" src="/assets/team_<%= team1.id %>.png"/>
+    </a>
+    <a href="/matches/<%= match.id %>">
+      <%= match.match_date_time.strftime("%m-%d-%Y @ %H:%M") %>
+    </a>
+    <a href="/teams/<%= team2.id %>">
+      <img class="upcoming_matches_team_logo" src="/assets/team_<%= team2.id %>.png"/>
+    </a>
+  <% else %>
+    <h3>No upcoming matches for this team</h3>
+  <% end %>
+  </div>
 </div>
 <% end %>
 
@@ -68,7 +84,7 @@
       <br>
       Guys!
       <br>
-      <font face="sans-serif">  We are going to give away items related to the event. Follow us on Facebook, Twitter and Twicht for a chance to receive one of the followings: 1 x NVIDA GTX 1080 Founder Edition, 2 x Razer Tournament Mechanical Keyboards, 1 x i7-6990k, 2 x Corsair 8GB DDR4 RAM ... </font>
+      <font face="sans-serif">  We are going to give away items related to the event. Follow us on Facebook, Twitter and Twicht for a chance to receive one of the followings: 1 x NVIDA GTX 1080 Founder Edition, 2 x Razer Tournament Mechanical Keyboards, 1 x i7-6990k, 2 x Corsair 8GB DDR4 RAM, 3 x Logitech G430 Gaming Headset, 3 x 512GB Samsung Evo SSD. </font>
     </div>
   </div>
 </div>
