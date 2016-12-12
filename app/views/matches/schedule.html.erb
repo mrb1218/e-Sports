@@ -1,22 +1,312 @@
 <!DOCTYPE html>
 <html>
-<h4><font face="sans-serif"> eSports 2016 Schedule </front></h4>
+<h2><font face="tahoma"> eSports 2016 Schedule </front></h2>
 <hr>
 
 
-    <div class="container-fluid">
+
+
+<!-- DECEMBER 25 MATCHES -->
+<!-- League of Legends -->
+<% league=League.first%>
+<div style="text-align:center">
+    <h3><font face="sans-serif"> Today, 25th of December </front></h3> <br>
+</div>
+      <div class="container">
+          <div class="row">
+           <div class="col-md-12">
+             <h4><font face="sans-serif" color="#B4A173"><a><href="/leagues/1">  League of  Legends </a></font></h4>
+               <br>
+              <div class="col-md-4">
+                    <% match = Match.where(league_id: league.id).order('match_date_time ASC').first; if match != nil %>
+                    <% team1 = Team.where(id: match.team1ID).first; team2 = Team.where(id: match.team2ID).first; %>
+                      <a href="/teams/<%= team1.id %>">
+                          <img class="upcoming_matches_team_logo" src="/assets/team_<%= team1.id %>"/>
+                      vs.
+                      <a href="/teams/<%= team2.id %>">
+                          <img class="upcoming_matches_team_logo" src="/assets/team_<%= team2.id %>"/>
+                      </a>
+                    <div style="text-align:right">
+                      <a href="/matches/<%= match.id %>">
+                        <small><%= match.match_date_time.strftime(" @ %H:%M") %></small>
+                      </a>
+                    </div>
+                  <% end %>
+               </div>
+               <div class="col-md-4">
+                     <% match = Match.where(league_id: league.id).order('match_date_time ASC').second; if match != nil %>
+                     <% team1 = Team.where(id: match.team1ID).first; team2 = Team.where(id: match.team2ID).first; %>
+                       <a href="/teams/<%= team1.id %>">
+                           <img class="upcoming_matches_team_logo" src="/assets/team_<%= team1.id %>"/>
+                       </a>
+                       vs.
+                       <a href="/teams/<%= team2.id %>">
+                           <img class="upcoming_matches_team_logo" src="/assets/team_<%= team2.id %>"/>
+                       </a>
+                     <div style="text-align:right">
+                       <a href="/matches/<%= match.id %>">
+                         <small><%= match.match_date_time.strftime(" ~ %H:%M") %></small>
+                       </a>
+                     </div>
+                </div>
+                <% end %>
+             <div class="col-md-4">
+                   <% match = Match.where(league_id: league.id).order('match_date_time ASC').third; if match != nil %>
+                   <% team1 = Team.where(id: match.team1ID).first; team2 = Team.where(id: match.team2ID).first; %>
+                     <a href="/teams/<%= team1.id %>">
+                        <img class="upcoming_matches_team_logo" src="/assets/team_<%= team1.id %>"/>
+                              vs.
+                            <a href="/teams/<%= team2.id %>">
+                                <img class="upcoming_matches_team_logo" src="/assets/team_<%= team2.id %>"/>
+                            </a>
+                        <div style="text-align:right">
+                            <a href="/matches/<%= match.id %>">
+                                <small><%= match.match_date_time.strftime(" ~ %H:%M") %></small>
+                            </a>
+                        </div>
+                 <% end %>
+              </div>
+            </div>
+          </div>
+       </div>
+       <br>
+
+<!-- CounterStrike - Global Offensive -->
+<% league=League.second%>
+ <div class="container">
+     <div class="row">
+      <div class="col-md-12">
+        <h4><font face="sans-serif" color="#B4A173"><a><href="/leagues/2">  Counter-Strike: Global Offensive </a></font></h4>
+          <br>
+         <div class="col-md-4">
+               <% match = Match.where(league_id: league.id).order('match_date_time ASC').first; if match != nil %>
+               <% team1 = Team.where(id: match.team1ID).first; team2 = Team.where(id: match.team2ID).first; %>
+                 <a href="/teams/<%= team1.id %>">
+                     <img class="upcoming_matches_team_logo" src="/assets/team_<%= team1.id %>"/>
+                 vs.
+                 <a href="/teams/<%= team2.id %>">
+                     <img class="upcoming_matches_team_logo" src="/assets/team_<%= team2.id %>"/>
+                 </a>
+               <div style="text-align:right">
+                 <a href="/matches/<%= match.id %>">
+                   <small><%= match.match_date_time.strftime(" ~ %H:%M") %></small>
+                 </a>
+               </div>
+             <% end %>
+          </div>
+          <div class="col-md-4">
+                <% match = Match.where(league_id: league.id).order('match_date_time ASC').second; if match != nil %>
+                <% team1 = Team.where(id: match.team1ID).first; team2 = Team.where(id: match.team2ID).first; %>
+                  <a href="/teams/<%= team1.id %>">
+                      <img class="upcoming_matches_team_logo" src="/assets/team_<%= team1.id %>"/>
+                  </a>
+                  vs.
+                  <a href="/teams/<%= team2.id %>">
+                      <img class="upcoming_matches_team_logo" src="/assets/team_<%= team2.id %>"/>
+                  </a>
+                <div style="text-align:right">
+                  <a href="/matches/<%= match.id %>">
+                    <small><%= match.match_date_time.strftime(" ~ %H:%M") %></small>
+                  </a>
+                </div>
+           </div>
+           <% end %>
+       </div>
+     </div>
+  </div>
+  <br>
+
+<!--Overwatch -->
+<% league=League.third%>
+<div class="container">
+   <div class="row">
+    <div class="col-md-12">
+      <h4><font face="sans-serif" color="#B4A173"><a><href="/leagues/2">  Overwatch </a></font></h4>
+        <br>
+       <div class="col-md-4">
+             <% match = Match.where(league_id: league.id).order('match_date_time ASC').first; if match != nil %>
+             <% team1 = Team.where(id: match.team1ID).first; team2 = Team.where(id: match.team2ID).first; %>
+               <a href="/teams/<%= team1.id %>">
+                   <img class="upcoming_matches_team_logo" src="/assets/team_<%= team1.id %>"/>
+               vs.
+               <a href="/teams/<%= team2.id %>">
+                   <img class="upcoming_matches_team_logo" src="/assets/team_<%= team2.id %>"/>
+               </a>
+             <div style="text-align:right">
+               <a href="/matches/<%= match.id %>">
+                 <small><%= match.match_date_time.strftime(" ~ %H:%M") %></small>
+               </a>
+             </div>
+           <% end %>
+        </div>
+      </div>
+   </div>
+</div>
+<br>
+
+
+
+<!-- DECEMBER 27 MATCHES -->
+<!-- League of legends -->
+<% league=League.first%>
+<div style="text-align:center">
+<h3><font face="sans-serif">  27th of December </front></h3> <br>
+</div>
+<div class="container">
+    <div class="row">
+     <div class="col-md-12">
+       <h4><font face="sans-serif" color="#B4A173"><a><href="/leagues/1">  League of Legends </a></font></h4>
+         <br>
+        <div class="col-md-4">
+              <% match = Match.where(league_id: league.id).order('match_date_time ASC').fourth; if match != nil %>
+              <% team1 = Team.where(id: match.team1ID).first; team2 = Team.where(id: match.team2ID).first; %>
+                <a href="/teams/<%= team1.id %>">
+                    <img class="upcoming_matches_team_logo" src="/assets/team_<%= team1.id %>"/>
+                vs.
+                <a href="/teams/<%= team2.id %>">
+                    <img class="upcoming_matches_team_logo" src="/assets/team_<%= team2.id %>"/>
+                </a>
+              <div style="text-align:right">
+                <a href="/matches/<%= match.id %>">
+                  <small><%= match.match_date_time.strftime(" @ %H:%M") %></small>
+                </a>
+              </div>
+            <% end %>
+         </div>
+        </div>
+      </div>
+    </div>
+ </div>
+ <br>
+
+ <!-- CounterStrike - Global Offensive -->
+<% league=League.second%>
+<div class="container">
+  <div class="row">
+   <div class="col-md-12">
+     <h4><font face="sans-serif" color="#B4A173"><a><href="/leagues/2">  Counter-Strike: Global Offensive </a></font></h4>
+       <br>
+      <div class="col-md-4">
+            <% match = Match.where(league_id: league.id).order('match_date_time ASC').third; if match != nil %>
+            <% team1 = Team.where(id: match.team1ID).first; team2 = Team.where(id: match.team2ID).first; %>
+              <a href="/teams/<%= team1.id %>">
+                  <img class="upcoming_matches_team_logo" src="/assets/team_<%= team1.id %>"/>
+              vs.
+              <a href="/teams/<%= team2.id %>">
+                  <img class="upcoming_matches_team_logo" src="/assets/team_<%= team2.id %>"/>
+              </a>
+            <div style="text-align:right">
+              <a href="/matches/<%= match.id %>">
+                <small><%= match.match_date_time.strftime(" ~ %H:%M") %></small>
+              </a>
+            </div>
+          <% end %>
+       </div>
+       <div class="col-md-4">
+             <% match = Match.where(league_id: league.id).order('match_date_time ASC').fourth; if match != nil %>
+             <% team1 = Team.where(id: match.team1ID).first; team2 = Team.where(id: match.team2ID).first; %>
+               <a href="/teams/<%= team1.id %>">
+                   <img class="upcoming_matches_team_logo" src="/assets/team_<%= team1.id %>"/>
+               </a>
+               vs.
+               <a href="/teams/<%= team2.id %>">
+                   <img class="upcoming_matches_team_logo" src="/assets/team_<%= team2.id %>"/>
+               </a>
+             <div style="text-align:right">
+               <a href="/matches/<%= match.id %>">
+                 <small><%= match.match_date_time.strftime(" ~ %H:%M") %></small>
+               </a>
+             </div>
+        </div>
+        <% end %>
+    </div>
+  </div>
+</div>
+<br>
+
+<!-- Dota 2-->
+<% league=League.fourth%>
+  <div class="container">
+      <div class="row">
+       <div class="col-md-12">
+         <h4><font face="sans-serif" color="#B4A173"><a><href="/leagues/1"> Dota 2</a></font></h4>
+           <br>
+          <div class="col-md-4">
+                <% match = Match.where(league_id: league.id).order('match_date_time ASC').second; if match != nil %>
+                <% team1 = Team.where(id: match.team1ID).first; team2 = Team.where(id: match.team2ID).first; %>
+                  <a href="/teams/<%= team1.id %>">
+                      <img class="upcoming_matches_team_logo" src="/assets/team_<%= team1.id %>"/>
+                  vs.
+                  <a href="/teams/<%= team2.id %>">
+                      <img class="upcoming_matches_team_logo" src="/assets/team_<%= team2.id %>"/>
+                  </a>
+                <div style="text-align:right">
+                  <a href="/matches/<%= match.id %>">
+                    <small><%= match.match_date_time.strftime(" @ %H:%M") %></small>
+                  </a>
+                </div>
+              <% end %>
+           </div>
+           <div class="col-md-4">
+                 <% match = Match.where(league_id: league.id).order('match_date_time ASC').third; if match != nil %>
+                 <% team1 = Team.where(id: match.team1ID).first; team2 = Team.where(id: match.team2ID).first; %>
+                   <a href="/teams/<%= team1.id %>">
+                       <img class="upcoming_matches_team_logo" src="/assets/team_<%= team1.id %>"/>
+                   </a>
+                   vs.
+                   <a href="/teams/<%= team2.id %>">
+                       <img class="upcoming_matches_team_logo" src="/assets/team_<%= team2.id %>"/>
+                   </a>
+                 <div style="text-align:right">
+                   <a href="/matches/<%= match.id %>">
+                     <small><%= match.match_date_time.strftime(" ~ %H:%M") %></small>
+                   </a>
+                 </div>
+            </div>
+            <% end %>
+         <div class="col-md-4">
+               <% match = Match.where(league_id: league.id).order('match_date_time ASC').fourth; if match != nil %>
+               <% team1 = Team.where(id: match.team1ID).first; team2 = Team.where(id: match.team2ID).first; %>
+                 <a href="/teams/<%= team1.id %>">
+                    <img class="upcoming_matches_team_logo" src="/assets/team_<%= team1.id %>"/>
+                          vs.
+                        <a href="/teams/<%= team2.id %>">
+                            <img class="upcoming_matches_team_logo" src="/assets/team_<%= team2.id %>"/>
+                        </a>
+                    <div style="text-align:right">
+                        <a href="/matches/<%= match.id %>">
+                            <small><%= match.match_date_time.strftime(" ~ %H:%M") %></small>
+                        </a>
+                    </div>
+             <% end %>
+          </div>
+        </div>
+      </div>
+   </div>
+   <br>
+
+
+
+
+
+
+
+
+
+
+<!--    <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-3 col-lg-3">
             <font face="sans-serif"> Today, 13th of December </front> <br>
               <font face="sans-serif"> Main Arena </front>
         </div>
         <br>
-        <div class="col-sm-5 col-md-3 col-lg-6">
+        <div class="col-sm-5 col-md-3 col-lg-7">
           <font face="sans-serif" color="#474D95"> <a href="/leagues/1">  League of  Legends </a></font>
             <br>
-              <font face="sans-serif"> ~11:00  MT :
-                <div class="col-sm-5 col-md-3 col-lg-3"> <img src="/assets/team_1.png" style="width: 20%; height: 20%"/> vs. <img src="/assets/team_2.png" style="width: 15%; height: 15%"/>
-                  <img src="/assets/team_1.png" style="width: 20%; height: 20%"/> vs. <img src="/assets/team_2.png" style="width: 15%; height: 15%"/>
+                <div class="col-sm-5 col-md-3 col-lg-6">
+                  <img src="/assets/team_1.png" style="width: 30%; height: 30%"/> vs. <img src="/assets/team_2.png" style="width: 25%; height: 25%"/>
+
                 </div>
               </font>
             <br>
@@ -35,6 +325,13 @@
           </div>
         </div>
       </div>
+
+
+
+
+
+
+
 
       <div class="container-fluid">
       <div class="row">
@@ -62,7 +359,7 @@
                 <font face="sans-serif"> ~21:00  MT : Round 1 - Match 4 </font>
           </div>
         </div>
-      </div>
+      </div> -->
 
 
 
