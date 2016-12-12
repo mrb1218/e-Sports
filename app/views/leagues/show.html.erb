@@ -1,12 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= @league.league_name %></h1>
-
-<img src="/images/league_<%= @league.id %>.jpg" class="img-fluid" style="width: 40%; height: 40%"/>
-
-<p>
-  <h4>
-    <strong>Prize money:</strong>
-    <%= @league.prize_money %>
-  </h4>
-</p>
+<div class="row">
+  <div class="col-xs-12 col-md-6" style="text-align:center;">
+    <img src="/assets/league_<%= @league.id %>.jpg" class="img-fluid" style="width: 100%;"/>
+    <h1><strong>Prize Money:</strong></h1>
+    <div class="label label-success" style="font-size: 30px;">$<%= number_with_delimiter(@league.prize_money, :delimiter => ',') %></div>
+    <br>
+    <br>
+  </div>
+  <div class="col-xs-12 col-md-6">
+    <h2 style="text-align:center;">Upcoming Matches</h2>
+    <% Match.where(league_id: @league.id).order('match_date_time ASC').each do |match| %>
+    <% team1 = Team.where(id: match.team1ID).first; team2 = Team.where(id: match.team2ID).first; %>
+      <div class="col-xs-12" style="text-align:center;">
+        <a href="/teams/<%= team1.id %>">
+          <img class="upcoming_matches_team_logo" src="/assets/team_<%= team1.id %>.png"/>
+        </a>
+        <a href="/matches/<%= match.id %>">
+          <%= match.match_date_time.strftime("%m-%d-%Y @ %H:%M") %>
+        </a>
+        <a href="/teams/<%= team2.id %>">
+          <img class="upcoming_matches_team_logo" src="/assets/team_<%= team2.id %>.png"/>
+        </a>
+      </div>
+    <% end %>
+  </div>
+</div>
