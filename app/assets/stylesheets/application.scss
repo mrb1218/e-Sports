@@ -22,10 +22,20 @@
   color:black
 }
 
+
 .field_name{
   color: white
 }
-//From Scaffolds
+
+p.notice {
+  padding: 5px;
+}
+
+p {
+  margin: auto;
+  padding: 0px;
+}
+
 body {
   background-color:#2d332d;
   color: #E4E2F1  ;
@@ -92,6 +102,28 @@ div {
 
 label {
   display: block;
+}
+
+//Search input
+#search-div {
+  padding-right: 10%;
+}
+
+#search-input {
+  background-color: gray;
+  color: darkgray;
+  width:300px;
+}
+
+#search-button {
+  background-color: gray;
+  color: darkgray;
+}
+
+
+//Matches
+.match_header, .match_team {
+  text-align: center;
 }
 
 //League, Team, Match, Player

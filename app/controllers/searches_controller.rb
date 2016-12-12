@@ -8,7 +8,8 @@ class SearchesController < ApplicationController
     if params[:search]
       leagues = League.search(params[:search]).order("created_at DESC")
       teams = Team.search(params[:search]).order("created_at DESC")
-      @searches = leagues + teams
+      players = Player.search(params[:search]).order("created_at DESC")
+      @searches = leagues + teams + players
     else
       @searches = League.all.order("created_at DESC")
     end

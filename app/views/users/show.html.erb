@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 <p>
   <strong>First name:</strong>
@@ -20,24 +20,17 @@
   <%= @user.phone_number %>
 </p>
 
-<p>
-  <strong>Coachid:</strong>
-  <%= @user.coachID %>
-</p>
 
-<p>
-  <strong>Age:</strong>
-  <%= @user.age %>
-</p>
+
 
 <p>
   <strong>Region:</strong>
   <%= @user.region %>
 </p>
 
-<p>
-  <strong>Player:</strong>
-  <%= @user.player %>
-</p>
 
-<%= link_to 'Back', users_path %>
+<% if current_user.present? %>
+   <a href="/users/<%= @user.id %>/edit"> Edit
+  </a>
+<% end %>
+
