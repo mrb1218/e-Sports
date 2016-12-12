@@ -1,48 +1,47 @@
 <p id="notice"><%= notice %></p>
 
 <div class="row">
-  <div class="col-xs-12 col-sm-4">
+  <div class="col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-0" style="text-align:center;">
     <h1><strong><%= @team.team_name %></strong></h1>
-    <img class="team_logo" src="/assets/team_<%= @team.id %>.png" style="width:80%"/>
+    <img class="team_logo" src="/assets/team_<%= @team.id %>.png"/>
     <h3><%= League.find(String(@team.league_id)).league_name %></h3>
-    <h4><strong>Coach: <% if @team.coachID != ''%>
-                       <%= User.find(String(@team.coachID)).first_name%>
-                       <%= User.find(String(@team.coachID)).last_name%>
-                      <% else %> No coach for this team
-                      <% end %></strong></h4>
+    <h4 class="team_coach">
+      Coach:
+      <% if @team.coachID != ''%>
+        <%= User.find(String(@team.coachID)).first_name%>
+        <%= User.find(String(@team.coachID)).last_name%>
+      <% else %>
+        No coach for this team
+      <% end %>
+    </h4>
     <h5 class="team-bio"><%= @team.bio %></h5>
   </div>
-  <div class="col-xs-12 col-sm-4">
+  <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0">
     <h3>Players</h3>
       <% players = Player.where(team_id: @team.id); if players.count > 0 %>
       <div class="list-group">
-
         <% players.each do |player| %>
-
         <a href='/players/<%= player.id %>' class="list-group-item players">
           <h4 class="list-group-item-heading"><%= player.ign %></h4>
           <%= player.in_game_role %>
         </a>
-
-              <% end %>
-        <%= link_to "Add Player", new_team_player_path(@team.id) %>
+        <% end %>
       </div>
       <% else %>
         <p class="no-players">No players on this team</p>
-
-
-        <%= link_to "Add Player", new_team_player_path(@team.id) %>
-
+      <% end %>
+      <% if user_signed_in? %>
+      <%= link_to "Add Player", new_team_player_path(@team.id) %>
       <% end %>
   </div>
-
-  <div class="col-xs-12 col-sm-4"><h3>Team Stats</h3>
+  <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0">
+    <h3>Team Stats</h3>
     <% team_stats = Statistic.where(team_id: @team.id); %>
     <div class="list-group">
-    <b> Kills:</b>  <%= team_stats.sum("kills") %><br>
-    <b> Deaths:</b>  <%= team_stats.sum("deaths") %><br>
-    <b> Wins:</b>  <%= team_stats.sum("wins") %><br>
-    <b> Losses:</b>  <%= team_stats.sum("losses") %><br>
+      <b>Kills:</b> <%= team_stats.sum("kills") %><br>
+      <b>Deaths:</b> <%= team_stats.sum("deaths") %><br>
+      <b>Wins:</b> <%= team_stats.sum("wins") %><br>
+      <b>Losses:</b> <%= team_stats.sum("losses") %><br>
     </div>
 </div>
 </div>

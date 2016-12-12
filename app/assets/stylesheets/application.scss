@@ -120,7 +120,6 @@ label {
   color: darkgray;
 }
 
-
 //Matches
 .match_header, .match_team {
   text-align: center;
@@ -133,6 +132,11 @@ th {
 
 td {
   padding: 5px;
+}
+
+//Team page
+.team_coach {
+  font-weight: bold;
 }
 
 //Players
@@ -191,7 +195,7 @@ li.signed_in {
 #about-us #team ul li:first-child,
 #about-us #team ul > li:first-child + li + li,
 #about-us #team ul > li:first-child + li + li + li + li{margin-left:0;}
-#about-us #team ul > li:first-child + li + li + li + li + li + li{margin-left:0;}  
+#about-us #team ul > li:first-child + li + li + li + li + li + li{margin-left:0;}
 #about-us #team ul > li:first-child, #about-us #team ul > li:first-child + li{margin-top:0;}
 #about-us #team ul li figure{}
 #about-us #team ul li figure img{padding:4px; border:1px solid #CCCCCC;}
