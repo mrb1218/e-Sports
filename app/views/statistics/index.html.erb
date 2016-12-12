@@ -1,28 +1,35 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Results</h1>
-  <% past_matches = @matches.all %>
-<% past_matches.each do |match| %>
-<div class = "col-xs-6 col-lg-4">
+<% @matches.all.each do |match| %>
+<div class="col-xs-6 col-md-4">
   <div class="list-group">
     <a href = '/matches/<%=match.id%>' class="list-group-item">
-        <b><%= League.where(id: match.league_id).first.league_name %> <br>
-        <%= match.match_date_time.to_date %></b>
-        <table>
-            <tbody>
-            <tr>
-              <td> <%= Team.where(id: match.team1ID).first.team_name %></td>
-              <td> <%= match.team1Score %></td>
-              </tr><br>
-            <tr>
-              <td>  <%= Team.where(id: match.team2ID).first.team_name %></td>
-              <td>  <%= match.team2Score %></td>
-              </tr>
-            </tbody>
-        </table>
-        </a>
-    </div>
+      <b><%= match.match_date_time.to_date %></b>
+      <table>
+        <tbody>
+        <tr>
+          <td><%= Team.where(id: match.team1ID).first.team_name %></td>
+          <td>
+            <span class="label label-<% if Integer(match.team1Score) > Integer(match.team2Score) %>success<% else %>danger<% end %>">
+              <%= match.team1Score %>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td><%= Team.where(id: match.team2ID).first.team_name %></td>
+          <td>
+            <span class="label label-<% if Integer(match.team2Score) > Integer(match.team1Score) %>success<% else %>danger<% end %>">
+              <%= match.team2Score %>
+            </span>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <b><%= League.where(id: match.league_id).first.league_name %></b>
+    </a>
   </div>
+</div>
           <% end %>
           <% if user_signed_in? and current_user.has_any_role? :admin %>
             <%= link_to "Add Stats", new_statistic_path, class: "btn btn-primary"%>
