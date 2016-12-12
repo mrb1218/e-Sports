@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   #Devise uses users
   devise_for :users
-  resources :users, only: [:index]
+  resources :users, only: [:index, :show, :edit, :update]
   #List resources
   resources :matches
   resources :leagues

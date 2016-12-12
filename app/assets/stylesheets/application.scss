@@ -22,6 +22,7 @@
   color:black
 }
 
+
 .field_name{
   color: white
 }
@@ -102,6 +103,23 @@ div {
 label {
   display: block;
 }
+
+//Search input
+#search-div {
+  padding-right: 10%;
+}
+
+#search-input {
+  background-color: gray;
+  color: darkgray;
+  width:300px;
+}
+
+#search-button {
+  background-color: gray;
+  color: darkgray;
+}
+
 
 //Matches
 .match_header, .match_team {
