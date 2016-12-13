@@ -19,7 +19,7 @@
       <% players = Player.where(team_id: @team.id); if players.count > 0 %>
       <div class="list-group">
         <% players.each do |player| %>
-        <a href='/players/<%= player.id %>' class="list-group-item players">
+        <a href='/teams/<%= player.team_id%>/players/<%=player.id=%>' class="list-group-item players">
           <h4 class="list-group-item-heading"><%= player.ign %></h4>
           <%= player.in_game_role %>
         </a>
