@@ -1,8 +1,7 @@
 <div class="row user_section">
   <% if user_signed_in? %>
-    <h1>Hello, <%= current_user.first_name %> <%= current_user.last_name %></h1>
+    <h1>Hello, <%= current_user.first_name %> <%= current_user.last_name %> | <a href="/users/<%= current_user.id %>/edit"> Edit Profile </a></h1>
     <div class="col-xs-6 home_favorites">
-      <h6><a href="<%= favorites_url %>">Add / Edit Favorites</a></h6>
       <% favorites = Favorite.where(user_id: current_user.id).all %>
       <% if favorites.length > 0 %>
         <div class="list-group">
@@ -28,12 +27,10 @@
           <% end %>
         <% end %>
         </div>
+        <h4><a href="<%= favorites_url %>">Add / Edit Favorites</a></h4>
       <% else %>
         <p>You have not set any favorites yet!</p>
       <% end %>
-    </div>
-    <div class="col-xs-6">
-      <a href="/users/<%= current_user.id %>/edit"> Edit Profile
     </div>
   <% end %>
 </div>
@@ -50,8 +47,8 @@
     </a>
   </div>
   <div class="col-xs-12 col-sm-6 upcoming_match">
-  <% match = Match.where(league_id: league.id).order('match_date_time ASC').first; if match != nil %>
-  <% team1 = Team.where(id: match.team1ID).first; team2 = Team.where(id: match.team2ID).first; %>
+  <% match = Match.where(league_id: league.id).where("match_date_time > ?", (DateTime.now.to_time + 2.hours).to_datetime).order('match_date_time ASC').first; if match != nil %>
+    <% team1 = Team.where(id: match.team1ID).first; team2 = Team.where(id: match.team2ID).first; %>
     <a href="/teams/<%= team1.id %>">
       <img class="upcoming_matches_team_logo" src="/assets/team_<%= team1.id %>.png"/>
     </a>
@@ -62,7 +59,7 @@
       <img class="upcoming_matches_team_logo" src="/assets/team_<%= team2.id %>.png"/>
     </a>
   <% else %>
-    <h3>No upcoming matches for this team</h3>
+    <!--<h3>No upcoming matches for this team</h3>-->
   <% end %>
   </div>
   <div class="col-xs-12 col-sm-6 upcoming_match">
