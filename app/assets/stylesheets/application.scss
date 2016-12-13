@@ -120,7 +120,6 @@ label {
   color: darkgray;
 }
 
-
 //Matches
 .match_header, .match_team {
   text-align: center;
@@ -133,6 +132,11 @@ th {
 
 td {
   padding: 5px;
+}
+
+//Team page
+.team_coach {
+  font-weight: bold;
 }
 
 //Players
