@@ -30,8 +30,10 @@
       <% else %>
         <p class="no-players">No players on this team</p>
       <% end %>
-      <% if @team.coachID == String(current_user.id)%>
-      <%= link_to "Add Player", new_team_player_path(@team.id) %>
+      <% if user_signed_in? %>
+        <% if @team.coachID == String(current_user.id)%>
+        <%= link_to "Add Player", new_team_player_path(@team.id) %>
+        <% end %>
       <% end %>
   </div>
   <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0">
