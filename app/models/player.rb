@@ -12,6 +12,6 @@ class Player < ApplicationRecord
   # validates :email, presence: true
 
   	def self.search(search)
-  		where("ign LIKE ?", "%#{search}%") 
+  		where("ign LIKE ?", "%#{search}%")
 	end
 end
