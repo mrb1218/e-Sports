@@ -14,6 +14,7 @@ class TeamsController < ApplicationController
   # GET /teams/new
   def new
     @team = Team.new
+    authorize @team
   end
 
   # GET /teams/1/edit
@@ -70,5 +71,10 @@ class TeamsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def team_params
       params.require(:team).permit(:bio, :coachID, :team_name, :league_id)
+    end
+
+    def user_not_authorized
+      flash[:notice] = "You are not cool enough to do this - go back from whence you came."
+      redirect_to(leagues_path)
     end
 end
