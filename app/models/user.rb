@@ -9,6 +9,8 @@ class User < ApplicationRecord
 
    after_create :assign_default_role
 
+   validates_uniqueness_of :email
+
   def assign_default_role
     self.add_role(:newuser) if self.roles.blank?
   end
@@ -24,7 +26,7 @@ class User < ApplicationRecord
   end
 
   def self.search(search)
-      where("first_name LIKE ?", "%#{search}%") 
+      where("first_name LIKE ?", "%#{search}%")
   end
 
 
