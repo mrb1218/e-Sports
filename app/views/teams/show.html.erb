@@ -40,8 +40,8 @@
     <div class="list-group">
       <b>Kills:</b> <%= team_stats.sum("kills") %><br>
       <b>Deaths:</b> <%= team_stats.sum("deaths") %><br>
-      <b>Wins:</b> <%= team_stats.sum("wins") %><br>
-      <b>Losses:</b> <%= team_stats.sum("losses") %><br>
+      <b>Wins:</b> <%= team_stats.sum("wins")/team_stats.count %><br>
+      <b>Losses:</b> <%= team_stats.sum("losses")/team_stats.count %><br>
     </div>
 </div>
 </div>
