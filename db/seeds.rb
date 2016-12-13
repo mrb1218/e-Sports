@@ -16,11 +16,11 @@ Team.delete_all
 #Create teams
 teams = Team.create([
   { id: '1', bio: 'This is team 1, SKT T1', coachID: '6', team_name: 'SKT T1', league_id: leagues[0].id},
-  { id: '2', bio: 'This is team 2, Samsung Galaxy', coachID: '12', team_name: 'Samsung Galaxy', league_id: leagues[0].id},
+  { id: '2', bio: 'This is team 2, Samsung Galaxy', coachID: '', team_name: 'Samsung Galaxy', league_id: leagues[0].id},
   { id: '3', bio: 'This is team 3, Saigon Jokers', coachID: '', team_name: 'Saigon Jokers', league_id: leagues[0].id},
-  { id: '4', bio: 'This is team 4, Team Solomid', coachID: '', team_name: 'Team Solomid', league_id: leagues[0].id},
-  { id: '5', bio: 'This is team 5, NiP', coachID: '', team_name: 'NiP', league_id: leagues[1].id},
-  { id: '6', bio: 'This is team 6, Cloud 9', coachID: '', team_name: 'Cloud 9', league_id: leagues[1].id},
+  { id: '4', bio: 'This is team 4, Team Solomid', coachID: '12', team_name: 'Team Solomid', league_id: leagues[0].id},
+  { id: '5', bio: 'This is team 5, NiP', coachID: '18', team_name: 'NiP', league_id: leagues[1].id},
+  { id: '6', bio: 'This is team 6, Cloud 9', coachID: '24', team_name: 'Cloud 9', league_id: leagues[1].id},
   { id: '7', bio: 'This is team 7, SK Gaming', coachID: '', team_name: 'SK Gaming', league_id: leagues[1].id},
   { id: '8', bio: 'This is team 8, Fnatic', coachID: '', team_name: 'Fnatic', league_id: leagues[1].id},
   { id: '9', bio: 'This is team 9, TeamEnvyUs', coachID: '', team_name: 'TeamEnvyUs', league_id: leagues[2].id},
@@ -102,30 +102,30 @@ Player.delete_all
 players = Player.create([
   #### League of Legends
   ####-----  SKT T1 -----
-  { id: '1', age: '21', country: 'S.Korea', ign: 'Duke', in_game_role: 'Top', team_id: teams[1].id, user_id: users[0].id },
-  { id: '2', age: '18', country: 'S.Korea', ign: 'Blank', in_game_role: 'Jungler', team_id: teams[1].id, user_id: users[1].id },
-  { id: '3', age: '20', country: 'S.Korea', ign: 'Faker', in_game_role: 'Mid Laner', team_id: teams[1].id, user_id: users[2].id },
-  { id: '4', age: '20', country: 'S.Korea', ign: 'Bang', in_game_role: 'AD Carry', team_id: teams[1].id, user_id: users[3].id },
-  { id: '5', age: '20', country: 'S.Korea', ign: 'Wolf', in_game_role: 'Support', team_id: teams[1].id, user_id: users[4].id },
+  { id: '1', age: '21', country: 'S.Korea', ign: 'Duke', in_game_role: 'Top', team_id: teams[0].id, user_id: users[0].id },
+  { id: '2', age: '18', country: 'S.Korea', ign: 'Blank', in_game_role: 'Jungler', team_id: teams[0].id, user_id: users[1].id },
+  { id: '3', age: '20', country: 'S.Korea', ign: 'Faker', in_game_role: 'Mid Laner', team_id: teams[0].id, user_id: users[2].id },
+  { id: '4', age: '20', country: 'S.Korea', ign: 'Bang', in_game_role: 'AD Carry', team_id: teams[0].id, user_id: users[3].id },
+  { id: '5', age: '20', country: 'S.Korea', ign: 'Wolf', in_game_role: 'Support', team_id: teams[0].id, user_id: users[4].id },
   ####-----    Team Solomid  ------
-  { id: '6', age: '21', country: 'USA', ign: 'Hauntzer', in_game_role:'Top', team_id: teams[4].id, user_id: users[4].id },
-  { id: '7', age: '21', country: 'Denmark', ign: 'Svenskeren', in_game_role:'Jungler', team_id: teams[4].id, user_id: users[7].id },
-  { id: '8', age: '20', country: 'Denmark', ign: 'Bjersen', in_game_role:'Mid Laner', team_id: teams[4].id, user_id: users[8].id },
-  { id: '9', age: '19', country: 'China', ign: 'Biofrost', in_game_role:'Support', team_id: teams[4].id, user_id: users[9].id },
-  { id: '10', age: '23', country: 'USA', ign: 'Doublelift', in_game_role:'AD Carry', team_id: teams[4].id, user_id: users[10].id },
+  { id: '6', age: '21', country: 'USA', ign: 'Hauntzer', in_game_role:'Top', team_id: teams[3].id, user_id: users[4].id },
+  { id: '7', age: '21', country: 'Denmark', ign: 'Svenskeren', in_game_role:'Jungler', team_id: teams[3].id, user_id: users[7].id },
+  { id: '8', age: '20', country: 'Denmark', ign: 'Bjersen', in_game_role:'Mid Laner', team_id: teams[3].id, user_id: users[8].id },
+  { id: '9', age: '19', country: 'China', ign: 'Biofrost', in_game_role:'Support', team_id: teams[3].id, user_id: users[9].id },
+  { id: '10', age: '23', country: 'USA', ign: 'Doublelift', in_game_role:'AD Carry', team_id: teams[3].id, user_id: users[10].id },
   #### Counter-Strike: Global Offensive
   ####-------   NiP   -----
-  { id: '11', age: '28', country: 'Sweden', ign: 'f0rest', in_game_role:'AWPer', team_id: teams[5].id, user_id: users[12].id },
-  { id: '12', age: '28', country: 'Sweden', ign: 'GeT_RiGhT', in_game_role:'Leader', team_id: teams[5].id, user_id: users[13].id },
-  { id: '13', age: '25', country: 'Sweden', ign: 'friberg', in_game_role:'Entry Fragger', team_id: teams[5].id, user_id: users[14].id },
-  { id: '14', age: '25', country: 'Sweden', ign: 'Xizt', in_game_role:'Rifler', team_id: teams[5].id, user_id: users[15].id },
-  { id: '15', age: '23', country: 'Sweden', ign: 'pyth', in_game_role:'Rifler', team_id: teams[5].id, user_id: users[16].id },
+  { id: '11', age: '28', country: 'Sweden', ign: 'f0rest', in_game_role:'AWPer', team_id: teams[4].id, user_id: users[12].id },
+  { id: '12', age: '28', country: 'Sweden', ign: 'GeT_RiGhT', in_game_role:'Leader', team_id: teams[4].id, user_id: users[13].id },
+  { id: '13', age: '25', country: 'Sweden', ign: 'friberg', in_game_role:'Entry Fragger', team_id: teams[4].id, user_id: users[14].id },
+  { id: '14', age: '25', country: 'Sweden', ign: 'Xizt', in_game_role:'Rifler', team_id: teams[4].id, user_id: users[15].id },
+  { id: '15', age: '23', country: 'Sweden', ign: 'pyth', in_game_role:'Rifler', team_id: teams[4].id, user_id: users[16].id },
   ####-------   Cloud 9 -----
-  { id: '16', age: '18', country: 'USA', ign: 'Stewie2k', in_game_role:'Leader', team_id: teams[6].id, user_id: users[18].id },
-  { id: '17', age: '24', country: 'USA', ign: 'autimatic', in_game_role:'Lurker', team_id: teams[6].id, user_id: users[19].id },
-  { id: '18', age: '26', country: 'USA', ign: 'n0thing', in_game_role:'Rifler', team_id: teams[6].id, user_id: users[20].id },
-  { id: '19', age: '22', country: 'USA', ign: 'shroud', in_game_role:'Rifler', team_id: teams[6].id, user_id: users[21].id },
-  { id: '20', age: '23', country: 'USA', ign: 'Skadoodle', in_game_role:'AWPer', team_id: teams[6].id, user_id: users[22].id }
+  { id: '16', age: '18', country: 'USA', ign: 'Stewie2k', in_game_role:'Leader', team_id: teams[5].id, user_id: users[18].id },
+  { id: '17', age: '24', country: 'USA', ign: 'autimatic', in_game_role:'Lurker', team_id: teams[5].id, user_id: users[19].id },
+  { id: '18', age: '26', country: 'USA', ign: 'n0thing', in_game_role:'Rifler', team_id: teams[5].id, user_id: users[20].id },
+  { id: '19', age: '22', country: 'USA', ign: 'shroud', in_game_role:'Rifler', team_id: teams[5].id, user_id: users[21].id },
+  { id: '20', age: '23', country: 'USA', ign: 'Skadoodle', in_game_role:'AWPer', team_id: teams[5].id, user_id: users[22].id }
 ])
 
 seasons = Season.create([
