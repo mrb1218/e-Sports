@@ -98,11 +98,11 @@ users = User.create([
   #Test Player
   { first_name: 'Test', last_name: 'Player', region: 'USA', email: 'player@esports.com', password: 'test12' },
   #Test Player2
-  { first_name: 'Test', last_name: 'Player2', region: 'USA', email: 'player2@esports.com', password: 'test12' },
+  { first_name: 'Test1', last_name: 'Player2', region: 'USA', email: 'player2@esports.com', password: 'test12' },
   #Coach1
-  { first_name: 'Test', last_name: 'Coach', region: 'USA', email: 'coach@esports.com', password: 'test12' },
+  { first_name: 'Test2', last_name: 'Coach', region: 'USA', email: 'coach@esports.com', password: 'test12' },
   #Coach2
-  { first_name: 'Test', last_name: 'Coach2', region: 'USA', email: 'coach2@esports.com', password: 'test12' },
+  { first_name: 'Test3', last_name: 'Coach2', region: 'USA', email: 'coach2@esports.com', password: 'test12' },
   #Our data
   { first_name: 'Matthew', last_name: 'Greci', region: 'USA', email: 'mgreci@unm.edu', password: 'test12' }
 ])
