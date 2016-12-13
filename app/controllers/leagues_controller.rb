@@ -20,17 +20,19 @@ class LeaguesController < ApplicationController
   # GET /leagues/new
   def new
     @league = League.new
+    authorize @league
   end
 
   # GET /leagues/1/edit
   def edit
+    authorize @league
   end
 
   # POST /leagues
   # POST /leagues.json
   def create
     @league = League.new(league_params)
-
+    authorize @league
     respond_to do |format|
       if @league.save
         format.html { redirect_to @league, notice: 'League was successfully created.' }
@@ -59,7 +61,9 @@ class LeaguesController < ApplicationController
   # DELETE /leagues/1
   # DELETE /leagues/1.json
   def destroy
-    @league.destroy
+    # @league.destroy
+    League.find(params[:id]).destroy
+    authorize @league
     respond_to do |format|
       format.html { redirect_to leagues_url, notice: 'League was successfully destroyed.' }
       format.json { head :no_content }
