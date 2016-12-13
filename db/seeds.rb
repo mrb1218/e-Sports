@@ -2,7 +2,7 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
 #Delete all Leagues
-League.delete_all
+#League.delete_all
 #Create leagues
 leagues = League.create([
   { id: '1', prize_money: '40,000', league_name: 'League of Legends' },
@@ -12,7 +12,7 @@ leagues = League.create([
 ])
 
 #Delete all Teams
-Team.delete_all
+#Team.delete_all
 #Create teams
 teams = Team.create([
   { id: '1', bio: 'This is team 1, SKT T1', coachID: '6', team_name: 'SKT T1', league_id: leagues[0].id},
@@ -34,7 +34,7 @@ teams = Team.create([
 ])
 
 #Delete all Matches
-Match.delete_all
+#Match.delete_all
 #Create matches
 matches = Match.create([
   { id: "0", team1ID: teams[0].id, team2ID: teams[1].id, team1Score: "0", team2Score: "1", location: "G-play Civic Center", match_date_time: DateTime.new(2016,12,8,11), league_id: leagues[0].id},
@@ -57,7 +57,7 @@ matches = Match.create([
 ])
 
 #Delete all Users
-User.delete_all
+#User.delete_all
 #Create users
 users = User.create([
   ####-----  SKT T1
@@ -104,7 +104,7 @@ users = User.create([
 ])
 
 #Delete all Players
-Player.delete_all
+#Player.delete_all
 #Create players
 players = Player.create([
   #### League of Legends
@@ -136,14 +136,14 @@ players = Player.create([
 ])
 
 #Delete all Seasons
-Season.delete_all
+#Season.delete_all
 seasons = Season.create([
   { season_name: '2016' },
   { season_name: '2017' }
 ])
 
 #Delete all statistics
-Statistic.delete_all
+#Statistic.delete_all
 statistics = Statistic.create([
   { games_played: '1', kills: '1', deaths: '0', wins: '1', losses:'0', ties: '0', team_id: teams[0].id, player_id: players[0].id, season_id: seasons[0].id, match_id: matches[0].id },
   { games_played: '1', kills: '1', deaths: '0', wins: '1', losses:'0', ties: '0', team_id: teams[0].id, player_id: players[1].id, season_id: seasons[0].id, match_id: matches[0].id },
