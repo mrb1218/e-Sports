@@ -5,10 +5,10 @@
 League.delete_all
 #Create leagues
 leagues = League.create([
-  { id: '1', prize_money: '40000', league_name: 'League of Legends' },
-  { id: '2', prize_money: '60000', league_name: 'Counter-Strike: Global Offensive' },
-  { id: '3', prize_money: '35000', league_name: 'Overwatch' },
-  { id: '4', prize_money: '50000', league_name: 'Dota 2' }
+  { id: '1', prize_money: '40,000', league_name: 'League of Legends' },
+  { id: '2', prize_money: '60,000', league_name: 'Counter-Strike: Global Offensive' },
+  { id: '3', prize_money: '35,000', league_name: 'Overwatch' },
+  { id: '4', prize_money: '50,000', league_name: 'Dota 2' }
 ])
 
 #Delete all Teams
@@ -49,7 +49,7 @@ matches = Match.create([
   { id: "9", team1ID: teams[2].id, team2ID: teams[0].id, team1Score: "0", team2Score: "1", location: "G-play Civic Center", match_date_time: DateTime.new(2016,12,27,11), league_id: leagues[0].id},
   { id: "10", team1ID: teams[6].id, team2ID: teams[4].id, team1Score: "1", team2Score: "1", location: "G-play Civic Center", match_date_time: DateTime.new(2016,12,27,13), league_id: leagues[1].id},
   { id: "11", team1ID: teams[7].id, team2ID: teams[5].id, team1Score: "1", team2Score: "0", location: "G-play Civic Center", match_date_time: DateTime.new(2016,12,27,15), league_id: leagues[1].id},
-  { id: "12", team1ID: teams[5].id, team2ID: teams[7].id, team1Score: "0", team2Score: "1", location: "G-play Civic Center", match_date_time: DateTime.new(2016,12,27,17), league_id: leagues[3].id},
+  { id: "12", team1ID: teams[14].id, team2ID: teams[13].id, team1Score: "0", team2Score: "1", location: "G-play Civic Center", match_date_time: DateTime.new(2016,12,27,17), league_id: leagues[3].id},
   { id: "13", team1ID: teams[12].id, team2ID: teams[15].id, team1Score: "1", team2Score: "0", location: "G-play Civic Center", match_date_time: DateTime.new(2016,12,27,19), league_id: leagues[3].id}
 ])
 
