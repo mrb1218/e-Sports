@@ -34,16 +34,16 @@
           <% end %>
         <% end %>
         </div>
-        <h4><a href="<%= favorites_url %>">Add / Edit Favorites</a></h4>
       <% else %>
         <p>You have not set any favorites yet!</p>
       <% end %>
+      <h4><a href="<%= favorites_url %>">Add / Edit Favorites</a></h4>
     </div>
   <% end %>
 </div>
 
 <!-- Upcoming Mathces -->
-<h1>Upcoming Matches</h1>
+<h1>Matches</h1>
 <hr>
 <% League.all.each do |league| %>
 <div class="row" style="border:1px solid lightgray">
