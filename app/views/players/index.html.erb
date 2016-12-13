@@ -24,7 +24,7 @@
         <td><%= player.age %></td>
         <td><%= Team.where(id: player.team_id).first.team_name %></td>
         <td><%= link_to 'Show', player %></td>
-       
+        td><%= link_to 'Edit', edit_player_path %></td>
       </tr>
     <% end %>
   </tbody>
