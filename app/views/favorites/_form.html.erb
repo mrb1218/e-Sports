@@ -2,27 +2,24 @@
   <% if favorite.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(favorite.errors.count, "error") %> prohibited this favorite from being saved:</h2>
-
       <ul>
-      <% favorite.errors.full_messages.each do |message| %>
+        <% favorite.errors.full_messages.each do |message| %>
         <li><%= message %></li>
-      <% end %>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-  <!-- Create a drop down of available teams and players -->
-
   <div class="field">
-    <%= f.label :TeamID %>
-    <%= f.text_field :teamID %>
+    <%= f.label :Team %>
+    <%= f.collection_select :teamID, Team.order(:team_name),:id,:team_name, include_blank: true %>
   </div>
 
   <p>Or</p>
 
   <div class="field">
-    <%= f.label :PlayerID %>
-    <%= f.text_field :playerID %>
+    <%= f.label :Player %>
+    <%= f.collection_select :playerID, Player.order(:ign),:id,:ign, include_blank: true %>
   </div>
 
   <div class="actions">
