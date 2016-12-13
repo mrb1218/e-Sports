@@ -94,7 +94,7 @@ users = User.create([
   #Add more users here
   { id: '24', first_name: 'Danan', last_name: 'Flander', region: 'USA', email: 'kaniggit@cloud9.csgo.com', password: 'test12'},
   #Admin
-  { first_name: 'Admin', last_name: 'Admin', region: 'USA', email: 'admin@esports.com', password: 'test12' },
+  #{ first_name: 'Admin', last_name: 'Admin', region: 'USA', email: 'admin@esports.com', password: 'test12' },
   #Test Player
   { first_name: 'Test', last_name: 'Player', region: 'USA', email: 'player@esports.com', password: 'test12' },
   #Test Player2
