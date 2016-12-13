@@ -47,10 +47,13 @@ matches = Match.create([
   { id: "7", team1ID: teams[14].id, team2ID: teams[15].id, team1Score: "6", team2Score: "0", location: "G-play Civic Center", match_date_time: DateTime.new(2016,12,10,21), league_id: leagues[3].id},
   { id: "8", team1ID: teams[2].id, team2ID: teams[1].id, team1Score: "1", team2Score: "0", location: "G-play Civic Center", match_date_time: DateTime.new(2016,12,11,15), league_id: leagues[0].id},
   { id: "9", team1ID: teams[2].id, team2ID: teams[0].id, team1Score: "0", team2Score: "1", location: "G-play Civic Center", match_date_time: DateTime.new(2016,12,10,11), league_id: leagues[0].id},
-  { id: "10", team1ID: teams[6].id, team2ID: teams[4].id, team1Score: "1", team2Score: "1", location: "G-play Civic Center", match_date_time: DateTime.new(2016,12,13,10,15), league_id: leagues[1].id},
-  { id: "11", team1ID: teams[7].id, team2ID: teams[5].id, team1Score: "0", team2Score: "0", location: "G-play Civic Center", match_date_time: DateTime.new(2016,12,25,15), league_id: leagues[1].id},
-  { id: "12", team1ID: teams[14].id, team2ID: teams[13].id, team1Score: "0", team2Score: "0", location: "G-play Civic Center", match_date_time: DateTime.new(2016,12,25,17), league_id: leagues[3].id},
-  { id: "13", team1ID: teams[12].id, team2ID: teams[15].id, team1Score: "0", team2Score: "0", location: "G-play Civic Center", match_date_time: DateTime.new(2016,12,25,19), league_id: leagues[3].id}
+  { id: "10", team1ID: teams[6].id, team2ID: teams[4].id, team1Score: "1", team2Score: "4", location: "G-play Civic Center", match_date_time: DateTime.new(2016,12,13,10,15), league_id: leagues[1].id},
+  { id: "11", team1ID: teams[9].id, team2ID: teams[10].id, team1Score: "0", team2Score: "0", location: "G-play Civic Center", match_date_time: DateTime.new(2016,12,13,11,30), league_id: leagues[2].id},
+  { id: "12", team1ID: teams[7].id, team2ID: teams[5].id, team1Score: "0", team2Score: "0", location: "G-play Civic Center", match_date_time: DateTime.new(2016,12,25,15), league_id: leagues[1].id},
+  { id: "13", team1ID: teams[14].id, team2ID: teams[13].id, team1Score: "0", team2Score: "0", location: "G-play Civic Center", match_date_time: DateTime.new(2016,12,25,17), league_id: leagues[3].id},
+  { id: "14", team1ID: teams[12].id, team2ID: teams[15].id, team1Score: "0", team2Score: "0", location: "G-play Civic Center", match_date_time: DateTime.new(2016,12,25,19), league_id: leagues[3].id},
+  { id: "15", team1ID: teams[12].id, team2ID: teams[15].id, team1Score: "0", team2Score: "0", location: "G-play Civic Center", match_date_time: DateTime.new(2016,12,27,19), league_id: leagues[3].id}
+
 ])
 
 #Delete all Users
@@ -128,12 +131,14 @@ players = Player.create([
   { id: '20', age: '23', country: 'USA', ign: 'Skadoodle', in_game_role:'AWPer', team_id: teams[5].id, user_id: users[22].id }
 ])
 
+#Delete all Seasons
+Season.delete_all
 seasons = Season.create([
   { season_name: '2016' },
   { season_name: '2017' }
 ])
 
-#Delete all Players
+#Delete all statistics
 Statistic.delete_all
 statistics = Statistic.create([
   { games_played: '1', kills: '1', deaths: '0', wins: '1', losses:'0', ties: '0', team_id: teams[0].id, player_id: players[0].id, season_id: seasons[0].id, match_id: matches[0].id },

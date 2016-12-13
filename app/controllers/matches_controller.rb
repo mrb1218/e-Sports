@@ -7,6 +7,11 @@ class MatchesController < ApplicationController
     @matches = Match.all
   end
 
+  def schedule
+    @matches = Match.all
+    @leagues = League.all
+  end
+
   # GET /matches/1
   # GET /matches/1.json
   def show

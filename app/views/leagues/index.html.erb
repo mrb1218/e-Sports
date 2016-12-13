@@ -8,11 +8,13 @@
       <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-0">
         <a href='/leagues/<%=league.id%>'>
           <h4><%= league.league_name %></h4>
-          <img src="/assets/league_<%= league.id %>.jpg" class="img-fluid" style="width: 40%; height: 40%"/>
+          <img src="/assets/league_<%= league.id %>.jpg" class="img-fluid" style="width: 70%; height: 70%"/>
         </a>
       </div>
       <div class="col-xs-4 col-xs-offset-2 col-sm-3 col-sm-offset-0">
-        <h4>Prize Money: $<%= number_with_delimiter(league.prize_money, :delimiter => ',') %></h4>
+        <h4>Prize Money: </h4>
+        <div class="label label-success" style="font-size: 30px;">$<%= number_with_delimiter(league.prize_money, :delimiter => ',') %></div>
+        <!--<h4>Prize Money: $<%= number_with_delimiter(league.prize_money, :delimiter => ',') %></h4>-->
       </div>
       <div class="col-xs-4 col-sm-3">
         <h4>
@@ -21,8 +23,15 @@
           <% else %>
           <%= link_to "Register", new_user_session_path, class: "btn btn-primary"%>
           <% end %>
+          <% if user_signed_in? and current_user.has_any_role? :admin %>
+          <%= link_to "Edit", edit_league_path(league.id), class: "btn btn-primary"%>
+          <%= link_to "Delete",league_path(league.id), method: :delete, data: {confirm: 'Are you sure?'} %>
+        <% end %>
         </h4>
       </div>
     </div>
   <% end %>
+  <% if user_signed_in? and current_user.has_any_role? :admin %>
+  <%= link_to "Add New Leagues", new_league_path, class: "btn btn-primary"%>
+<% end %>
 </center>

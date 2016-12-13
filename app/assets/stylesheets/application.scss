@@ -22,9 +22,13 @@
   color:black
 }
 
-
 .field_name{
   color: white
+}
+
+//List-group-item
+.list-group-item {
+  background-color: lightgray;
 }
 
 p.notice {
@@ -283,19 +287,18 @@ div.upcoming_matches {
 	color:  inherit;
 }
 
-.footer-distributed .footer-right{
-	float: right;
-	margin-top: 0px;
+.footer-distributed .footer-social{
+	//float: right;
+  margin: auto;
 	max-width: 180px;
 }
 
-.footer-distributed .footer-right a{
+.footer-distributed .footer-social a{
 	display: inline-block;
 	width: 35px;
 	height: 35px;
 	background-color:  #186CA0;
 	border-radius: 5px;
-
 	font-size: 20px;
 	color: #FFFFFF;
 	text-align: center;
@@ -319,6 +322,13 @@ s {
 }
 .footer-logo .footer-sponsor s{
   padding-right: 1%;
+}
+.footer-logo-div {
+  display: inline-block;
+  margin: auto;
+}
+.footer-sponsor {
+  width: 13%;
 }
 
 /* If you don't want the footer to be responsive, remove these media queries */
