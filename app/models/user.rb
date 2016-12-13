@@ -7,6 +7,9 @@ class User < ApplicationRecord
   has_one :player
   has_many :favorites
 
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+
    after_create :assign_default_role
 
   def assign_default_role
