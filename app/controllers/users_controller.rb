@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    authorize @user
   end
 
   # GET /users/new
@@ -19,6 +20,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    authorize @user
   end
 
   # POST /users
@@ -54,6 +56,7 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
+    authorize @user
     @user.destroy
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }

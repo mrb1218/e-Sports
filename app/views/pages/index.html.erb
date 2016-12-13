@@ -1,6 +1,13 @@
 <div class="row user_section">
   <% if user_signed_in? %>
-    <h1>Hello, <%= current_user.first_name %> <%= current_user.last_name %> | <a href="/users/<%= current_user.id %>/edit"> Edit Profile </a></h1>
+    <h1>
+      Hello,
+      <%= current_user.first_name %> <%= current_user.last_name %> |
+      <a href="/users/<%= current_user.id %>/edit"> Edit Profile </a>
+      <% if current_user.has_any_role? :admin %>
+      | <%= link_to "View All Users", users_path%>
+      <% end %>
+    </h1>
     <div class="col-xs-6 home_favorites">
       <% favorites = Favorite.where(user_id: current_user.id).all %>
       <% if favorites.length > 0 %>
