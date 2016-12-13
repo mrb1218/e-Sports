@@ -19,6 +19,7 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'rails_12factor'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
+gem 'rb-readline'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -47,6 +48,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  gem 'rails-erd'
 end
 
 group :development do

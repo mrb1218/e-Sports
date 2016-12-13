@@ -15,6 +15,7 @@ class PlayersController < ApplicationController
   # GET /players/new
   def new
     @player = Player.new
+    authorize @player
   end
 
   # GET /players/1/edit
@@ -25,6 +26,7 @@ class PlayersController < ApplicationController
   # POST /players.json
   def create
     @player = Player.new(player_params)
+    authorize @player
     user= User.find_by_email(String(@player.email))
     if user!=nil
       registeredPlayer = Player.find_by_user_id(String(user.id))
@@ -68,9 +70,10 @@ class PlayersController < ApplicationController
   # DELETE /players/1
   # DELETE /players/1.json
   def destroy
+    authorize @player
     @player.destroy
     respond_to do |format|
-      format.html { redirect_to players_url, notice: 'Player was successfully destroyed.' }
+      format.html { redirect_to team_path(@player.team_id), notice: 'Player was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -84,5 +87,10 @@ class PlayersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def player_params
       params.require(:player).permit(:ign, :age, :country, :in_game_role, :team_id, :email)
+    end
+
+    def user_not_authorized
+      flash[:notice] = "You are not cool enough to do this"
+      redirect_to(leagues_path)
     end
 end
