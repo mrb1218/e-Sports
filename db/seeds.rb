@@ -94,17 +94,17 @@ users = User.create([
   #Add more users here
   { id: '24', first_name: 'Danan', last_name: 'Flander', region: 'USA', email: 'kaniggit@cloud9.csgo.com', password: 'test12'},
   #Admin
-  #{ first_name: 'Admin', last_name: 'Admin', region: 'USA', email: 'admin@esports.com', password: 'test12' },
+  {id: '25', first_name: 'Admin', last_name: 'Admin', region: 'USA', email: 'admin@esports.com', password: 'test12' },
   #Test Player
-  { first_name: 'Test', last_name: 'Player', region: 'USA', email: 'player@esports.com', password: 'test12' },
+  { id: '26', first_name: 'Test', last_name: 'Player', region: 'USA', email: 'player@esports.com', password: 'test12' },
   #Test Player2
-  { first_name: 'Test1', last_name: 'Player2', region: 'USA', email: 'player2@esports.com', password: 'test12' },
+  { id: '27', first_name: 'Test1', last_name: 'Player2', region: 'USA', email: 'player2@esports.com', password: 'test12' },
   #Coach1
-  { first_name: 'Test2', last_name: 'Coach', region: 'USA', email: 'coach@esports.com', password: 'test12' },
+  { id: '28', first_name: 'Test2', last_name: 'Coach', region: 'USA', email: 'coach@esports.com', password: 'test12' },
   #Coach2
-  { first_name: 'Test3', last_name: 'Coach2', region: 'USA', email: 'coach2@esports.com', password: 'test12' },
+  { id: '29', first_name: 'Test3', last_name: 'Coach2', region: 'USA', email: 'coach2@esports.com', password: 'test12' },
   #Our data
-  { first_name: 'Matthew', last_name: 'Greci', region: 'USA', email: 'mgreci@unm.edu', password: 'test12' }
+  { id: '30', first_name: 'Matthew', last_name: 'Greci', region: 'USA', email: 'mgreci@unm.edu', password: 'test12' }
 ])
 
 #Delete all Players
