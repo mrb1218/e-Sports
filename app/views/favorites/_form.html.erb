@@ -10,19 +10,30 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :Team %>
-    <%= f.collection_select :teamID, Team.order(:team_name),:id,:team_name, include_blank: true %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="field">
+        <%= f.label :Team %>
+        <%= f.collection_select :teamID, Team.order(:team_name),:id,:team_name, {:include_blank => 'Choose a Team'}, {:class => 'form-control'} %>
+      </div>
+    </div>
+    <div class="col-xs-12">
+      <h2>Or</h2>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="field">
+        <%= f.label :Player %>
+        <%= f.collection_select :playerID, Player.order(:ign),:id,:ign, {:include_blank => 'Choose a Player IGN'}, {:class => 'form-control'} %>
+      </div>
+    </div>
+    <div class="col-xs-12">
+      <div class="actions">
+        <div class="field"><%= f.submit%></div>
+      </div>
+    </div>
+    <div class="col-xs-12">
+      <%= link_to 'Back', favorites_path %>
+    </div>
   </div>
 
-  <p>Or</p>
-
-  <div class="field">
-    <%= f.label :Player %>
-    <%= f.collection_select :playerID, Player.order(:ign),:id,:ign, include_blank: true %>
-  </div>
-
-  <div class="actions">
-    <div class="field"><%= f.submit%></div>
-  </div>
 <% end %>
