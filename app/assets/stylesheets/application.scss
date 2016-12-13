@@ -16,434 +16,291 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
 //Field styling
 .field {
-    color: black
+  color:black
 }
 
-.field_name {
-    color: white
+
+.field_name{
+  color: white
 }
 
 p.notice {
-    padding: 5px;
+  padding: 5px;
 }
 
 p {
-    margin: auto;
-    padding: 0px;
+  margin: auto;
+  padding: 0px;
 }
 
 body {
-    background-color: #2d332d;
-    color: #E4E2F1;
-    font-family: verdana, arial, helvetica, sans-serif;
-    font-size: 13px;
-    line-height: 18px;
+  background-color:#2d332d;
+  color: #E4E2F1  ;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
 }
 
 a {
-    color: #000;
-    &:visited {
-        color: #666;
-    }
-    &:hover {
-        //color: #fff;
-        //background-color: #000;
-        background-color: transparent;
-        cursor: pointer;
-    }
+  color: #000;
+
+  &:visited {
+    color: #666;
+  }
+
+  &:hover {
+    //color: #fff;
+    //background-color: #000;
+    background-color: transparent;
+    cursor: pointer;
+  }
 }
 
 div {
-    &.field,
-    &.actions {
-        margin-bottom: 10px;
-    }
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
 }
 
 #notice {
-    color: green;
+  color: green;
 }
 
 .field_with_errors {
-    padding: 2px;
-    background-color: red;
-    display: table;
+  padding: 2px;
+  background-color: red;
+  display: table;
 }
 
 #error_explanation {
-    width: 450px;
-    border: 2px solid red;
-    padding: 7px;
-    padding-bottom: 0;
-    margin-bottom: 20px;
-    background-color: #f0f0f0;
-    h2 {
-        text-align: left;
-        font-weight: bold;
-        padding: 5px 5px 5px 15px;
-        font-size: 12px;
-        margin: -7px;
-        margin-bottom: 0;
-        background-color: #c00;
-        color: #fff;
-    }
-    //
-    ul li {
-        font-size: 12px;
-        list-style: square;
-    }
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: black;
+
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0;
+    background-color: #c00;
+    color: #fff;
+  }
+//
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
 }
 
 label {
-    display: block;
+  display: block;
 }
 
 //Search input
 #search-div {
-    padding-right: 10%;
+  padding-right: 10%;
 }
 
 #search-input {
-    background-color: gray;
-    color: darkgray;
-    width: 300px;
+  background-color: gray;
+  color: darkgray;
+  width:150px;
 }
 
 #search-button {
-    background-color: gray;
-    color: darkgray;
+  background-color: gray;
+  color: darkgray;
 }
 
 //Matches
-.match_header,
-.match_team {
-    text-align: center;
+.match_header, .match_team {
+  text-align: center;
 }
 
 //League, Team, Match, Player
 th {
-    padding: 5px;
+  padding: 5px;
 }
 
 td {
-    padding: 5px;
+  padding: 5px;
 }
 
 //Team page
 .team_coach {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 //Players
 li.players {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 // League Logo images
 img.league_logo {
-    max-width: 100%;
-    max-height: 100%;
-    height: inherit;
+  max-width: 100%;
+  max-height: 100%;
+  height: inherit;
 }
 
 //Home page
 img.upcoming_matches_team_logo {
-    height: 25%;
-    width: 25%;
+  height: 25%;
+  width: 25%;
 }
 
 .upcoming_match {
-    vertical-align: middle;
-    text-align: center;
+  vertical-align: middle;
+  text-align: center;
 }
 
 li.signed_in {
-    color: lightgray;
-}
+   color: lightgray;
+ }
 
 #general {
-    display: inline-block;
-    float: left;
-    margin: 0 0 0 20px;
-    list-style: none;
-    width: 470px;
+    display:inline-block; float:left; margin:0 0 0 20px; list-style:none; width:470px;
+  }
+#reach{
+  margin:0 0 0 30px;
 }
 
-#reach {
-    margin: 0 0 0 30px;
-}
+ #about-us{display:block; width:100%; line-height:1.6em;}
 
-#about-us {
-    display: block;
-    width: 100%;
-    line-height: 1.6em;
-}
+#about-us #about-intro{margin-bottom:0;}
+#about-us #about-intro .panorama{margin-bottom:20px;}
+#about-us #about-intro .panorama .imgholder{}
+#about-us #about-intro blockquote{position:relative; margin:0; padding:0;}
+#about-us #about-intro blockquote p{margin:0; padding:0 0 0 60px; font-size:16px; font-style:italic; line-height:1.6em;}
+#about-us #about-intro blockquote p span{position:absolute; top:0; left:0; font-size:120px; line-height:.8em;}
+#about-us #about-intro h2{}
+#about-us #about-intro p{}
+#about-us #about-intro p:first-child{}
 
-#about-us #about-intro {
-    margin-bottom: 0;
-}
+#about-us #skillset{margin-bottom:0;}
+#about-us #skillset li{margin-top:8px;}
+#about-us #skillset li:first-child{margin-top:0;}
 
-#about-us #about-intro .panorama {
-    margin-bottom: 20px;
-}
-
-#about-us #about-intro .panorama .imgholder {}
-
-#about-us #about-intro blockquote {
-    position: relative;
-    margin: 0;
-    padding: 0;
-}
-
-#about-us #about-intro blockquote p {
-    margin: 0;
-    padding: 0 0 0 60px;
-    font-size: 16px;
-    font-style: italic;
-    line-height: 1.6em;
-}
-
-#about-us #about-intro blockquote p span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 120px;
-    line-height: .8em;
-}
-
-#about-us #about-intro h2 {}
-
-#about-us #about-intro p {}
-
-#about-us #about-intro p:first-child {}
-
-#about-us #skillset {
-    margin-bottom: 0;
-}
-
-#about-us #skillset li {
-    margin-top: 8px;
-}
-
-#about-us #skillset li:first-child {
-    margin-top: 0;
-}
-
-#about-us #team {
-    margin-bottom: 0;
-}
-
-#about-us #team ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-#about-us #team ul li {
-    display: inline-block;
-    float: left;
-    width: 140px;
-    margin: 30px 0 0 20px;
-    padding: 0;
-    text-align: center;
-}
-
+#about-us #team{margin-bottom:0;}
+#about-us #team ul{margin:0; padding:0; list-style:none;}
+#about-us #team ul li{display:inline-block; float:left; width:140px; margin:30px 0 0 20px; padding:0; text-align:center;}
 #about-us #team ul li:first-child,
 #about-us #team ul > li:first-child + li + li,
-#about-us #team ul > li:first-child + li + li + li + li {
-    margin-left: 0;
-}
-
-#about-us #team ul > li:first-child + li + li + li + li + li + li {
-    margin-left: 0;
-}
-
-#about-us #team ul > li:first-child,
-#about-us #team ul > li:first-child + li {
-    margin-top: 0;
-}
-
-#about-us #team ul li figure {}
-
-#about-us #team ul li figure img {
-    padding: 4px;
-    border: 1px solid #CCCCCC;
-}
-
-#about-us #team ul li figcaption {}
-
-#about-us #team ul li figcaption p {
-    margin: 5px 0 0 0;
-    padding: 0;
-}
-
-#about-us #team ul li figcaption p:first-child {}
-
-#about-us #team ul li figure figcaption .team_name {}
-
-#about-us #team ul li figure figcaption .team_title {
-    margin: 0;
-    font-size: 11px;
-    line-height: normal;
-}
+#about-us #team ul > li:first-child + li + li + li + li{margin-left:0;}
+#about-us #team ul > li:first-child + li + li + li + li + li + li{margin-left:0;}
+#about-us #team ul > li:first-child, #about-us #team ul > li:first-child + li{margin-top:0;}
+#about-us #team ul li figure{}
+#about-us #team ul li figure img{padding:4px; border:1px solid #CCCCCC;}
+#about-us #team ul li figcaption{}
+#about-us #team ul li figcaption p{margin:5px 0 0 0; padding:0;}
+#about-us #team ul li figcaption p:first-child{}
+#about-us #team ul li figure figcaption .team_name{}
+#about-us #team ul li figure figcaption .team_title{margin:0; font-size:11px; line-height:normal;}
 
 .one_half,
-.one_third,
-.two_third,
-.one_quarter,
-.two_quarter,
-.three_quarter,
-.one_fifth,
-.two_fifth,
-.three_fifth,
-.four_fifth {
-    display: inline-block;
-    float: left;
-    margin: 0 0 0 20px;
-    list-style: none;
-}
+.one_third, .two_third,
+.one_quarter, .two_quarter, .three_quarter,
+.one_fifth, .two_fifth, .three_fifth, .four_fifth{display:inline-block; float:left; margin:0 0 0 20px; list-style:none;}
 
-.one_third,
-.two_third {
-    margin: 0 0 0 30px;
-}
+.one_third, .two_third{margin:0 0 0 30px;}
 
 .first,
 .one_half:first-child,
-.one_third:first-child,
-.two_third:first-child,
-.one_quarter:first-child,
-.two_quarter:first-child,
-.three_quarter:first-child,
-.one_fifth:first-child,
-.two_fifth:first-child,
-.three_fifth:first-child,
-.four_fifth:first-child {
-    margin-left: 0;
-}
+.one_third:first-child, .two_third:first-child,
+.one_quarter:first-child, .two_quarter:first-child, .three_quarter:first-child,
+.one_fifth:first-child, .two_fifth:first-child, .three_fifth:first-child, .four_fifth:first-child{margin-left:0;}
 
-.two_half,
-.three_third,
-.four_quarter,
-.five_fifth {
-    display: block;
-    width: 100%;
-    clear: both;
-}
-
+.two_half, .three_third, .four_quarter, .five_fifth{display:block; width:100%; clear:both;}
 
 /*----------------------------------------------Half Grid-------------------------------------*/
 
-.one_half {
-    width: 470px;
-}
-
+.one_half{width:470px;}
 
 /*----------------------------------------------Third Grid-------------------------------------*/
 
-.one_third {
-    width: 300px;
-}
-
-.two_third {
-    width: 630px;
-}
-
+.one_third{width:300px;}
+.two_third{width:630px;}
 
 /*----------------------------------------------Quarter Grid-------------------------------------*/
 
-.one_quarter {
-    width: 225px;
-}
-
-.two_quarter {
-    width: 470px;
-}
-
-.three_quarter {
-    width: 715px;
-}
-
+.one_quarter{width:225px;}
+.two_quarter{width:470px;}
+.three_quarter{width:715px;}
 
 /*----------------------------------------------Fifth Grid-------------------------------------*/
 
-.one_fifth {
-    width: 176px;
-}
-
-.two_fifth {
-    width: 372px;
-}
-
-.three_fifth {
-    width: 568px;
-}
-
-.four_fifth {
-    width: 764px;
-}
+.one_fifth{width:176px;}
+.two_fifth{width:372px;}
+.three_fifth{width:568px;}
+.four_fifth{width:764px;}
 
 //Home page
 div.upcoming_matches {
-    //margin: auto;
-    //width: 50%;
+  //margin: auto;
+  //width: 50%;
 }
 
 //Footer
-.footer-distributed {
-    background-color: #33383b;
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-    box-sizing: border-box;
-    width: 100%;
-    text-align: left;
-    font: normal 16px sans-serif;
-    padding: 40px 45px;
-    margin-top: 10px;
+.footer-distributed{
+	background-color: #33383b;
+	box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: normal 16px sans-serif;
+	padding: 40px 45px;
+	margin-top: 10px;
 }
 
-.footer-distributed .footer-left p {
-    color: #8f9296;
-    font-size: 14px;
-    margin: 0;
+.footer-distributed .footer-left p{
+	color:  #8f9296;
+	font-size: 14px;
+	margin: 0 10px 0;
 }
-
 
 /* Footer links */
 
-.footer-distributed p.footer-links {
-    font-size: 12px;
-    font-weight: bold;
-    color: #9A9B9C;
-    margin: 0 0 2px;
-    padding: 0;
+.footer-distributed p.footer-links{
+	font-size:12px;
+	font-weight: bold;
+	color:  #9A9B9C;
+	margin: 0 0 2px;
+	padding: 0;
 }
 
-.footer-distributed p.footer-links a {
-    display: inline-block;
-    line-height: 0;
-    text-decoration: none;
-    color: inherit;
+.footer-distributed p.footer-links a{
+	display:inline-block;
+	line-height: 0;
+	text-decoration: none;
+	color:  inherit;
 }
 
-.footer-distributed .footer-right {
-    float: right;
-    margin-top: 0px;
-    max-width: 180px;
+.footer-distributed .footer-right{
+	float: right;
+	margin-top: 0px;
+	max-width: 180px;
 }
 
-.footer-distributed .footer-right a {
-    display: inline-block;
-    width: 35px;
-    height: 35px;
-    background-color: #186CA0;
-    border-radius: 5px;
-    font-size: 20px;
-    color: #FFFFFF;
-    text-align: center;
-    line-height: 35px;
-    margin-left: 3px;
+.footer-distributed .footer-right a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	background-color:  #186CA0;
+	border-radius: 5px;
+
+	font-size: 20px;
+	color: #FFFFFF;
+	text-align: center;
+	line-height: 35px;
+	margin-left: 3px;
 }
 
 s {
@@ -453,19 +310,32 @@ s {
     padding-left: 80px;
 }
 
+/* For sponsors alignemnt */
+.footer-logo{
+  margin: 0px;
+  margin-top: 0px;
+  width: 1000px;
+  height: 50px;
+}
+.footer-logo .footer-sponsor s{
+  padding-right: 1%;
+}
 
 /* If you don't want the footer to be responsive, remove these media queries */
 
 @media (max-width: 600px) {
-    .footer-distributed .footer-left,
-    .footer-distributed .footer-right {
-        text-align: center;
-    }
-    .footer-distributed .footer-right {
-        float: none;
-        margin: 0 auto 20px;
-    }
-    .footer-distributed .footer-left p.footer-links {
-        line-height: 1.8;
-    }
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-right{
+		text-align: center;
+	}
+
+	.footer-distributed .footer-right{
+		float: none;
+		margin: 0 auto 20px;
+	}
+
+	.footer-distributed .footer-left p.footer-links{
+		line-height: 1.8;
+	}
 }
