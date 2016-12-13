@@ -6,12 +6,10 @@
     <img class="team_logo" src="/assets/team_<%= @team.id %>.png"/>
     <h3><%= League.find(String(@team.league_id)).league_name %></h3>
     <h4 class="team_coach">
-      Coach:
       <% if @team.coachID != ''%>
-        <%= User.find(String(@team.coachID)).first_name%>
-        <%= User.find(String(@team.coachID)).last_name%>
+        <%= User.find(String(@team.coachID)).first_name%> <%= User.find(String(@team.coachID)).last_name%>
       <% else %>
-        No coach for this team
+        <!--No coach for this team-->
       <% end %>
     </h4>
     <h5 class="team-bio"><%= @team.bio %></h5>
