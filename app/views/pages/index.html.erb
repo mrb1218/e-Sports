@@ -34,6 +34,10 @@
     </div>
     <div class="col-xs-6">
       <a href="/users/<%= current_user.id %>/edit"> Edit Profile
+        <br>
+      <% if current_user.has_any_role? :admin %>
+      <%= link_to "View All", users_path%>
+      <% end %>
     </div>
   <% end %>
 </div>

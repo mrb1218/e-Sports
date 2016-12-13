@@ -23,7 +23,11 @@
         <td><%= user.phone_number %></td>
         <td><%= user.region %></td>
         <td><%= user.player%></td>
-        <td><%= link_to 'Show', users_path %></td>
+        <td><%= link_to 'Show', user_path(user.id) %></td>
+        <% if current_user.has_any_role? :admin %>
+        <td><%= link_to 'Edit', edit_user_path(user.id) %></td>
+        <!-- <td><%= link_to "Delete",users_path, method: :delete, data: {confirm: 'Are you sure?'} %></td> -->
+        <% end %>
       </tr>
     <% end %>
   </tbody>
