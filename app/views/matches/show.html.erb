@@ -45,7 +45,19 @@
     </div>
     <!-- Stats -->
     <div class="row">
-
+      <h3>Team Stats</h3>
+      <% team_stats = Statistic.where(team_id: team1.id); %>
+      <ul class="list-group" style="color:black;font-size:20px;">
+        <li class="list-group-item"><b>Kills:</b> <div class="label label-info"><%= team_stats.sum("kills") %></div></li>
+        <li class="list-group-item"><b>Deaths:</b> <div class="label label-info"><%= team_stats.sum("deaths") %></div></li>
+        <% if team_stats.count > 0 %>
+        <li class="list-group-item"><b>Wins:</b> <div class="label label-info"><%= team_stats.sum("wins")/team_stats.count %></div></li>
+        <li class="list-group-item"><b>Losses:</b> <div class="label label-info"><%= team_stats.sum("losses")/team_stats.count %></div></li>
+        <li class="list-group-item"><b>Games Played:</b> <div class="label label-info"><%= team_stats.sum("games_played")/team_stats.count %></div></li>
+        <% else %>
+        <li class="list-group-item"><b>Games Played:</b> <div class="label label-info">0</div></li>
+        <% end %>
+      </ul>
     </div>
   </div>
   <div class="col-xs-0 col-sm-2"></div>
@@ -83,7 +95,19 @@
     </div>
     <!-- Stats -->
     <div class="row">
-
+      <h3>Team Stats</h3>
+      <% team_stats = Statistic.where(team_id: team2.id); %>
+      <ul class="list-group" style="color:black;font-size:20px;">
+        <li class="list-group-item"><b>Kills:</b> <div class="label label-info"><%= team_stats.sum("kills") %></div></li>
+        <li class="list-group-item"><b>Deaths:</b> <div class="label label-info"><%= team_stats.sum("deaths") %></div></li>
+        <% if team_stats.count > 0 %>
+        <li class="list-group-item"><b>Wins:</b> <div class="label label-info"><%= team_stats.sum("wins")/team_stats.count %></div></li>
+        <li class="list-group-item"><b>Losses:</b> <div class="label label-info"><%= team_stats.sum("losses")/team_stats.count %></div></li>
+        <li class="list-group-item"><b>Games Played:</b> <div class="label label-info"><%= team_stats.sum("games_played")/team_stats.count %></div></li>
+        <% else %>
+        <li class="list-group-item"><b>Games Played:</b> <div class="label label-info">0</div></li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>

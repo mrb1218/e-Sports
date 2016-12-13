@@ -39,16 +39,16 @@
   <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0">
     <h3>Team Stats</h3>
     <% team_stats = Statistic.where(team_id: @team.id); %>
-    <div class="list-group">
-      <b>Kills:</b> <%= team_stats.sum("kills") %><br>
-      <b>Deaths:</b> <%= team_stats.sum("deaths") %><br>
+    <ul class="list-group" style="color:black;font-size:20px;">
+      <li class="list-group-item"><b>Kills:</b> <div class="label label-info"><%= team_stats.sum("kills") %></div></li>
+      <li class="list-group-item"><b>Deaths:</b> <div class="label label-info"><%= team_stats.sum("deaths") %></div></li>
       <% if team_stats.count > 0 %>
-      <b>Wins:</b> <%= team_stats.sum("wins")/team_stats.count %><br>
-      <b>Losses:</b> <%= team_stats.sum("losses")/team_stats.count %><br>
-      <b>Games Played:</b> <%= team_stats.sum("games_played")/team_stats.count %><br>
+      <li class="list-group-item"><b>Wins:</b> <div class="label label-info"><%= team_stats.sum("wins")/team_stats.count %></div></li>
+      <li class="list-group-item"><b>Losses:</b> <div class="label label-info"><%= team_stats.sum("losses")/team_stats.count %></div></li>
+      <li class="list-group-item"><b>Games Played:</b> <div class="label label-info"><%= team_stats.sum("games_played")/team_stats.count %></div></li>
       <% else %>
-      <b>Games Played:</b>  0 <br>
+      <li class="list-group-item"><b>Games Played:</b> <div class="label label-info">0</div></li>
       <% end %>
-    </div>
-</div>
+    </ul>
+  </div>
 </div>
