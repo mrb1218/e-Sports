@@ -8,6 +8,7 @@ class TeamPolicy < ApplicationPolicy
    user.has_role? :coach or user.has_role? :admin
  end
 
+
  def destroy?
    user.has_role? :admin
  end
@@ -15,4 +16,5 @@ class TeamPolicy < ApplicationPolicy
  def edit?
    user.has_role? :coach or user.has_role? :admin
  end
+
 end

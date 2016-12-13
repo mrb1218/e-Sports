@@ -2,5 +2,5 @@
 
 <%= render 'form', player: @player %>
 
-<%= link_to 'Show', @player %> |
+<%= link_to 'Show', player_path(@player.team_id) %> |
 <%= link_to 'Back', team_path %>
