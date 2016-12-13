@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Results</h1>
+<hr>
+
 <!--<% matches = @matches.all%> -->
 <% matches = @matches.where("match_date_time <= ?", DateTime.now).order("match_date_time DESC").each do |match| %>
 <div class="col-xs-6 col-md-4">
@@ -35,4 +37,4 @@
           <% if user_signed_in? and current_user.has_any_role? :admin %>
             <%= link_to "Add Stats", new_statistic_path, class: "btn btn-primary"%>
           <% end %>
-      </html>
+    </html>  

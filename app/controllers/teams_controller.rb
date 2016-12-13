@@ -75,7 +75,7 @@ class TeamsController < ApplicationController
     end
 
     def user_not_authorized
-      flash[:notice] ="You are not cool enough to do this!"
+      flash[:notice] ="You are not cool enough to perform this action!"
       redirect_to(leagues_path)
     end
 end
