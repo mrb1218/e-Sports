@@ -61,50 +61,50 @@ User.delete_all
 #Create users
 users = User.create([
   ####-----  SKT T1
-  { id: '1', first_name: 'Ho-Seong', last_name: 'Lee', region: 'S.Korea', email: 'duke@skt.lol.com', password: 'test12' },
-  { id: '2', first_name: 'Sun-gu', last_name: 'Kang', region: 'S.Korea', email: 'blank@skt.lol.com', password: 'test12' },
-  { id: '3', first_name: 'Sang-hyeok', last_name: 'Lee', region: 'S.Korea', email: 'faker@skt.lol.com', password: 'test12' },
-  { id: '4', first_name: 'Jun-sik', last_name: 'Bae', region: 'S.Korea', email: 'bang@skt.lol.com', password: 'test12' },
-  { id: '5', first_name: 'Jae-wan', last_name: 'Lee', region: 'S.Korea', email: 'wolf@skt.lol.com', password: 'test12' },
+  { first_name: 'Ho-Seong', last_name: 'Lee', region: 'S.Korea', email: 'duke@skt.lol.com', password: 'test12' },
+  { first_name: 'Sun-gu', last_name: 'Kang', region: 'S.Korea', email: 'blank@skt.lol.com', password: 'test12' },
+  { first_name: 'Sang-hyeok', last_name: 'Lee', region: 'S.Korea', email: 'faker@skt.lol.com', password: 'test12' },
+  { first_name: 'Jun-sik', last_name: 'Bae', region: 'S.Korea', email: 'bang@skt.lol.com', password: 'test12' },
+  { first_name: 'Jae-wan', last_name: 'Lee', region: 'S.Korea', email: 'wolf@skt.lol.com', password: 'test12' },
   #Coach
-  { id: '6', first_name: 'Jeong-gyun', last_name: 'Kim',region: 'S.Korea', email: 'kkoma@skt.lol.com', password: 'test12' },
+  { first_name: 'Jeong-gyun', last_name: 'Kim',region: 'S.Korea', email: 'kkoma@skt.lol.com', password: 'test12' },
   ####-----  Team Solomid
-  { id: '7', first_name: 'Kevin', last_name: 'Yarnell', region: 'USA', email: 'hauntzer@tsm.lol.com', password: 'test12' },
-  { id: '8', first_name: 'Dennis', last_name: 'Johnsen', region: 'Denmark', email: 'svenskeren@tsm.lol.com', password: 'test12' },
-  { id: '9', first_name: 'Soren', last_name: 'Bjerg', region: 'Denmark', email: 'bjersen@tsm.lol.com', password: 'test12' },
-  { id: '10', first_name: 'Vincent', last_name: 'Wang', region: 'China', email: 'biofrost@tsm.lol.com', password: 'test12' },
-  { id: '11', first_name: 'Yiliang', last_name: 'Peng', region: 'USA', email: 'doublelift@tsm.lol.com', password: 'test12' },
+  { first_name: 'Kevin', last_name: 'Yarnell', region: 'USA', email: 'hauntzer@tsm.lol.com', password: 'test12' },
+  { first_name: 'Dennis', last_name: 'Johnsen', region: 'Denmark', email: 'svenskeren@tsm.lol.com', password: 'test12' },
+  { first_name: 'Soren', last_name: 'Bjerg', region: 'Denmark', email: 'bjersen@tsm.lol.com', password: 'test12' },
+  { first_name: 'Vincent', last_name: 'Wang', region: 'China', email: 'biofrost@tsm.lol.com', password: 'test12' },
+  { first_name: 'Yiliang', last_name: 'Peng', region: 'USA', email: 'doublelift@tsm.lol.com', password: 'test12' },
   #Coach
-  { id: '12', first_name: 'Parth', last_name: 'Naidu',region: 'India',email: 'parthenaan@skt.lol.com', password: 'test12' },
+  { first_name: 'Parth', last_name: 'Naidu',region: 'India',email: 'parthenaan@skt.lol.com', password: 'test12' },
   ####------  NiP
-  { id: '13', first_name: 'Patrik', last_name: 'Lindberg', region: 'Sweden', email: 'f0rest@nip.csgo.com', password: 'test12' },
-  { id: '14', first_name: 'Christopher', last_name: 'Alesund', region: 'Sweden',email: 'getright@nip.csgo.com', password: 'test12' },
-  { id: '15', first_name: 'Adam', last_name: 'Friberg', region: 'Sweden',email: 'friberg@nip.csgo.com', password: 'test12' },
-  { id: '16', first_name: 'Richard', last_name: 'Landstrorm', region: 'Sweden', email: 'xizt@nip.csgo.com', password: 'test12' },
-  { id: '17', first_name: 'Jacob', last_name: 'Mourujarvi', region: 'Sweden', email: 'pyth@nip.csgo.com', password: 'test12' },
+  { first_name: 'Patrik', last_name: 'Lindberg', region: 'Sweden', email: 'f0rest@nip.csgo.com', password: 'test12' },
+  { first_name: 'Christopher', last_name: 'Alesund', region: 'Sweden',email: 'getright@nip.csgo.com', password: 'test12' },
+  { first_name: 'Adam', last_name: 'Friberg', region: 'Sweden',email: 'friberg@nip.csgo.com', password: 'test12' },
+  { first_name: 'Richard', last_name: 'Landstrorm', region: 'Sweden', email: 'xizt@nip.csgo.com', password: 'test12' },
+  { first_name: 'Jacob', last_name: 'Mourujarvi', region: 'Sweden', email: 'pyth@nip.csgo.com', password: 'test12' },
   #Coach
-  { id: '18', first_name: 'Bjorn', last_name: 'Pers', region: 'Sweden',email: 'bjornpers@nip.csgo.com', password: 'test12' },
+  { first_name: 'Bjorn', last_name: 'Pers', region: 'Sweden',email: 'bjornpers@nip.csgo.com', password: 'test12' },
   ####------  Cloud 9
-  { id: '19', first_name: 'Jake', last_name: 'Yip', region: 'USA', email: 'stewie2k@cloud9.csgo.com', password: 'test12' },
-  { id: '20', first_name: 'Timothy', last_name: 'Ta', region: 'USA', email: 'autimatic@cloud9.csgo.com', password: 'test12' },
-  { id: '21', first_name: 'Tyler', last_name: 'Latham', region: 'USA', email: 'n0thing@cloud9.csgo.com', password: 'test12' },
-  { id: '22', first_name: 'Mike', last_name: 'Grzesiek', region: 'Canada', email: 'shroudk@cloud9.csgo.com', password: 'test12' },
-  { id: '23', first_name: 'Jordan', last_name: 'Gilbert', region: 'USA', email: 'skadoodle@cloud9.csgo.com', password: 'test12' },
+  { first_name: 'Jake', last_name: 'Yip', region: 'USA', email: 'stewie2k@cloud9.csgo.com', password: 'test12' },
+  { first_name: 'Timothy', last_name: 'Ta', region: 'USA', email: 'autimatic@cloud9.csgo.com', password: 'test12' },
+  { first_name: 'Tyler', last_name: 'Latham', region: 'USA', email: 'n0thing@cloud9.csgo.com', password: 'test12' },
+  { first_name: 'Mike', last_name: 'Grzesiek', region: 'Canada', email: 'shroudk@cloud9.csgo.com', password: 'test12' },
+  { first_name: 'Jordan', last_name: 'Gilbert', region: 'USA', email: 'skadoodle@cloud9.csgo.com', password: 'test12' },
   #Coach
   #Add more users here
-  { id: '24', first_name: 'Danan', last_name: 'Flander', region: 'USA', email: 'kaniggit@cloud9.csgo.com', password: 'test12'},
+  { first_name: 'Danan', last_name: 'Flander', region: 'USA', email: 'kaniggit@cloud9.csgo.com', password: 'test12'},
   #Admin
-  {id: '25', first_name: 'Admin', last_name: 'Admin', region: 'USA', email: 'admin@esports.com', password: 'test12' },
+  { first_name: 'Admin', last_name: 'Admin', region: 'USA', email: 'admin@esports.com', password: 'test12' },
   #Test Player
-  { id: '26', first_name: 'Test', last_name: 'Player', region: 'USA', email: 'player@esports.com', password: 'test12' },
+  { first_name: 'Test', last_name: 'Player', region: 'USA', email: 'player@esports.com', password: 'test12' },
   #Test Player2
-  { id: '27', first_name: 'Test1', last_name: 'Player2', region: 'USA', email: 'player2@esports.com', password: 'test12' },
+  { first_name: 'Test1', last_name: 'Player2', region: 'USA', email: 'player2@esports.com', password: 'test12' },
   #Coach1
-  { id: '28', first_name: 'Test2', last_name: 'Coach', region: 'USA', email: 'coach@esports.com', password: 'test12' },
+  { first_name: 'Test2', last_name: 'Coach', region: 'USA', email: 'coach@esports.com', password: 'test12' },
   #Coach2
-  { id: '29', first_name: 'Test3', last_name: 'Coach2', region: 'USA', email: 'coach2@esports.com', password: 'test12' },
+  { first_name: 'Test3', last_name: 'Coach2', region: 'USA', email: 'coach2@esports.com', password: 'test12' },
   #Our data
-  { id: '30', first_name: 'Matthew', last_name: 'Greci', region: 'USA', email: 'mgreci@unm.edu', password: 'test12' }
+  { first_name: 'Matthew', last_name: 'Greci', region: 'USA', email: 'mgreci@unm.edu', password: 'test12' }
 ])
 
 #Delete all Players
