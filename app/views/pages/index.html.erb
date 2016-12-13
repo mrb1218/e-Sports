@@ -70,19 +70,21 @@
   <% end %>
   </div>
   <div class="col-xs-12 col-sm-6 upcoming_match">
-  <% match = Match.where(league_id: league.id).order('match_date_time ASC').second; if match != nil %>
-  <% team1 = Team.where(id: match.team1ID).first; team2 = Team.where(id: match.team2ID).first; %>
+  <% match1 = Match.where(league_id: league.id).where("match_date_time > ?", (DateTime.now.to_time + 2.hours).to_datetime).order('match_date_time ASC').second; if match1 != nil %>
+  <% team1 = Team.where(id: match1.team1ID).first; team2 = Team.where(id: match1.team2ID).first; %>
     <a href="/teams/<%= team1.id %>">
       <img class="upcoming_matches_team_logo" src="/assets/team_<%= team1.id %>.png"/>
     </a>
-    <a href="/matches/<%= match.id %>">
-      <%= match.match_date_time.strftime("%m-%d-%Y @ %H:%M") %>
+    <a href="/matches/<%= match1.id %>">
+      <%= match1.match_date_time.strftime("%m-%d-%Y @ %H:%M") %>
     </a>
     <a href="/teams/<%= team2.id %>">
       <img class="upcoming_matches_team_logo" src="/assets/team_<%= team2.id %>.png"/>
     </a>
   <% else %>
-    <h3>No upcoming matches for this team</h3>
+  <% if match1 == nil and match == nil %>
+    <h3>No upcoming matches in this league </h3>
+  <% end %>
   <% end %>
   </div>
 </div>
