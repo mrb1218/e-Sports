@@ -17,14 +17,16 @@
 
   <tbody>
     <% @players.each do |player|%>
+    <% user = User.where(id: player.user_id).first %>
       <tr>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
         <td><%= player.ign %></td>
         <td><%= player.in_game_role %></td>
         <td><%= player.country %></td>
         <td><%= player.age %></td>
         <td><%= Team.where(id: player.team_id).first.team_name %></td>
         <td><%= link_to 'Show', player %></td>
-        td><%= link_to 'Edit', edit_player_path %></td>
       </tr>
     <% end %>
   </tbody>
