@@ -57,7 +57,7 @@ class TeamsController < ApplicationController
   def destroy
     @team.destroy
     respond_to do |format|
-      format.html { redirect_to teams_url, notice: 'Team was successfully destroyed.' }
+      format.html { redirect_to teams_url, notice: 'Team was successfully removed.' }
       format.json { head :no_content }
     end
   end
@@ -74,7 +74,7 @@ class TeamsController < ApplicationController
     end
 
     def user_not_authorized
-      flash[:notice] = "You are not cool enough to do this - go back from whence you came."
+      flash[:notice] ="You are not cool enough to do this!"
       redirect_to(leagues_path)
     end
 end
