@@ -153,7 +153,6 @@ ActiveRecord::Schema.define(version: 20161220601847) do
     t.integer  "deaths"
     t.integer  "wins"
     t.integer  "losses"
-    t.integer  "ties"
     t.integer  "team_id"
     t.integer  "match_id"
     t.integer  "season_id"

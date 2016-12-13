@@ -149,16 +149,16 @@ seasons = Season.create([
 #Delete all statistics
 Statistic.delete_all
 statistics = Statistic.create([
-  { games_played: '1', kills: '1', deaths: '0', wins: '1', losses:'0', ties: '0', team_id: teams[0].id, player_id: players[0].id, season_id: seasons[0].id, match_id: matches[0].id },
-  { games_played: '1', kills: '1', deaths: '0', wins: '1', losses:'0', ties: '0', team_id: teams[0].id, player_id: players[1].id, season_id: seasons[0].id, match_id: matches[0].id },
-  { games_played: '1', kills: '1', deaths: '0', wins: '1', losses:'0', ties: '0', team_id: teams[0].id, player_id: players[2].id, season_id: seasons[0].id, match_id: matches[0].id },
-  { games_played: '1', kills: '1', deaths: '0', wins: '1', losses:'0', ties: '0', team_id: teams[0].id, player_id: players[3].id, season_id: seasons[0].id, match_id: matches[0].id },
-  { games_played: '1', kills: '1', deaths: '0', wins: '1', losses:'0', ties: '0', team_id: teams[0].id, player_id: players[4].id, season_id: seasons[0].id, match_id: matches[0].id },
-  { games_played: '1', kills: '0', deaths: '1', wins: '0', losses:'1', ties: '0', team_id: teams[1].id, player_id: players[5].id, season_id: seasons[0].id, match_id: matches[0].id },
-  { games_played: '1', kills: '0', deaths: '1', wins: '0', losses:'1', ties: '0', team_id: teams[1].id, player_id: players[6].id, season_id: seasons[0].id, match_id: matches[0].id },
-  { games_played: '1', kills: '0', deaths: '1', wins: '0', losses:'1', ties: '0', team_id: teams[1].id, player_id: players[7].id, season_id: seasons[0].id, match_id: matches[0].id },
-  { games_played: '1', kills: '0', deaths: '1', wins: '0', losses:'1', ties: '0', team_id: teams[1].id, player_id: players[8].id, season_id: seasons[0].id, match_id: matches[0].id },
-  { games_played: '1', kills: '0', deaths: '1', wins: '0', losses:'1', ties: '0', team_id: teams[1].id, player_id: players[9].id, season_id: seasons[0].id, match_id: matches[0].id }
+  { games_played: '1', kills: '1', deaths: '0', wins: '1', losses:'0', team_id: teams[0].id, player_id: players[0].id, season_id: seasons[0].id, match_id: matches[0].id },
+  { games_played: '1', kills: '1', deaths: '0', wins: '1', losses:'0', team_id: teams[0].id, player_id: players[1].id, season_id: seasons[0].id, match_id: matches[0].id },
+  { games_played: '1', kills: '1', deaths: '0', wins: '1', losses:'0', team_id: teams[0].id, player_id: players[2].id, season_id: seasons[0].id, match_id: matches[0].id },
+  { games_played: '1', kills: '1', deaths: '0', wins: '1', losses:'0', team_id: teams[0].id, player_id: players[3].id, season_id: seasons[0].id, match_id: matches[0].id },
+  { games_played: '1', kills: '1', deaths: '0', wins: '1', losses:'0', team_id: teams[0].id, player_id: players[4].id, season_id: seasons[0].id, match_id: matches[0].id },
+  { games_played: '1', kills: '0', deaths: '1', wins: '0', losses:'1', team_id: teams[1].id, player_id: players[5].id, season_id: seasons[0].id, match_id: matches[0].id },
+  { games_played: '1', kills: '0', deaths: '1', wins: '0', losses:'1', team_id: teams[1].id, player_id: players[6].id, season_id: seasons[0].id, match_id: matches[0].id },
+  { games_played: '1', kills: '0', deaths: '1', wins: '0', losses:'1', team_id: teams[1].id, player_id: players[7].id, season_id: seasons[0].id, match_id: matches[0].id },
+  { games_played: '1', kills: '0', deaths: '1', wins: '0', losses:'1', team_id: teams[1].id, player_id: players[8].id, season_id: seasons[0].id, match_id: matches[0].id },
+  { games_played: '1', kills: '0', deaths: '1', wins: '0', losses:'1', team_id: teams[1].id, player_id: players[9].id, season_id: seasons[0].id, match_id: matches[0].id }
 ])
 
 #Coaches?
