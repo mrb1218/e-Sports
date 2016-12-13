@@ -31,8 +31,10 @@
   </div>
 </div>
 
-<%= link_to 'All Players', players_path %>
-<% if (user_signed_in? && (current_user.id == @player.user_id)) %>
+<%= link_to 'All Players', team_path(@player.team_id) %>
+<% if user_signed_in? && ((current_user.id == @player.user_id) || (String(current_user.id) == Team.find(@player.team_id).coachID) || (current_user.has_role? :admin)) %>
   <%= link_to 'Edit Information', edit_player_path %>
 <% end %>
-
+<% if user_signed_in? && ((String(current_user.id) == Team.find(@player.team_id).coachID) || (current_user.has_role? :admin)) %>
+  <%= link_to 'Remove Player', @player, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
