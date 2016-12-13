@@ -128,12 +128,14 @@ players = Player.create([
   { id: '20', age: '23', country: 'USA', ign: 'Skadoodle', in_game_role:'AWPer', team_id: teams[3].id, user_id: users[22].id }
 ])
 
+#Delete all Seasons
+Season.delete_all
 seasons = Season.create([
   { season_name: '2016' },
   { season_name: '2017' }
 ])
 
-#Delete all Players
+#Delete all statistics
 Statistic.delete_all
 statistics = Statistic.create([
   { games_played: '1', kills: '1', deaths: '0', wins: '1', losses:'0', ties: '0', team_id: teams[0].id, player_id: players[0].id, season_id: seasons[0].id, match_id: matches[0].id },
