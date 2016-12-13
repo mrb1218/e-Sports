@@ -9,7 +9,7 @@
     <br>
   </div>
   <div class="col-xs-12 col-md-6">
-    <h2 style="text-align:center;">Upcoming Matches</h2>
+    <h2 style="text-align:center;">Matches</h2>
     <% Match.where(league_id: @league.id).order('match_date_time ASC').each do |match| %>
     <% team1 = Team.where(id: match.team1ID).first; team2 = Team.where(id: match.team2ID).first; %>
       <div class="col-xs-12" style="text-align:center;">
